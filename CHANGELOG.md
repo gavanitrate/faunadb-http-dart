@@ -8,3 +8,5 @@ All notable changes to this project will be documented in this file.
 
 - FaunaDBConfig class
 - FaunaDBClient class
+
+[0.1.0]: https://github.com/gavanitrate/faunadb-http-dart/releases/tag/0.1.0
