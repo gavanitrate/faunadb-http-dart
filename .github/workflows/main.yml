@@ -1,0 +1,12 @@
+name: publish
+
+on: [push, pull_request]
+
+jobs:
+  publishing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'checkout'
+        uses: actions/checkout@v2
+
+      - uses: k-paxian/dart-package-publisher@master
