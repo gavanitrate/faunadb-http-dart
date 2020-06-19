@@ -20,15 +20,15 @@ class FaunaDBConfig {
 
   factory FaunaDBConfig.create({
     String scheme = "https",
-    String domain,
+    String domain = "db.fauna.com",
     int port,
     String secret,
   }) {
     final _isHttp = (scheme == "https");
     final _defaultPort = (_isHttp ? 443 : 80);
     return FaunaDBConfig(
-      scheme: scheme ?? "https",
-      domain: domain ?? "db.fauna.com",
+      scheme: scheme,
+      domain: domain,
       port: port ?? _defaultPort,
       secret: secret,
     );
