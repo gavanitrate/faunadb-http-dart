@@ -1,15 +1,22 @@
 import 'package:faunadb_http/faunadb_http.dart';
 
-void main(List<String> arguments) {
-  final config = FaunaDBConfig.create(secret: "your_secret_here");
+/*
+* FaunaDB secret should be the first argument
+* `dart ./basic_example.dart <you_secret_here>`
+* */
+void main(List<String> arguments) async {
+  final config = FaunaDBConfig.build(secret: arguments[0]);
+  // Or if you want to put your secret straight in your code
+  // final config = FaunaDBConfig.build(secret: "<you_secret_here>");
   final client = FaunaDBClient(config);
 
-  client.query({
+  var value = await client.query({
     "paginate": {
       "match": {"index": "all_products"}
     }
-  }).then((value) {
-    print(value);
-    client.close();
   });
+
+  print(value);
+
+  client.close();
 }

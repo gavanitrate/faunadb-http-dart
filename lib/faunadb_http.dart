@@ -7,18 +7,29 @@ class FaunaDBConfig {
   final String domain;
   final int port;
   final String secret;
+  String _baseUrl;
+  String _authToken;
 
-  FaunaDBConfig({this.scheme, this.domain, this.port, this.secret});
+  /*
+  * ??= operator used to cache computed getters
+  * https://flutterigniter.com/dart-getter-cache-computed-properties/
+  * */
+  String get baseUrl => _baseUrl ??= buildBaseUrl();
 
-  String get baseUrl {
+  String get authToken => _authToken ??= buildAuthToken();
+
+  String buildBaseUrl() {
     return scheme + "://" + domain + ":" + port.toString();
   }
 
-  String get authToken {
-    return "Bearer " + secret;
+  String buildAuthToken() {
+    final bytes = utf8.encode(secret + ":");
+    return "Basic " + base64.encode(bytes);
   }
 
-  factory FaunaDBConfig.create({
+  FaunaDBConfig({this.scheme, this.domain, this.port, this.secret});
+
+  factory FaunaDBConfig.build({
     String scheme = "https",
     String domain = "db.fauna.com",
     int port,
