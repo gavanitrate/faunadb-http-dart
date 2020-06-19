@@ -1,9 +1,9 @@
 name: publish to pub.dev
 
 on:
-  push:
-    branches:
-      - master
+  release:
+    types:
+      - created
 
 jobs:
   publishing:
