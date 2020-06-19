@@ -13,3 +13,5 @@ jobs:
         uses: actions/checkout@v2
 
       - uses: k-paxian/dart-package-publisher@master
+        with:
+          credentialJson: ${{ secrets.CREDENTIAL_JSON }}
