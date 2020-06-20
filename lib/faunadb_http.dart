@@ -7,8 +7,12 @@ class FaunaDBConfig {
   final String domain;
   final int port;
   final String secret;
+  final Map<String, String> headers;
+  final Duration timeout;
+  final Duration queryTimeout;
   String _baseUrl;
   String _authToken;
+  Map<String, String> _requestHeaders;
 
   /*
   * ??= operator used to cache computed getters
@@ -17,6 +21,9 @@ class FaunaDBConfig {
   String get baseUrl => _baseUrl ??= buildBaseUrl();
 
   String get authToken => _authToken ??= buildAuthToken();
+
+  Map<String, String> get requestHeaders =>
+      _requestHeaders ??= buildRequestHeaders();
 
   String buildBaseUrl() {
     return scheme + "://" + domain + ":" + port.toString();
@@ -27,22 +34,44 @@ class FaunaDBConfig {
     return "Basic " + base64.encode(bytes);
   }
 
-  FaunaDBConfig({this.scheme, this.domain, this.port, this.secret});
+  Map<String, String> buildRequestHeaders() {
+    final reqHeaders = Map<String, String>.from(headers);
+    reqHeaders.putIfAbsent("Authorization", () => authToken);
+    return reqHeaders;
+  }
+
+  FaunaDBConfig({
+    this.scheme,
+    this.domain,
+    this.port,
+    this.secret,
+    this.headers,
+    this.timeout,
+    this.queryTimeout,
+  });
 
   factory FaunaDBConfig.build({
     String scheme = "https",
     String domain = "db.fauna.com",
     int port,
     String secret,
+    Map<String, String> headers = const {},
+    Duration timeout = const Duration(minutes: 1),
+    Duration queryTimeout,
   }) {
-    final _isHttp = (scheme == "https");
-    final _defaultPort = (_isHttp ? 443 : 80);
-    return FaunaDBConfig(
+    final isHttp = (scheme == "https");
+    final defaultPort = (isHttp ? 443 : 80);
+    final config = FaunaDBConfig(
       scheme: scheme,
       domain: domain,
-      port: port ?? _defaultPort,
+      port: port ?? defaultPort,
       secret: secret,
+      headers: headers,
+      timeout: timeout,
+      queryTimeout: queryTimeout,
     );
+
+    return config;
   }
 }
 
@@ -53,20 +82,14 @@ class FaunaDBClient {
   FaunaDBClient(this.config);
 
   Future<dynamic> query(data) {
-    try {
-      return _httpClient
-          .post(
-            config.baseUrl,
-            headers: {
-              "Authorization": config.authToken,
-            },
-            body: json.encode(data),
-          )
-          .then((Response response) => json.decode(response.body));
-    } catch (e) {
-      print(e);
-      return null;
-    }
+    return _httpClient
+        .post(
+          config.baseUrl,
+          headers: config.requestHeaders,
+          body: json.encode(data),
+        )
+        .timeout(config.timeout)
+        .then((Response response) => json.decode(response.body));
   }
 
   close() {

@@ -15,7 +15,6 @@ void main(List<String> arguments) async {
       "match": {"index": "all_products"}
     }
   });
-
   print(value);
 
   client.close();
