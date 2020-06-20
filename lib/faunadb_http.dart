@@ -3,6 +3,8 @@ import 'dart:convert';
 import 'package:http/http.dart';
 
 class FaunaDBConfig {
+  static const APIVersion = "3";
+
   final String scheme;
   final String domain;
   final int port;
@@ -36,7 +38,20 @@ class FaunaDBConfig {
 
   Map<String, String> buildRequestHeaders() {
     final reqHeaders = Map<String, String>.from(headers);
-    reqHeaders.putIfAbsent("Authorization", () => authToken);
+    reqHeaders.putIfAbsent(
+      "X-FaunaDB-API-Version",
+      () => FaunaDBConfig.APIVersion,
+    );
+    reqHeaders.putIfAbsent(
+      "Authorization",
+      () => authToken,
+    );
+    if (queryTimeout != null) {
+      reqHeaders.putIfAbsent(
+        "X-Query-Timeout",
+        () => queryTimeout.inMilliseconds.toString(),
+      );
+    }
     return reqHeaders;
   }
 
