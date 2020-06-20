@@ -1,0 +1,8 @@
+name: faunadb_http_expample
+
+dependencies:
+  faunadb_http: ^0.2.0
+
+dependency_overrides:
+  faunadb_http:
+    path: ../
