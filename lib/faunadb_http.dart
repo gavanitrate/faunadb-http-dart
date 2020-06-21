@@ -2,29 +2,35 @@ import 'dart:convert';
 
 import 'package:http/http.dart';
 
+/// Configuration for a [FaunaClient].
+///
+/// It is recommended to use [FaunaConfig.build] to build a configuration.
 class FaunaConfig {
-  /// FQL API Version to target
+  /// Query API Version to target.
   static const APIVersion = "3";
 
-  /// FaunaDB secret
+  /// FaunaDB secret.
   final String secret;
 
-  /// FaunaDB URL scheme (http, https)
+  /// FaunaDB URL scheme (http, https).
   final String scheme;
 
-  /// FaunaDB URL domain
+  /// FaunaDB URL domain.
   final String domain;
 
-  /// FaunaDB URL port
+  /// FaunaDB URL port.
   final int port;
 
-  /// HTTP request headers
+  /// HTTP request headers.
   final Map<String, String> headers;
 
-  /// Max amount of time to wait for query response
+  /// Max amount of time to wait for query response.
   final Duration timeout;
 
-  /// Max amount of time to wait for query execution on server
+  /// Max amount of time to wait for query execution on server.
+  ///
+  /// If specified, this value is sent as the
+  /// `X-Query-Timeout` header in [requestHeaders].
   final Duration queryTimeout;
   String _baseUrl;
   String _authToken;
@@ -33,7 +39,7 @@ class FaunaConfig {
   // ??= operator used to cache computed getters
   // https://flutterigniter.com/dart-getter-cache-computed-properties/
 
-  /// The computed URL to send query requests to
+  /// The computed URL to send query requests to.
   /// Built from [scheme], [domain], [port].
   String get baseUrl => _baseUrl ??= _buildBaseUrl();
 
@@ -44,7 +50,7 @@ class FaunaConfig {
   /// Headers that are applied to every request this client makes.
   ///
   /// `Authorization`, `X-FaunaDB-API-Version`
-  /// headers are automatically added in
+  /// headers are automatically added in.
   Map<String, String> get requestHeaders =>
       _requestHeaders ??= _buildRequestHeaders();
 
@@ -76,7 +82,6 @@ class FaunaConfig {
     return reqHeaders;
   }
 
-  /// Configuration for a [FaunaClient]
   FaunaConfig({
     this.secret,
     this.scheme,
@@ -93,7 +98,8 @@ class FaunaConfig {
   ///
   /// [keys-docs]: https://docs.fauna.com/fauna/current/security/keys.html
   ///
-  /// By default, base url is https://db.fauna.com:443.
+  /// By default, [baseUrl] is https://db.fauna.com:443.
+  /// This is the URL the [FaunaClient] will make query requests to.
   factory FaunaConfig.build({
     String secret,
     String scheme = "https",
@@ -119,6 +125,8 @@ class FaunaConfig {
 
 /// The Dart native client for FaunaDB.
 ///
+/// Query methods are asynchronous and return a [Future].
+///
 /// The [close()] method must be called in order to release the FaunaClient I/O resources.
 class FaunaClient {
   final _httpClient = Client();
@@ -132,6 +140,8 @@ class FaunaClient {
   /// Executes a query via the FaunaDB Query API.
   ///
   /// [expression] must be serializable JSON representation of an FQL query.
+  ///
+  /// Docs on query syntax can be found [here][query-docs].
   /// Example query:
   /// ```
   /// {
@@ -140,8 +150,6 @@ class FaunaClient {
   ///   }
   /// }
   /// ```
-  ///
-  /// Docs on query syntax can be found [here][query-docs].
   ///
   /// [query-docs]: https://app.fauna.com/documentation/intro/querying#query-syntax
   ///
