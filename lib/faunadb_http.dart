@@ -142,7 +142,7 @@ class FaunaClient {
   /// [expression] must be serializable JSON representation of an FQL query.
   ///
   /// Docs on query syntax can be found [here][query-docs].
-  /// Example query:
+  /// Example [expression]
   /// ```
   /// {
   ///   "paginate": {
