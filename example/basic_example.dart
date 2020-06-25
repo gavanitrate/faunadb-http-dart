@@ -1,4 +1,5 @@
 import 'package:faunadb_http/faunadb_http.dart';
+import 'package:faunadb_http/query.dart' as fql;
 
 /*
 * FaunaDB secret should be the first argument
@@ -12,11 +13,16 @@ void main(List<String> arguments) async {
   // final config = FaunaDBConfig.build(secret: "<your_secret_here>");
   final client = FaunaClient(config);
 
-  var value = await client.query({
-    "paginate": {
-      "match": {"index": "all_products"},
-    }
-  });
+  fql.Expr query = fql.Paginate(
+    fql.Match(
+      fql.Index("customers_by_firstname"),
+      terms: ["Skipper"],
+    ),
+  );
+
+  print(query);
+
+  var value = await client.query(query);
   print(value);
 
   client.close();

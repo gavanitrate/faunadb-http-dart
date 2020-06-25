@@ -8,3 +8,8 @@ environment:
 
 dependencies:
   http: ^0.12.1
+  json_annotation: ^3.0.1
+
+dev_dependencies:
+  json_serializable: ^3.3.0
+  build_runner: ^1.10.0
