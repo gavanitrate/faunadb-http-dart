@@ -6,6 +6,43 @@ part of 'fql.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
+Object_ _$Object_FromJson(Map<String, dynamic> json) {
+  return Object_(
+    json['object'] as Map<String, dynamic>,
+  );
+}
+
+Map<String, dynamic> _$Object_ToJson(Object_ instance) => <String, dynamic>{
+      'object': instance.object,
+    };
+
+Select _$SelectFromJson(Map<String, dynamic> json) {
+  $checkKeys(json, disallowNullValues: const ['default']);
+  return Select(
+    json['select'],
+    json['from'] == null
+        ? null
+        : Object_.fromJson(json['from'] as Map<String, dynamic>),
+    default_: json['default'],
+  );
+}
+
+Map<String, dynamic> _$SelectToJson(Select instance) {
+  final val = <String, dynamic>{
+    'select': instance.path,
+    'from': instance.from,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('default', instance.default_);
+  return val;
+}
+
 Paginate _$PaginateFromJson(Map<String, dynamic> json) {
   $checkKeys(json, disallowNullValues: const ['size']);
   return Paginate(
@@ -76,16 +113,31 @@ Map<String, dynamic> _$IndexToJson(Index instance) {
 }
 
 Ref _$RefFromJson(Map<String, dynamic> json) {
+  $checkKeys(json, disallowNullValues: const ['@ref']);
   return Ref(
-    json['@ref'],
+    json['ref'],
     json['id'] as String,
+    fromRef: json['@ref'] == null
+        ? null
+        : Ref.fromJson(json['@ref'] as Map<String, dynamic>),
   );
 }
 
-Map<String, dynamic> _$RefToJson(Ref instance) => <String, dynamic>{
-      '@ref': instance.schema_ref,
-      'id': instance.id,
-    };
+Map<String, dynamic> _$RefToJson(Ref instance) {
+  final val = <String, dynamic>{
+    'ref': instance.schema_ref,
+    'id': instance.id,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('@ref', instance.fromRef);
+  return val;
+}
 
 Collection _$CollectionFromJson(Map<String, dynamic> json) {
   $checkKeys(json, disallowNullValues: const ['database']);
@@ -107,5 +159,37 @@ Map<String, dynamic> _$CollectionToJson(Collection instance) {
   }
 
   writeNotNull('database', instance.database);
+  return val;
+}
+
+Collections _$CollectionsFromJson(Map<String, dynamic> json) {
+  return Collections(
+    database: json['collections'],
+  );
+}
+
+Map<String, dynamic> _$CollectionsToJson(Collections instance) =>
+    <String, dynamic>{
+      'collections': instance.database,
+    };
+
+QueryResult _$QueryResultFromJson(Map<String, dynamic> json) {
+  return QueryResult(
+    json['resource'],
+    json['errors'],
+  );
+}
+
+Map<String, dynamic> _$QueryResultToJson(QueryResult instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('resource', instance.resource);
+  writeNotNull('errors', instance.errors);
   return val;
 }
