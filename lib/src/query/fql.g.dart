@@ -175,8 +175,8 @@ Map<String, dynamic> _$CollectionsToJson(Collections instance) =>
 
 QueryResult _$QueryResultFromJson(Map<String, dynamic> json) {
   return QueryResult(
-    json['resource'],
-    json['errors'],
+    resource: json['resource'],
+    errors: json['errors'],
   );
 }
 

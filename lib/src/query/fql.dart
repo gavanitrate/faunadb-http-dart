@@ -161,7 +161,7 @@ class QueryResult extends Expr {
   @JsonKey(nullable: true, includeIfNull: false)
   final Object errors;
 
-  QueryResult(this.resource, this.errors);
+  QueryResult({this.resource, this.errors});
 
   factory QueryResult.fromBody(String body) {
     return QueryResult.fromJson(json.decode(body));
