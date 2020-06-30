@@ -13,15 +13,15 @@ void main(List<String> arguments) async {
   // final config = FaunaDBConfig.build(secret: "<your_secret_here>");
   final client = FaunaClient(config);
 
-  final query = Paginate(
-    Match(
-      Index("customers_by_firstname"),
-      terms: ["Skipper"],
-    ),
-  );
-  print(query);
+  final query = Collections();
+  print("query=>\n${query}");
+
   final response = await client.query(query);
-  print(response);
+  if (!response.hasErrors) {
+    print("response=>\n${response.resource}");
+  } else {
+    print("errors=>\n${response.errors}");
+  }
 
   client.close();
 }
