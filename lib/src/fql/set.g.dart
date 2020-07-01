@@ -30,3 +30,20 @@ Map<String, dynamic> _$MatchToJson(Match instance) {
   writeNotNull('terms', instance.terms);
   return val;
 }
+
+Difference _$DifferenceFromJson(Map<String, dynamic> json) {
+  return Difference(
+    json['difference'] == null
+        ? null
+        : Expr.fromJson(json['difference'] as Map<String, dynamic>),
+    json['diff'] == null
+        ? null
+        : Expr.fromJson(json['diff'] as Map<String, dynamic>),
+  );
+}
+
+Map<String, dynamic> _$DifferenceToJson(Difference instance) =>
+    <String, dynamic>{
+      'difference': instance.source,
+      'diff': instance.diff,
+    };

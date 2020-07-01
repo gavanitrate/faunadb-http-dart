@@ -4,6 +4,15 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'expr.g.dart';
 
+/// Base class to represent an FQL Expression.
+///
+/// Native Dart types are preferred over expressions such as Value.
+///
+/// Varargs -> arrays
+///
+/// reserved keywords - add trailing _
+/// Function -> [Function_]
+/// default -> [default_]
 @JsonSerializable()
 class Expr {
   static _wrap_value(dynamic value) {
@@ -125,12 +134,18 @@ class RefResponse extends Expr {
 
   @override
   String toString() {
-    return "Ref: " + super.toString();
+    if (collection != null) {
+      return "Ref(id: ${id}, collection: ${collection.toString()})";
+    }
+    return "Ref(id: ${id})";
   }
 }
 
 @JsonSerializable()
 class QueryResult extends Expr {
+  @JsonKey(ignore: true)
+  String raw;
+
   @JsonKey(
     includeIfNull: false,
     fromJson: Expr._unwrap_values,
@@ -144,6 +159,12 @@ class QueryResult extends Expr {
   bool get hasErrors => (errors != null);
 
   QueryResult({this.resource, this.errors});
+
+  factory QueryResult.fromBody(String responseBody) {
+    final qr = QueryResult.fromJson(json.decode(responseBody));
+    qr.raw = responseBody;
+    return qr;
+  }
 
   factory QueryResult.fromJson(Map<String, dynamic> json) =>
       _$QueryResultFromJson(json);

@@ -19,3 +19,18 @@ class Match extends Expr {
 
   Map<String, dynamic> toJson() => _$MatchToJson(this);
 }
+
+@JsonSerializable()
+class Difference extends Expr {
+  @JsonKey(name: "difference")
+  final Expr source;
+
+  final Expr diff;
+
+  Difference(this.source, this.diff);
+
+  factory Difference.fromJson(Map<String, dynamic> json) =>
+      _$DifferenceFromJson(json);
+
+  Map<String, dynamic> toJson() => _$DifferenceToJson(this);
+}

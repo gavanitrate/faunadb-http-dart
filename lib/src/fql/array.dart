@@ -15,3 +15,18 @@ class Count extends Expr {
 
   Map<String, dynamic> toJson() => _$CountToJson(this);
 }
+
+@JsonSerializable()
+class Concat extends Expr {
+  @JsonKey(name: "concat")
+  final List value;
+
+  @JsonKey(disallowNullValue: true, includeIfNull: false)
+  final String seperator;
+
+  Concat(this.value, {this.seperator});
+
+  factory Concat.fromJson(Map<String, dynamic> json) => _$ConcatFromJson(json);
+
+  Map<String, dynamic> toJson() => _$ConcatToJson(this);
+}
