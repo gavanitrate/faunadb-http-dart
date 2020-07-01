@@ -37,7 +37,7 @@ class FaunaClient {
   ///
   /// Throws [TimeoutException] if query response is not received within
   /// [config.timeout].
-  Future<dynamic> query(Expr expression, {FaunaConfig options}) {
+  Future<QueryResult> query(Expr expression, {FaunaConfig options}) {
     return _httpClient
         .post(
           config.baseUrl,
@@ -45,7 +45,7 @@ class FaunaClient {
           body: json.encode(expression),
         )
         .timeout(config.timeout)
-        .then((Response response) => json.decode(response.body));
+        .then((Response response) => QueryResult.fromBody(response.body));
   }
 
   /// Closes and releases all client resources.
