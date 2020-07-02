@@ -3,7 +3,7 @@ import 'package:faunadb_http/query.dart';
 
 /*
 * FaunaDB secret should be the first argument
-* `dart ./basic_example.dart <your_secret_here>`
+* `dart ./main.dart <your_secret_here>`
 * */
 void main(List<String> arguments) async {
   final config = FaunaConfig.build(
@@ -14,13 +14,15 @@ void main(List<String> arguments) async {
   final client = FaunaClient(config);
 
   final query = Collections();
+
   print("query=>\n${query}");
 
-  final response = await client.query(query);
-  if (!response.hasErrors) {
-    print("response=>\n${response.resource}");
+  final result = await client.query(query);
+  if (!result.hasErrors) {
+//    print("result=>\n${result.raw}");
+    print("resource=>\n${result.resource}");
   } else {
-    print("errors=>\n${response.errors}");
+    print("errors=>\n${result.errors}");
   }
 
   client.close();

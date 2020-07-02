@@ -1,9 +1,10 @@
 import 'dart:convert';
 
-import 'package:faunadb_http/query.dart';
 import 'package:http/http.dart';
 
 import './FaunaConfig.dart';
+import 'fql/expr.dart';
+import 'fql/result.dart';
 
 /// The Dart native client for FaunaDB.
 ///
@@ -38,6 +39,7 @@ class FaunaClient {
   /// Throws [TimeoutException] if query response is not received within
   /// [config.timeout].
   Future<QueryResult> query(Expr expression, {FaunaConfig options}) {
+    final config = (options == null ? this.config : this.config.merge(options));
     return _httpClient
         .post(
           config.baseUrl,
