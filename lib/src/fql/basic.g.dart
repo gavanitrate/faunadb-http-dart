@@ -64,15 +64,15 @@ Map<String, dynamic> _$IfToJson(If instance) => <String, dynamic>{
 Lambda _$LambdaFromJson(Map<String, dynamic> json) {
   return Lambda(
     json['lambda'],
-    json['expression'] == null
+    json['expr'] == null
         ? null
-        : Expr.fromJson(json['expression'] as Map<String, dynamic>),
+        : Expr.fromJson(json['expr'] as Map<String, dynamic>),
   );
 }
 
 Map<String, dynamic> _$LambdaToJson(Lambda instance) => <String, dynamic>{
       'lambda': instance.params,
-      'expression': instance.expression,
+      'expr': instance.expression,
     };
 
 Let _$LetFromJson(Map<String, dynamic> json) {

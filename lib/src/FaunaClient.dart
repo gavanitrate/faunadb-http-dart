@@ -3,7 +3,6 @@ import 'dart:convert';
 import 'package:http/http.dart';
 
 import './FaunaConfig.dart';
-import 'fql/expr.dart';
 import 'fql/result.dart';
 
 /// The Dart native client for FaunaDB.

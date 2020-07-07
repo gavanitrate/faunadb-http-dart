@@ -15,3 +15,118 @@ class And extends Expr {
 
   Map<String, dynamic> toJson() => _$AndToJson(this);
 }
+
+@JsonSerializable()
+class Contains extends Expr {
+  @JsonKey(name: "contains")
+  final Object path;
+
+  @JsonKey(name: "in")
+  final Object in_;
+
+  Contains(this.path, this.in_);
+
+  factory Contains.fromJson(Map<String, dynamic> json) =>
+      _$ContainsFromJson(json);
+
+  Map<String, dynamic> toJson() => _$ContainsToJson(this);
+}
+
+@JsonSerializable()
+class Equals extends Expr {
+  @JsonKey(name: "equals")
+  final Object values;
+
+  Equals(this.values);
+
+  factory Equals.fromJson(Map<String, dynamic> json) => _$EqualsFromJson(json);
+
+  Map<String, dynamic> toJson() => _$EqualsToJson(this);
+}
+
+@JsonSerializable()
+class Exists extends Expr {
+  @JsonKey(name: "exists")
+  final Object ref;
+
+  @JsonKey(disallowNullValue: true, includeIfNull: false)
+  final Object ts;
+
+  Exists(this.ref, {this.ts});
+
+  factory Exists.fromJson(Map<String, dynamic> json) => _$ExistsFromJson(json);
+
+  Map<String, dynamic> toJson() => _$ExistsToJson(this);
+}
+
+@JsonSerializable()
+class GT extends Expr {
+  @JsonKey(name: "gt")
+  final Object values;
+
+  GT(this.values);
+
+  factory GT.fromJson(Map<String, dynamic> json) => _$GTFromJson(json);
+
+  Map<String, dynamic> toJson() => _$GTToJson(this);
+}
+
+@JsonSerializable()
+class GTE extends Expr {
+  @JsonKey(name: "gte")
+  final Object values;
+
+  GTE(this.values);
+
+  factory GTE.fromJson(Map<String, dynamic> json) => _$GTEFromJson(json);
+
+  Map<String, dynamic> toJson() => _$GTEToJson(this);
+}
+
+@JsonSerializable()
+class LT extends Expr {
+  @JsonKey(name: "lt")
+  final Object values;
+
+  LT(this.values);
+
+  factory LT.fromJson(Map<String, dynamic> json) => _$LTFromJson(json);
+
+  Map<String, dynamic> toJson() => _$LTToJson(this);
+}
+
+@JsonSerializable()
+class LTE extends Expr {
+  @JsonKey(name: "lte")
+  final Object values;
+
+  LTE(this.values);
+
+  factory LTE.fromJson(Map<String, dynamic> json) => _$LTEFromJson(json);
+
+  Map<String, dynamic> toJson() => _$LTEToJson(this);
+}
+
+@JsonSerializable()
+class Not extends Expr {
+  @JsonKey(name: "not")
+  final Object value;
+
+  Not(this.value);
+
+  factory Not.fromJson(Map<String, dynamic> json) => _$NotFromJson(json);
+
+  Map<String, dynamic> toJson() => _$NotToJson(this);
+}
+
+@JsonSerializable()
+class Or extends Expr {
+  @JsonKey(name: "or")
+  final Object values;
+
+  Or(this.values);
+
+  factory Or.fromJson(Map<String, dynamic> json) => _$OrFromJson(json);
+
+  Map<String, dynamic> toJson() => _$OrToJson(this);
+}

@@ -32,7 +32,11 @@ class Expr {
     if (data == null) return null;
 
     if (data is List) {
-      return data.map((e) => wrap_value(e)).toList(growable: false);
+      return List.generate(
+        data.length,
+        (e) => wrap_value(data[e]),
+        growable: false,
+      );
     } else if (data is Map<String, dynamic>) {
       return data.map(
         (key, value) => MapEntry(key, wrap_value(value)),

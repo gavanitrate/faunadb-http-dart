@@ -36,7 +36,11 @@ class Result {
     if (data == null) return null;
 
     if (data is List) {
-      return data.map((e) => unwrap_values(e));
+      return List.generate(
+        data.length,
+        (e) => unwrap_value(null, data[e]),
+        growable: false,
+      );
     } else if (data is Map<String, dynamic>) {
       return _replace(
             "@set",

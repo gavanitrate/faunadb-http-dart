@@ -8,7 +8,7 @@ part of 'miscellaneous.dart';
 
 Abort _$AbortFromJson(Map<String, dynamic> json) {
   return Abort(
-    json['abort'] as String,
+    json['abort'],
   );
 }
 
@@ -19,7 +19,7 @@ Map<String, dynamic> _$AbortToJson(Abort instance) => <String, dynamic>{
 Collection _$CollectionFromJson(Map<String, dynamic> json) {
   $checkKeys(json, disallowNullValues: const ['database']);
   return Collection(
-    json['collection'] as String,
+    json['collection'],
     database: json['database'],
   );
 }
@@ -53,7 +53,7 @@ Map<String, dynamic> _$CollectionsToJson(Collections instance) =>
 Database _$DatabaseFromJson(Map<String, dynamic> json) {
   $checkKeys(json, disallowNullValues: const ['scope']);
   return Database(
-    json['database'] as String,
+    json['database'],
     database: json['scope'] == null
         ? null
         : Ref.fromJson(json['scope'] as Map<String, dynamic>),
@@ -87,9 +87,7 @@ Map<String, dynamic> _$DatabasesToJson(Databases instance) => <String, dynamic>{
 
 Documents _$DocumentsFromJson(Map<String, dynamic> json) {
   return Documents(
-    json['documents'] == null
-        ? null
-        : Collection.fromJson(json['documents'] as Map<String, dynamic>),
+    json['documents'],
   );
 }
 
@@ -137,7 +135,7 @@ Map<String, dynamic> _$FunctionsToJson(Functions instance) => <String, dynamic>{
 Index _$IndexFromJson(Map<String, dynamic> json) {
   $checkKeys(json, disallowNullValues: const ['database']);
   return Index(
-    json['index'] as String,
+    json['index'],
     database: json['database'],
   );
 }
@@ -170,12 +168,8 @@ Map<String, dynamic> _$IndexesToJson(Indexes instance) => <String, dynamic>{
     };
 
 NewId _$NewIdFromJson(Map<String, dynamic> json) {
-  return NewId()..value = json['new_id'];
+  return NewId();
 }
-
-Map<String, dynamic> _$NewIdToJson(NewId instance) => <String, dynamic>{
-      'new_id': instance.value,
-    };
 
 Query _$QueryFromJson(Map<String, dynamic> json) {
   return Query(

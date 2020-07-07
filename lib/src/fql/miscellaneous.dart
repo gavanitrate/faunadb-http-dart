@@ -8,7 +8,7 @@ part 'miscellaneous.g.dart';
 @JsonSerializable()
 class Abort extends Expr {
   @JsonKey(name: "abort")
-  final String message;
+  final Object message;
 
   Abort(this.message);
 
@@ -20,7 +20,7 @@ class Abort extends Expr {
 @JsonSerializable()
 class Collection extends Ref {
   @JsonKey(name: "collection")
-  final String name;
+  final Object name;
 
   @JsonKey(disallowNullValue: true, includeIfNull: false)
   final Object database;
@@ -49,7 +49,7 @@ class Collections extends Ref {
 @JsonSerializable()
 class Database extends Ref {
   @JsonKey(name: "database")
-  final String name;
+  final Object name;
 
   @JsonKey(name: "scope", disallowNullValue: true, includeIfNull: false)
   final Ref database;
@@ -78,7 +78,7 @@ class Databases extends Ref {
 @JsonSerializable()
 class Documents extends Ref {
   @JsonKey(name: "documents")
-  final Collection collection;
+  final Object collection;
 
   Documents(this.collection) : super.empty();
 
@@ -120,7 +120,7 @@ class Functions extends Ref {
 @JsonSerializable()
 class Index extends Ref {
   @JsonKey(name: "index")
-  final String name;
+  final Object name;
 
   @JsonKey(disallowNullValue: true, includeIfNull: false)
   final Object database;
@@ -145,18 +145,13 @@ class Indexes extends Ref {
   Map<String, dynamic> toJson() => _$IndexesToJson(this);
 }
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class NewId extends Expr {
-  @JsonKey(name: "new_id")
-  dynamic value;
-
-  NewId() {
-    this.value = null;
-  }
+  NewId();
 
   factory NewId.fromJson(Map<String, dynamic> json) => _$NewIdFromJson(json);
 
-  Map<String, dynamic> toJson() => _$NewIdToJson(this);
+  Map<String, dynamic> toJson() => const {"new_id": null};
 }
 
 @JsonSerializable()

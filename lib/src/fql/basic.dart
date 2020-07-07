@@ -69,6 +69,7 @@ class Lambda extends Expr {
   @JsonKey(name: "lambda")
   final Object params;
 
+  @JsonKey(name: "expr")
   final Expr expression;
 
   Lambda(this.params, this.expression);

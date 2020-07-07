@@ -28,42 +28,6 @@ Map<String, dynamic> _$CountToJson(Count instance) => <String, dynamic>{
       'count': instance.arrayOrSet,
     };
 
-Concat _$ConcatFromJson(Map<String, dynamic> json) {
-  $checkKeys(json, disallowNullValues: const ['seperator']);
-  return Concat(
-    json['concat'],
-    seperator: json['seperator'] as String,
-  );
-}
-
-Map<String, dynamic> _$ConcatToJson(Concat instance) {
-  final val = <String, dynamic>{
-    'concat': instance.value,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('seperator', instance.seperator);
-  return val;
-}
-
-Difference _$DifferenceFromJson(Map<String, dynamic> json) {
-  return Difference(
-    json['difference'],
-    json['diff'],
-  );
-}
-
-Map<String, dynamic> _$DifferenceToJson(Difference instance) =>
-    <String, dynamic>{
-      'difference': instance.source,
-      'diff': instance.diff,
-    };
-
 Distinct _$DistinctFromJson(Map<String, dynamic> json) {
   return Distinct(
     json['distinct'],
@@ -76,7 +40,7 @@ Map<String, dynamic> _$DistinctToJson(Distinct instance) => <String, dynamic>{
 
 Drop _$DropFromJson(Map<String, dynamic> json) {
   return Drop(
-    json['drop'] as int,
+    json['drop'],
     json['collection'],
   );
 }
@@ -98,6 +62,78 @@ Filter _$FilterFromJson(Map<String, dynamic> json) {
 Map<String, dynamic> _$FilterToJson(Filter instance) => <String, dynamic>{
       'collection': instance.arrayOrSet,
       'filter': instance.lambda,
+    };
+
+Foreach _$ForeachFromJson(Map<String, dynamic> json) {
+  return Foreach(
+    json['foreach'],
+    json['lambda'] == null
+        ? null
+        : Lambda.fromJson(json['lambda'] as Map<String, dynamic>),
+  );
+}
+
+Map<String, dynamic> _$ForeachToJson(Foreach instance) => <String, dynamic>{
+      'foreach': instance.array_or_page,
+      'lambda': instance.lambda,
+    };
+
+Intersection _$IntersectionFromJson(Map<String, dynamic> json) {
+  return Intersection(
+    json['intersection'],
+  );
+}
+
+Map<String, dynamic> _$IntersectionToJson(Intersection instance) =>
+    <String, dynamic>{
+      'intersection': instance.group,
+    };
+
+IsEmpty _$IsEmptyFromJson(Map<String, dynamic> json) {
+  return IsEmpty(
+    json['is_empty'],
+  );
+}
+
+Map<String, dynamic> _$IsEmptyToJson(IsEmpty instance) => <String, dynamic>{
+      'is_empty': instance.arrayOrSet,
+    };
+
+IsNonEmpty _$IsNonEmptyFromJson(Map<String, dynamic> json) {
+  return IsNonEmpty(
+    json['is_non_empty'],
+  );
+}
+
+Map<String, dynamic> _$IsNonEmptyToJson(IsNonEmpty instance) =>
+    <String, dynamic>{
+      'is_non_empty': instance.arrayOrSet,
+    };
+
+Join _$JoinFromJson(Map<String, dynamic> json) {
+  return Join(
+    json['join'],
+    json['detail'],
+  );
+}
+
+Map<String, dynamic> _$JoinToJson(Join instance) => <String, dynamic>{
+      'join': instance.source,
+      'detail': instance.detail,
+    };
+
+Map_ _$Map_FromJson(Map<String, dynamic> json) {
+  return Map_(
+    json['collection'],
+    json['map'] == null
+        ? null
+        : Lambda.fromJson(json['map'] as Map<String, dynamic>),
+  );
+}
+
+Map<String, dynamic> _$Map_ToJson(Map_ instance) => <String, dynamic>{
+      'collection': instance.array,
+      'map': instance.lambda,
     };
 
 Match _$MatchFromJson(Map<String, dynamic> json) {
@@ -124,3 +160,49 @@ Map<String, dynamic> _$MatchToJson(Match instance) {
   writeNotNull('terms', instance.terms);
   return val;
 }
+
+Prepend _$PrependFromJson(Map<String, dynamic> json) {
+  return Prepend(
+    json['prepend'],
+    json['collection'],
+  );
+}
+
+Map<String, dynamic> _$PrependToJson(Prepend instance) => <String, dynamic>{
+      'prepend': instance.base,
+      'collection': instance.elems,
+    };
+
+Singleton _$SingletonFromJson(Map<String, dynamic> json) {
+  return Singleton(
+    json['singleton'] == null
+        ? null
+        : Ref.fromJson(json['singleton'] as Map<String, dynamic>),
+  );
+}
+
+Map<String, dynamic> _$SingletonToJson(Singleton instance) => <String, dynamic>{
+      'singleton': instance.ref,
+    };
+
+Take _$TakeFromJson(Map<String, dynamic> json) {
+  return Take(
+    json['take'],
+    json['collection'],
+  );
+}
+
+Map<String, dynamic> _$TakeToJson(Take instance) => <String, dynamic>{
+      'take': instance.num,
+      'collection': instance.array,
+    };
+
+Union _$UnionFromJson(Map<String, dynamic> json) {
+  return Union(
+    json['union'],
+  );
+}
+
+Map<String, dynamic> _$UnionToJson(Union instance) => <String, dynamic>{
+      'union': instance.group,
+    };
