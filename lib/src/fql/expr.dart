@@ -5,15 +5,6 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'expr.g.dart';
 
-/// Base class to represent an FQL Expression.
-///
-/// Native Dart types are preferred over expressions such as Value.
-///
-/// Varargs -> arrays
-///
-/// reserved keywords - add trailing _
-/// Function -> [Function_]
-/// default -> [default_]
 @JsonSerializable()
 class Expr {
   static wrap_value(dynamic value) {

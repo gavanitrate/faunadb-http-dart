@@ -13,7 +13,7 @@ void main(List<String> arguments) async {
   // final config = FaunaDBConfig.build(secret: "<your_secret_here>");
   final client = FaunaClient(config);
 
-  final query = Round(2.65651, precision: 0);
+  final query = Paginate(Match(Index("all_customers")));
   print("query=>\n${query}");
 
   final result = await client.query(query);

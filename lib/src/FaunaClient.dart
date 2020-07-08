@@ -9,7 +9,8 @@ import 'fql/result.dart';
 ///
 /// Query methods are asynchronous and return a [Future].
 ///
-/// The [close()] method must be called in order to release the FaunaClient I/O resources.
+/// The [close()] method must be called in order to release
+/// the FaunaClient I/O resources.
 class FaunaClient {
   final _httpClient = Client();
 
@@ -21,10 +22,45 @@ class FaunaClient {
 
   /// Executes a query via the FaunaDB Query API.
   ///
-  /// [expression] must be serializable JSON representation of an FQL query.
+  /// [expression] must be either:
+  ///  - composed using functions from the query classes
+  ///  - serializable JSON representation of an FQL query.
   ///
-  /// Docs on query syntax can be found [here][query-docs].
-  /// Example [expression]
+  /// Queries built using the query classes look very similar to
+  /// real FQL. It was an aim to mimic FQL function names and arguments
+  /// as closely as possible.
+  /// Docs on all FQL functions can be found [here][fql-cheat].
+  ///
+  /// [fql-cheat]: https://docs.fauna.com/fauna/current/api/fql/cheat_sheet
+  ///
+  /// Example query [expression]:
+  ///
+  /// ```
+  /// Paginate(Match(Index("all_customers")))
+  /// ```
+  ///
+  /// However some notable differences are:
+  ///  - Optional FQL arguments are named arguments in Dart.
+  ///  e.g. `Repeat('x', number: 10)`
+  ///  - FQL functions with a variable number of arguments
+  ///  (such as Sum, GT etc.)
+  ///  accept a Dart List instead.
+  ///  - Some FQL functions and arguments are reserved keywords in Dart;
+  ///  simply add a trailing underscore to them
+  ///  (`Map` -> `Map_`,
+  ///  `Function` -> `Function_`,
+  ///  `default` -> `default_`)
+  ///
+  ///
+  ///
+  /// Any value serializable to valid JSON can also be passed
+  /// as an [expression].
+  ///
+  /// Docs on JSON query syntax can be found [here][query-docs].
+  ///
+  /// [query-docs]: https://app.fauna.com/documentation/intro/querying#query-syntax
+  ///
+  /// Example JSON [expression]:
   /// ```
   /// {
   ///   "paginate": {
@@ -32,8 +68,6 @@ class FaunaClient {
   ///   }
   /// }
   /// ```
-  ///
-  /// [query-docs]: https://app.fauna.com/documentation/intro/querying#query-syntax
   ///
   /// Throws [TimeoutException] if query response is not received within
   /// [config.timeout].
