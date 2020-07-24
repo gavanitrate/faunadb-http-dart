@@ -9,9 +9,7 @@ part of 'read_and_write.dart';
 Get _$GetFromJson(Map<String, dynamic> json) {
   $checkKeys(json, disallowNullValues: const ['ts']);
   return Get(
-    json['get'] == null
-        ? null
-        : Ref.fromJson(json['get'] as Map<String, dynamic>),
+    json['get'],
     ts: json['ts'] == null ? null : DateTime.parse(json['ts'] as String),
   );
 }

@@ -181,7 +181,7 @@ class Map_ extends Expr {
 @JsonSerializable()
 class Match extends Expr {
   @JsonKey(name: "match")
-  final Ref index;
+  final Object index;
 
   @JsonKey(disallowNullValue: true, includeIfNull: false)
   final List terms;

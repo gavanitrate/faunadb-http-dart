@@ -8,7 +8,7 @@ part 'read_and_write.g.dart';
 @JsonSerializable()
 class Get extends Expr {
   @JsonKey(name: "get")
-  final Ref ref;
+  final Object ref;
 
   @JsonKey(disallowNullValue: true, includeIfNull: false)
   final DateTime ts;

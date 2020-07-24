@@ -1,6 +1,6 @@
 name: faunadb_http
 version: 0.3.0
-description: A basic communication library for interacting with FaunaDB using FQL in raw JSON
+description: A pure Dart implementation of a FaunaDB client.
 homepage: https://github.com/gavanitrate/faunadb-http-dart
 
 environment:

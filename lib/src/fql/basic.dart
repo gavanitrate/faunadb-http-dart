@@ -37,7 +37,7 @@ class Call extends Expr {
 @JsonSerializable()
 class Do extends Expr {
   @JsonKey(name: "do")
-  final List<Expr> expression;
+  final List expression;
 
   Do(this.expression);
 

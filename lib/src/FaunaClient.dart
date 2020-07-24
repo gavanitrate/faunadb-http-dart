@@ -71,7 +71,7 @@ class FaunaClient {
   ///
   /// Throws [TimeoutException] if query response is not received within
   /// [config.timeout].
-  Future<QueryResult> query(Object expression, {FaunaConfig options}) {
+  Future<FaunaResponse> query(Object expression, {FaunaConfig options}) {
     final config = (options == null ? this.config : this.config.merge(options));
     return _httpClient
         .post(
@@ -80,7 +80,7 @@ class FaunaClient {
           body: json.encode(expression),
         )
         .timeout(config.timeout)
-        .then((Response response) => QueryResult.fromBody(response.body));
+        .then((Response response) => FaunaResponse.fromBody(response.body));
   }
 
   /// Closes and releases all client resources.

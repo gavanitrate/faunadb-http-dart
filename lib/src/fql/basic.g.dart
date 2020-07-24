@@ -36,10 +36,7 @@ Map<String, dynamic> _$CallToJson(Call instance) => <String, dynamic>{
 
 Do _$DoFromJson(Map<String, dynamic> json) {
   return Do(
-    (json['do'] as List)
-        ?.map(
-            (e) => e == null ? null : Expr.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
+    json['do'] as List,
   );
 }
 

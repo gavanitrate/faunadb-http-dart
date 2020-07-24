@@ -139,9 +139,7 @@ Map<String, dynamic> _$Map_ToJson(Map_ instance) => <String, dynamic>{
 Match _$MatchFromJson(Map<String, dynamic> json) {
   $checkKeys(json, disallowNullValues: const ['terms']);
   return Match(
-    json['match'] == null
-        ? null
-        : Ref.fromJson(json['match'] as Map<String, dynamic>),
+    json['match'],
     terms: json['terms'] as List,
   );
 }
