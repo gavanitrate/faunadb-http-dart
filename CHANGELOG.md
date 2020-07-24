@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.4.1] - 2020-07-24
+
+### Changed
+
+- Package description
+- Replaced double quotes with single quotes
+
 ## [0.4.0] - 2020-07-24
 
 ### Added
