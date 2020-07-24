@@ -8,10 +8,10 @@ part 'array_and_set.g.dart';
 
 @JsonSerializable()
 class Append extends Expr {
-  @JsonKey(name: "append")
+  @JsonKey(name: 'append')
   final Object base;
 
-  @JsonKey(name: "collection")
+  @JsonKey(name: 'collection')
   final Object elems;
 
   Append(this.base, this.elems);
@@ -23,7 +23,7 @@ class Append extends Expr {
 
 @JsonSerializable()
 class Count extends Expr {
-  @JsonKey(name: "count")
+  @JsonKey(name: 'count')
   final Object arrayOrSet;
 
   Count(this.arrayOrSet);
@@ -35,7 +35,7 @@ class Count extends Expr {
 
 @JsonSerializable(createFactory: false, createToJson: false)
 class Difference extends Expr {
-  @JsonKey(name: "difference")
+  @JsonKey(name: 'difference')
   final Object source;
 
   final Object diff;
@@ -43,18 +43,18 @@ class Difference extends Expr {
   Difference(this.source, this.diff);
 
   factory Difference.fromJson(Map<String, dynamic> json) {
-    final diffs = json["difference"];
+    final diffs = json['difference'];
     return Difference(diffs[0], diffs[1]);
   }
 
   Map<String, dynamic> toJson() => {
-        "difference": [this.source, this.diff]
+        'difference': [this.source, this.diff]
       };
 }
 
 @JsonSerializable()
 class Distinct extends Expr {
-  @JsonKey(name: "distinct")
+  @JsonKey(name: 'distinct')
   final Object source;
 
   Distinct(this.source);
@@ -67,10 +67,10 @@ class Distinct extends Expr {
 
 @JsonSerializable()
 class Drop extends Expr {
-  @JsonKey(name: "drop")
+  @JsonKey(name: 'drop')
   final Object num;
 
-  @JsonKey(name: "collection")
+  @JsonKey(name: 'collection')
   final Object array;
 
   Drop(this.num, this.array);
@@ -82,10 +82,10 @@ class Drop extends Expr {
 
 @JsonSerializable()
 class Filter extends Expr {
-  @JsonKey(name: "collection")
+  @JsonKey(name: 'collection')
   final Object arrayOrSet;
 
-  @JsonKey(name: "filter")
+  @JsonKey(name: 'filter')
   final Lambda lambda;
 
   Filter(this.arrayOrSet, this.lambda);
@@ -97,7 +97,7 @@ class Filter extends Expr {
 
 @JsonSerializable()
 class Foreach extends Expr {
-  @JsonKey(name: "foreach")
+  @JsonKey(name: 'foreach')
   final Object array_or_page;
 
   final Lambda lambda;
@@ -112,7 +112,7 @@ class Foreach extends Expr {
 
 @JsonSerializable()
 class Intersection extends Expr {
-  @JsonKey(name: "intersection")
+  @JsonKey(name: 'intersection')
   final Object group;
 
   Intersection(this.group);
@@ -125,7 +125,7 @@ class Intersection extends Expr {
 
 @JsonSerializable()
 class IsEmpty extends Expr {
-  @JsonKey(name: "is_empty")
+  @JsonKey(name: 'is_empty')
   final Object arrayOrSet;
 
   IsEmpty(this.arrayOrSet);
@@ -138,7 +138,7 @@ class IsEmpty extends Expr {
 
 @JsonSerializable()
 class IsNonEmpty extends Expr {
-  @JsonKey(name: "is_non_empty")
+  @JsonKey(name: 'is_non_empty')
   final Object arrayOrSet;
 
   IsNonEmpty(this.arrayOrSet);
@@ -151,7 +151,7 @@ class IsNonEmpty extends Expr {
 
 @JsonSerializable()
 class Join extends Expr {
-  @JsonKey(name: "join")
+  @JsonKey(name: 'join')
   final Object source;
 
   final Object detail;
@@ -165,10 +165,10 @@ class Join extends Expr {
 
 @JsonSerializable()
 class Map_ extends Expr {
-  @JsonKey(name: "collection")
+  @JsonKey(name: 'collection')
   final Object array;
 
-  @JsonKey(name: "map")
+  @JsonKey(name: 'map')
   final Lambda lambda;
 
   Map_(this.array, this.lambda);
@@ -180,7 +180,7 @@ class Map_ extends Expr {
 
 @JsonSerializable()
 class Match extends Expr {
-  @JsonKey(name: "match")
+  @JsonKey(name: 'match')
   final Object index;
 
   @JsonKey(disallowNullValue: true, includeIfNull: false)
@@ -195,10 +195,10 @@ class Match extends Expr {
 
 @JsonSerializable()
 class Prepend extends Expr {
-  @JsonKey(name: "prepend")
+  @JsonKey(name: 'prepend')
   final Object base;
 
-  @JsonKey(name: "collection")
+  @JsonKey(name: 'collection')
   final Object elems;
 
   Prepend(this.base, this.elems);
@@ -211,7 +211,7 @@ class Prepend extends Expr {
 
 @JsonSerializable()
 class Singleton extends Expr {
-  @JsonKey(name: "singleton")
+  @JsonKey(name: 'singleton')
   final Ref ref;
 
   Singleton(this.ref);
@@ -224,10 +224,10 @@ class Singleton extends Expr {
 
 @JsonSerializable()
 class Take extends Expr {
-  @JsonKey(name: "take")
+  @JsonKey(name: 'take')
   final Object num;
 
-  @JsonKey(name: "collection")
+  @JsonKey(name: 'collection')
   final Object array;
 
   Take(this.num, this.array);
@@ -239,7 +239,7 @@ class Take extends Expr {
 
 @JsonSerializable()
 class Union extends Expr {
-  @JsonKey(name: "union")
+  @JsonKey(name: 'union')
   final Object group;
 
   Union(this.group);

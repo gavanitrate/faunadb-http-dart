@@ -6,7 +6,7 @@ part 'math.g.dart';
 
 @JsonSerializable()
 class Abs extends Expr {
-  @JsonKey(name: "abs")
+  @JsonKey(name: 'abs')
   final Object value;
 
   Abs(this.value);
@@ -18,7 +18,7 @@ class Abs extends Expr {
 
 @JsonSerializable()
 class Acos extends Expr {
-  @JsonKey(name: "acos")
+  @JsonKey(name: 'acos')
   final Object value;
 
   Acos(this.value);
@@ -30,7 +30,7 @@ class Acos extends Expr {
 
 @JsonSerializable()
 class Add extends Expr {
-  @JsonKey(name: "add")
+  @JsonKey(name: 'add')
   final Object values;
 
   Add(this.values);
@@ -42,7 +42,7 @@ class Add extends Expr {
 
 @JsonSerializable()
 class Asin extends Expr {
-  @JsonKey(name: "asin")
+  @JsonKey(name: 'asin')
   final Object value;
 
   Asin(this.value);
@@ -54,7 +54,7 @@ class Asin extends Expr {
 
 @JsonSerializable()
 class Atan extends Expr {
-  @JsonKey(name: "atan")
+  @JsonKey(name: 'atan')
   final Object value;
 
   Atan(this.value);
@@ -66,7 +66,7 @@ class Atan extends Expr {
 
 @JsonSerializable()
 class BitAnd extends Expr {
-  @JsonKey(name: "bitand")
+  @JsonKey(name: 'bitand')
   final Object values;
 
   BitAnd(this.values);
@@ -78,7 +78,7 @@ class BitAnd extends Expr {
 
 @JsonSerializable()
 class BitNot extends Expr {
-  @JsonKey(name: "bitnot")
+  @JsonKey(name: 'bitnot')
   final Object value;
 
   BitNot(this.value);
@@ -90,7 +90,7 @@ class BitNot extends Expr {
 
 @JsonSerializable()
 class BitOr extends Expr {
-  @JsonKey(name: "bitor")
+  @JsonKey(name: 'bitor')
   final Object values;
 
   BitOr(this.values);
@@ -102,7 +102,7 @@ class BitOr extends Expr {
 
 @JsonSerializable()
 class BitXor extends Expr {
-  @JsonKey(name: "bitxor")
+  @JsonKey(name: 'bitxor')
   final Object values;
 
   BitXor(this.values);
@@ -114,7 +114,7 @@ class BitXor extends Expr {
 
 @JsonSerializable()
 class Ceil extends Expr {
-  @JsonKey(name: "ceil")
+  @JsonKey(name: 'ceil')
   final Object value;
 
   Ceil(this.value);
@@ -126,7 +126,7 @@ class Ceil extends Expr {
 
 @JsonSerializable()
 class Cos extends Expr {
-  @JsonKey(name: "cos")
+  @JsonKey(name: 'cos')
   final Object value;
 
   Cos(this.value);
@@ -138,7 +138,7 @@ class Cos extends Expr {
 
 @JsonSerializable()
 class Cosh extends Expr {
-  @JsonKey(name: "cosh")
+  @JsonKey(name: 'cosh')
   final Object value;
 
   Cosh(this.value);
@@ -150,7 +150,7 @@ class Cosh extends Expr {
 
 @JsonSerializable()
 class Degrees extends Expr {
-  @JsonKey(name: "degrees")
+  @JsonKey(name: 'degrees')
   final Object value;
 
   Degrees(this.value);
@@ -163,7 +163,7 @@ class Degrees extends Expr {
 
 @JsonSerializable()
 class Divide extends Expr {
-  @JsonKey(name: "divide")
+  @JsonKey(name: 'divide')
   final Object values;
 
   Divide(this.values);
@@ -175,7 +175,7 @@ class Divide extends Expr {
 
 @JsonSerializable()
 class Exp extends Expr {
-  @JsonKey(name: "exp")
+  @JsonKey(name: 'exp')
   final Object value;
 
   Exp(this.value);
@@ -187,7 +187,7 @@ class Exp extends Expr {
 
 @JsonSerializable()
 class Floor extends Expr {
-  @JsonKey(name: "floor")
+  @JsonKey(name: 'floor')
   final Object value;
 
   Floor(this.value);
@@ -199,7 +199,7 @@ class Floor extends Expr {
 
 @JsonSerializable()
 class Hypot extends Expr {
-  @JsonKey(name: "hypot")
+  @JsonKey(name: 'hypot')
   final Object a;
 
   @JsonKey(disallowNullValue: true, includeIfNull: false)
@@ -214,7 +214,7 @@ class Hypot extends Expr {
 
 @JsonSerializable()
 class Ln extends Expr {
-  @JsonKey(name: "ln")
+  @JsonKey(name: 'ln')
   final Object value;
 
   Ln(this.value);
@@ -226,7 +226,7 @@ class Ln extends Expr {
 
 @JsonSerializable()
 class Log extends Expr {
-  @JsonKey(name: "log")
+  @JsonKey(name: 'log')
   final Object value;
 
   Log(this.value);
@@ -238,7 +238,7 @@ class Log extends Expr {
 
 @JsonSerializable()
 class Max extends Expr {
-  @JsonKey(name: "max")
+  @JsonKey(name: 'max')
   final Object value;
 
   Max(this.value);
@@ -250,7 +250,7 @@ class Max extends Expr {
 
 @JsonSerializable()
 class Mean extends Expr {
-  @JsonKey(name: "mean")
+  @JsonKey(name: 'mean')
   final Object arrayOrSet;
 
   Mean(this.arrayOrSet);
@@ -262,7 +262,7 @@ class Mean extends Expr {
 
 @JsonSerializable()
 class Min extends Expr {
-  @JsonKey(name: "min")
+  @JsonKey(name: 'min')
   final Object arrayOrSet;
 
   Min(this.arrayOrSet);
@@ -274,7 +274,7 @@ class Min extends Expr {
 
 @JsonSerializable()
 class Modulo extends Expr {
-  @JsonKey(name: "modulo")
+  @JsonKey(name: 'modulo')
   final Object values;
 
   Modulo(this.values);
@@ -286,7 +286,7 @@ class Modulo extends Expr {
 
 @JsonSerializable()
 class Multiply extends Expr {
-  @JsonKey(name: "multiply")
+  @JsonKey(name: 'multiply')
   final Object values;
 
   Multiply(this.values);
@@ -299,10 +299,10 @@ class Multiply extends Expr {
 
 @JsonSerializable()
 class Pow extends Expr {
-  @JsonKey(name: "pow")
+  @JsonKey(name: 'pow')
   final Object value;
 
-  @JsonKey(name: "exp")
+  @JsonKey(name: 'exp')
   final Object exponent;
 
   Pow(this.value, this.exponent);
@@ -314,7 +314,7 @@ class Pow extends Expr {
 
 @JsonSerializable()
 class Radians extends Expr {
-  @JsonKey(name: "radians")
+  @JsonKey(name: 'radians')
   final Object value;
 
   Radians(this.value);
@@ -327,7 +327,7 @@ class Radians extends Expr {
 
 @JsonSerializable()
 class Round extends Expr {
-  @JsonKey(name: "round")
+  @JsonKey(name: 'round')
   final Object value;
 
   @JsonKey(disallowNullValue: true, includeIfNull: false)
@@ -342,7 +342,7 @@ class Round extends Expr {
 
 @JsonSerializable()
 class Sign extends Expr {
-  @JsonKey(name: "sign")
+  @JsonKey(name: 'sign')
   final Object value;
 
   Sign(this.value);
@@ -354,7 +354,7 @@ class Sign extends Expr {
 
 @JsonSerializable()
 class Sin extends Expr {
-  @JsonKey(name: "sin")
+  @JsonKey(name: 'sin')
   final Object value;
 
   Sin(this.value);
@@ -366,7 +366,7 @@ class Sin extends Expr {
 
 @JsonSerializable()
 class Sinh extends Expr {
-  @JsonKey(name: "sinh")
+  @JsonKey(name: 'sinh')
   final Object value;
 
   Sinh(this.value);
@@ -378,7 +378,7 @@ class Sinh extends Expr {
 
 @JsonSerializable()
 class Sqrt extends Expr {
-  @JsonKey(name: "sqrt")
+  @JsonKey(name: 'sqrt')
   final Object value;
 
   Sqrt(this.value);
@@ -390,7 +390,7 @@ class Sqrt extends Expr {
 
 @JsonSerializable()
 class Subtract extends Expr {
-  @JsonKey(name: "subtract")
+  @JsonKey(name: 'subtract')
   final Object values;
 
   Subtract(this.values);
@@ -403,7 +403,7 @@ class Subtract extends Expr {
 
 @JsonSerializable()
 class Sum extends Expr {
-  @JsonKey(name: "sum")
+  @JsonKey(name: 'sum')
   final Object arrayOrSet;
 
   Sum(this.arrayOrSet);
@@ -415,7 +415,7 @@ class Sum extends Expr {
 
 @JsonSerializable()
 class Tan extends Expr {
-  @JsonKey(name: "tan")
+  @JsonKey(name: 'tan')
   final Object value;
 
   Tan(this.value);
@@ -427,7 +427,7 @@ class Tan extends Expr {
 
 @JsonSerializable()
 class Tanh extends Expr {
-  @JsonKey(name: "tanh")
+  @JsonKey(name: 'tanh')
   final Object value;
 
   Tanh(this.value);
@@ -439,7 +439,7 @@ class Tanh extends Expr {
 
 @JsonSerializable()
 class Trunc extends Expr {
-  @JsonKey(name: "trunc")
+  @JsonKey(name: 'trunc')
   final Object value;
 
   @JsonKey(disallowNullValue: true, includeIfNull: false)

@@ -7,7 +7,7 @@ part 'miscellaneous.g.dart';
 
 @JsonSerializable()
 class Abort extends Expr {
-  @JsonKey(name: "abort")
+  @JsonKey(name: 'abort')
   final Object message;
 
   Abort(this.message);
@@ -19,7 +19,7 @@ class Abort extends Expr {
 
 @JsonSerializable()
 class Collection extends Ref {
-  @JsonKey(name: "collection")
+  @JsonKey(name: 'collection')
   final Object name;
 
   @JsonKey(disallowNullValue: true, includeIfNull: false)
@@ -35,7 +35,7 @@ class Collection extends Ref {
 
 @JsonSerializable()
 class Collections extends Ref {
-  @JsonKey(name: "collections", includeIfNull: true)
+  @JsonKey(name: 'collections', includeIfNull: true)
   final Object database;
 
   Collections({this.database}) : super.empty();
@@ -48,10 +48,10 @@ class Collections extends Ref {
 
 @JsonSerializable()
 class Database extends Ref {
-  @JsonKey(name: "database")
+  @JsonKey(name: 'database')
   final Object name;
 
-  @JsonKey(name: "scope", disallowNullValue: true, includeIfNull: false)
+  @JsonKey(name: 'scope', disallowNullValue: true, includeIfNull: false)
   final Ref database;
 
   Database(this.name, {this.database}) : super.empty();
@@ -64,7 +64,7 @@ class Database extends Ref {
 
 @JsonSerializable()
 class Databases extends Ref {
-  @JsonKey(name: "databases", includeIfNull: true)
+  @JsonKey(name: 'databases', includeIfNull: true)
   final Object database;
 
   Databases({this.database}) : super.empty();
@@ -77,7 +77,7 @@ class Databases extends Ref {
 
 @JsonSerializable()
 class Documents extends Ref {
-  @JsonKey(name: "documents")
+  @JsonKey(name: 'documents')
   final Object collection;
 
   Documents(this.collection) : super.empty();
@@ -90,7 +90,7 @@ class Documents extends Ref {
 
 @JsonSerializable()
 class Function_ extends Ref {
-  @JsonKey(name: "function")
+  @JsonKey(name: 'function')
   final String name;
 
   @JsonKey(disallowNullValue: true, includeIfNull: false)
@@ -106,7 +106,7 @@ class Function_ extends Ref {
 
 @JsonSerializable()
 class Functions extends Ref {
-  @JsonKey(name: "functions", includeIfNull: true)
+  @JsonKey(name: 'functions', includeIfNull: true)
   final Ref database;
 
   Functions({this.database}) : super.empty();
@@ -119,7 +119,7 @@ class Functions extends Ref {
 
 @JsonSerializable()
 class Index extends Ref {
-  @JsonKey(name: "index")
+  @JsonKey(name: 'index')
   final Object name;
 
   @JsonKey(disallowNullValue: true, includeIfNull: false)
@@ -134,7 +134,7 @@ class Index extends Ref {
 
 @JsonSerializable()
 class Indexes extends Ref {
-  @JsonKey(name: "indexes", includeIfNull: true)
+  @JsonKey(name: 'indexes', includeIfNull: true)
   final Ref database;
 
   Indexes({this.database}) : super.empty();
@@ -151,12 +151,12 @@ class NewId extends Expr {
 
   factory NewId.fromJson(Map<String, dynamic> json) => _$NewIdFromJson(json);
 
-  Map<String, dynamic> toJson() => const {"new_id": null};
+  Map<String, dynamic> toJson() => const {'new_id': null};
 }
 
 @JsonSerializable()
 class Query extends Expr {
-  @JsonKey(name: "query")
+  @JsonKey(name: 'query')
   final Lambda lambda;
 
   Query(this.lambda);
@@ -168,7 +168,7 @@ class Query extends Expr {
 
 @JsonSerializable()
 class Ref extends Expr {
-  @JsonKey(name: "ref")
+  @JsonKey(name: 'ref')
   final Expr schema_ref;
 
   final String id;
@@ -184,7 +184,7 @@ class Ref extends Expr {
 
 @JsonSerializable()
 class Role extends Expr {
-  @JsonKey(name: "role")
+  @JsonKey(name: 'role')
   final String name;
 
   @JsonKey(disallowNullValue: true, includeIfNull: false)
@@ -199,7 +199,7 @@ class Role extends Expr {
 
 @JsonSerializable()
 class Roles extends Expr {
-  @JsonKey(name: "roles", includeIfNull: true)
+  @JsonKey(name: 'roles', includeIfNull: true)
   final Ref database;
 
   Roles({this.database});

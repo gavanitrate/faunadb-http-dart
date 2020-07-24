@@ -53,32 +53,32 @@ class FaunaConfig {
       _requestHeaders ??= _buildRequestHeaders();
 
   String _buildBaseUrl() {
-    return scheme + "://" + domain + ":" + port.toString();
+    return scheme + '://' + domain + ':' + port.toString();
   }
 
   String _buildAuthToken() {
-    final bytes = utf8.encode(secret + ":");
-    return "Basic " + base64.encode(bytes);
+    final bytes = utf8.encode(secret + ':');
+    return 'Basic ' + base64.encode(bytes);
   }
 
   Map<String, String> _buildRequestHeaders() {
     final reqHeaders = Map<String, String>.from(headers);
 
-    reqHeaders["X-Fauna-Driver"] = "Dart";
+    reqHeaders['X-Fauna-Driver'] = 'Dart';
 
     reqHeaders.putIfAbsent(
-      "Authorization",
+      'Authorization',
       () => authToken,
     );
 
     reqHeaders.putIfAbsent(
-      "X-FaunaDB-API-Version",
+      'X-FaunaDB-API-Version',
       () => FaunaConfig.APIVersion.toString(),
     );
 
     if (queryTimeout != null) {
       reqHeaders.putIfAbsent(
-        "X-Query-Timeout",
+        'X-Query-Timeout',
         () => queryTimeout.inMilliseconds.toString(),
       );
     }
@@ -105,14 +105,14 @@ class FaunaConfig {
   /// This is the URL the [FaunaClient] will make query requests to.
   factory FaunaConfig.build({
     String secret,
-    String scheme = "https",
-    String domain = "db.fauna.com",
+    String scheme = 'https',
+    String domain = 'db.fauna.com',
     int port,
     Map<String, String> headers = const {},
     Duration timeout = const Duration(minutes: 1),
     Duration queryTimeout,
   }) {
-    final isHttp = (scheme == "https");
+    final isHttp = (scheme == 'https');
     final defaultPort = (isHttp ? 443 : 80);
     return FaunaConfig(
       scheme: scheme,

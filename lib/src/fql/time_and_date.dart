@@ -6,7 +6,7 @@ part 'time_and_date.g.dart';
 
 @JsonSerializable()
 class Date extends Expr {
-  @JsonKey(name: "date")
+  @JsonKey(name: 'date')
   final String str;
 
   Date(this.str);
@@ -18,7 +18,7 @@ class Date extends Expr {
 
 @JsonSerializable()
 class DayOfMonth extends Expr {
-  @JsonKey(name: "day_of_month")
+  @JsonKey(name: 'day_of_month')
   final Expr timestamp;
 
   DayOfMonth(this.timestamp);
@@ -31,7 +31,7 @@ class DayOfMonth extends Expr {
 
 @JsonSerializable()
 class DayOfWeek extends Expr {
-  @JsonKey(name: "day_of_week")
+  @JsonKey(name: 'day_of_week')
   final Expr timestamp;
 
   DayOfWeek(this.timestamp);
@@ -44,7 +44,7 @@ class DayOfWeek extends Expr {
 
 @JsonSerializable()
 class DayOfYear extends Expr {
-  @JsonKey(name: "day_of_year")
+  @JsonKey(name: 'day_of_year')
   final Expr timestamp;
 
   DayOfYear(this.timestamp);
@@ -57,7 +57,7 @@ class DayOfYear extends Expr {
 
 @JsonSerializable()
 class Epoch extends Expr {
-  @JsonKey(name: "epoch")
+  @JsonKey(name: 'epoch')
   final int num;
 
   final String unit;
@@ -71,7 +71,7 @@ class Epoch extends Expr {
 
 @JsonSerializable()
 class Hour extends Expr {
-  @JsonKey(name: "hour")
+  @JsonKey(name: 'hour')
   final Expr timestamp;
 
   Hour(this.timestamp);
@@ -83,7 +83,7 @@ class Hour extends Expr {
 
 @JsonSerializable()
 class Minute extends Expr {
-  @JsonKey(name: "minute")
+  @JsonKey(name: 'minute')
   final Expr timestamp;
 
   Minute(this.timestamp);
@@ -95,7 +95,7 @@ class Minute extends Expr {
 
 @JsonSerializable()
 class Month extends Expr {
-  @JsonKey(name: "month")
+  @JsonKey(name: 'month')
   final Expr timestamp;
 
   Month(this.timestamp);
@@ -107,7 +107,7 @@ class Month extends Expr {
 
 @JsonSerializable()
 class Now extends Expr {
-  @JsonKey(name: "now")
+  @JsonKey(name: 'now')
   dynamic value;
 
   Now() {
@@ -121,7 +121,7 @@ class Now extends Expr {
 
 @JsonSerializable()
 class Second extends Expr {
-  @JsonKey(name: "second")
+  @JsonKey(name: 'second')
   final Expr timestamp;
 
   Second(this.timestamp);
@@ -133,7 +133,7 @@ class Second extends Expr {
 
 @JsonSerializable()
 class Time extends Expr {
-  @JsonKey(name: "time")
+  @JsonKey(name: 'time')
   final String str;
 
   Time(this.str);
@@ -145,7 +145,7 @@ class Time extends Expr {
 
 @JsonSerializable()
 class Year extends Expr {
-  @JsonKey(name: "year")
+  @JsonKey(name: 'year')
   final Expr timestamp;
 
   Year(this.timestamp);

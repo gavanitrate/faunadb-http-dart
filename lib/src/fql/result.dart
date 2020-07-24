@@ -25,7 +25,7 @@ class Result {
       return unwrap_values(value);
     } else if (value is Obj) {
       return value.object;
-    } else if (key == "ts") {
+    } else if (key == 'ts') {
       return DateTime.fromMicrosecondsSinceEpoch(value);
     } else {
       return value;
@@ -43,27 +43,27 @@ class Result {
       );
     } else if (data is Map<String, dynamic>) {
       return _replace(
-            "object",
+            'object',
             (_) => Obj.fromJson(data),
             data,
           ) ??
           _replace(
-            "@set",
+            '@set',
             (value) => Set.from([unwrap_values(value)]),
             data,
           ) ??
           _replace(
-            "@query",
+            '@query',
             (value) => QueryResult.fromJson(value),
             data,
           ) ??
           _replace(
-            "@ref",
+            '@ref',
             (value) => RefResult.fromJson(value),
             data,
           ) ??
           _replace(
-            "@ts",
+            '@ts',
             (value) => DateTime.parse(value),
             data,
           ) ??
@@ -99,18 +99,18 @@ class RefResult {
   @override
   String toString() {
     if (collection != null) {
-      return "Ref(id: ${id}, collection: ${collection.toString()})";
+      return 'Ref(id: ${id}, collection: ${collection.toString()})';
     }
-    return "Ref(id: ${id})";
+    return 'Ref(id: ${id})';
   }
 }
 
 @JsonSerializable()
 class QueryResult {
-  @JsonKey(name: "lambda")
+  @JsonKey(name: 'lambda')
   final Object params;
 
-  @JsonKey(name: "expr", fromJson: Result.unwrap_values)
+  @JsonKey(name: 'expr', fromJson: Result.unwrap_values)
   final Map<String, dynamic> expression;
 
   QueryResult(this.params, this.expression);
@@ -122,7 +122,7 @@ class QueryResult {
 
   @override
   String toString() {
-    return "Query(lambda: ${params}), expr: ${expression}";
+    return 'Query(lambda: ${params}), expr: ${expression}';
   }
 }
 

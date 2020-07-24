@@ -10,18 +10,18 @@ void main(List<String> arguments) async {
     secret: arguments[0],
   );
   // Or if you want to put your secret straight in your code
-  // final config = FaunaDBConfig.build(secret: "<your_secret_here>");
+  // final config = FaunaDBConfig.build(secret: '<your_secret_here>');
   final client = FaunaClient(config);
 
   final query = Paginate(Collections());
-  print("query=>\n${query}");
+  print('query=>\n${query}');
 
   final result = await client.query(query);
   if (!result.hasErrors) {
-//    print("result=>\n${result.raw}");
-    print("resource=>\n${result.resource}");
+//    print('result=>\n${result.raw}');
+    print('resource=>\n${result.resource}');
   } else {
-    print("errors=>\n${result.errors}");
+    print('errors=>\n${result.errors}');
   }
 
   client.close();

@@ -7,10 +7,10 @@ part 'basic.g.dart';
 
 @JsonSerializable()
 class At extends Expr {
-  @JsonKey(name: "at")
+  @JsonKey(name: 'at')
   final Time timestamp;
 
-  @JsonKey(name: "expr")
+  @JsonKey(name: 'expr')
   final Expr expression;
 
   At(this.timestamp, this.expression);
@@ -22,7 +22,7 @@ class At extends Expr {
 
 @JsonSerializable()
 class Call extends Expr {
-  @JsonKey(name: "call")
+  @JsonKey(name: 'call')
   final Object function;
 
   final Object arguments;
@@ -36,7 +36,7 @@ class Call extends Expr {
 
 @JsonSerializable()
 class Do extends Expr {
-  @JsonKey(name: "do")
+  @JsonKey(name: 'do')
   final List expression;
 
   Do(this.expression);
@@ -48,13 +48,13 @@ class Do extends Expr {
 
 @JsonSerializable()
 class If extends Expr {
-  @JsonKey(name: "if")
+  @JsonKey(name: 'if')
   final Object cond;
 
-  @JsonKey(name: "then")
+  @JsonKey(name: 'then')
   final Object true_expr;
 
-  @JsonKey(name: "else")
+  @JsonKey(name: 'else')
   final Object false_expr;
 
   If(this.cond, this.true_expr, this.false_expr);
@@ -66,10 +66,10 @@ class If extends Expr {
 
 @JsonSerializable()
 class Lambda extends Expr {
-  @JsonKey(name: "lambda")
+  @JsonKey(name: 'lambda')
   final Object params;
 
-  @JsonKey(name: "expr")
+  @JsonKey(name: 'expr')
   final Expr expression;
 
   Lambda(this.params, this.expression);
@@ -81,10 +81,10 @@ class Lambda extends Expr {
 
 @JsonSerializable()
 class Let extends Expr {
-  @JsonKey(name: "let")
+  @JsonKey(name: 'let')
   final Map<String, dynamic> bindings;
 
-  @JsonKey(name: "in")
+  @JsonKey(name: 'in')
   final Expr in_;
 
   Let(this.bindings, this.in_);
@@ -96,7 +96,7 @@ class Let extends Expr {
 
 @JsonSerializable()
 class Var extends Expr {
-  @JsonKey(name: "var")
+  @JsonKey(name: 'var')
   final String name;
 
   Var(this.name);

@@ -6,7 +6,7 @@ part 'string.g.dart';
 
 @JsonSerializable()
 class Casefold extends Expr {
-  @JsonKey(name: "casefold")
+  @JsonKey(name: 'casefold')
   final Object value;
 
   @JsonKey(disallowNullValue: true, includeIfNull: false)
@@ -22,7 +22,7 @@ class Casefold extends Expr {
 
 @JsonSerializable()
 class Concat extends Expr {
-  @JsonKey(name: "concat")
+  @JsonKey(name: 'concat')
   final Object value;
 
   @JsonKey(disallowNullValue: true, includeIfNull: false)
@@ -37,7 +37,7 @@ class Concat extends Expr {
 
 @JsonSerializable()
 class FindStr extends Expr {
-  @JsonKey(name: "findstr")
+  @JsonKey(name: 'findstr')
   final Object value;
 
   final Object find;
@@ -55,16 +55,16 @@ class FindStr extends Expr {
 
 @JsonSerializable()
 class FindStrRegex extends Expr {
-  @JsonKey(name: "findstrregex")
+  @JsonKey(name: 'findstrregex')
   final Object value;
 
-  @JsonKey(name: "pattern")
+  @JsonKey(name: 'pattern')
   final Object find;
 
   @JsonKey(disallowNullValue: true, includeIfNull: false)
   final Object start;
 
-  @JsonKey(name: "num_results", disallowNullValue: true, includeIfNull: false)
+  @JsonKey(name: 'num_results', disallowNullValue: true, includeIfNull: false)
   final Object max_results;
 
   FindStrRegex(this.value, this.find, {this.start, this.max_results});
@@ -77,7 +77,7 @@ class FindStrRegex extends Expr {
 
 @JsonSerializable()
 class LTrim extends Expr {
-  @JsonKey(name: "ltrim")
+  @JsonKey(name: 'ltrim')
   final Object value;
 
   LTrim(this.value);
@@ -89,7 +89,7 @@ class LTrim extends Expr {
 
 @JsonSerializable()
 class Length extends Expr {
-  @JsonKey(name: "length")
+  @JsonKey(name: 'length')
   final Object value;
 
   Length(this.value);
@@ -101,7 +101,7 @@ class Length extends Expr {
 
 @JsonSerializable()
 class LowerCase extends Expr {
-  @JsonKey(name: "lowercase")
+  @JsonKey(name: 'lowercase')
   final Object value;
 
   LowerCase(this.value);
@@ -114,7 +114,7 @@ class LowerCase extends Expr {
 
 @JsonSerializable()
 class RTrim extends Expr {
-  @JsonKey(name: "rtrim")
+  @JsonKey(name: 'rtrim')
   final Object value;
 
   RTrim(this.value);
@@ -126,7 +126,7 @@ class RTrim extends Expr {
 
 @JsonSerializable()
 class Repeat extends Expr {
-  @JsonKey(name: "repeat")
+  @JsonKey(name: 'repeat')
   final Object value;
 
   @JsonKey(disallowNullValue: true, includeIfNull: false)
@@ -141,7 +141,7 @@ class Repeat extends Expr {
 
 @JsonSerializable()
 class ReplaceStr extends Expr {
-  @JsonKey(name: "replacestr")
+  @JsonKey(name: 'replacestr')
   final Object value;
 
   final Object find;
@@ -158,14 +158,14 @@ class ReplaceStr extends Expr {
 
 @JsonSerializable()
 class ReplaceStrRegex extends Expr {
-  @JsonKey(name: "replacestrregex")
+  @JsonKey(name: 'replacestrregex')
   final Object value;
 
   final Object pattern;
 
   final Object replace;
 
-  @JsonKey(name: "first", disallowNullValue: true, includeIfNull: false)
+  @JsonKey(name: 'first', disallowNullValue: true, includeIfNull: false)
   final Object first_only;
 
   ReplaceStrRegex(this.value, this.pattern, this.replace, {this.first_only});
@@ -178,7 +178,7 @@ class ReplaceStrRegex extends Expr {
 
 @JsonSerializable()
 class Space extends Expr {
-  @JsonKey(name: "space")
+  @JsonKey(name: 'space')
   final Object count;
 
   Space(this.count);
@@ -190,7 +190,7 @@ class Space extends Expr {
 
 @JsonSerializable()
 class SubString extends Expr {
-  @JsonKey(name: "substring")
+  @JsonKey(name: 'substring')
   final Object value;
 
   final Object start;
@@ -208,7 +208,7 @@ class SubString extends Expr {
 
 @JsonSerializable()
 class TitleCase extends Expr {
-  @JsonKey(name: "titlecase")
+  @JsonKey(name: 'titlecase')
   final Object value;
 
   TitleCase(this.value);
@@ -221,7 +221,7 @@ class TitleCase extends Expr {
 
 @JsonSerializable()
 class Trim extends Expr {
-  @JsonKey(name: "trim")
+  @JsonKey(name: 'trim')
   final Object value;
 
   Trim(this.value);
@@ -233,7 +233,7 @@ class Trim extends Expr {
 
 @JsonSerializable()
 class UpperCase extends Expr {
-  @JsonKey(name: "uppercase")
+  @JsonKey(name: 'uppercase')
   final Object value;
 
   UpperCase(this.value);

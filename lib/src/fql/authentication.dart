@@ -12,7 +12,7 @@ class HasIdentity extends Expr {
   factory HasIdentity.fromJson(Map<String, dynamic> json) =>
       _$HasIdentityFromJson(json);
 
-  Map<String, dynamic> toJson() => const {"has_identity": null};
+  Map<String, dynamic> toJson() => const {'has_identity': null};
 }
 
 @JsonSerializable()
@@ -36,12 +36,12 @@ class Identity extends Expr {
   factory Identity.fromJson(Map<String, dynamic> json) =>
       _$IdentityFromJson(json);
 
-  Map<String, dynamic> toJson() => const {"identity": null};
+  Map<String, dynamic> toJson() => const {'identity': null};
 }
 
 @JsonSerializable()
 class Keys extends Expr {
-  @JsonKey(name: "keys", includeIfNull: true)
+  @JsonKey(name: 'keys', includeIfNull: true)
   final Object database;
 
   Keys({this.database});
@@ -53,7 +53,7 @@ class Keys extends Expr {
 
 @JsonSerializable()
 class Login extends Expr {
-  @JsonKey(name: "login")
+  @JsonKey(name: 'login')
   final Object identity;
 
   final Obj param_object;
@@ -67,7 +67,7 @@ class Login extends Expr {
 
 @JsonSerializable()
 class Logout extends Expr {
-  @JsonKey(name: "logout", includeIfNull: true)
+  @JsonKey(name: 'logout', includeIfNull: true)
   final bool all_tokens;
 
   Logout({this.all_tokens});
@@ -83,5 +83,5 @@ class Tokens extends Expr {
 
   factory Tokens.fromJson(Map<String, dynamic> json) => _$TokensFromJson(json);
 
-  Map<String, dynamic> toJson() => const {"tokens": null};
+  Map<String, dynamic> toJson() => const {'tokens': null};
 }

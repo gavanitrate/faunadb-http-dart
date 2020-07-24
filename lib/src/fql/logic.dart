@@ -6,7 +6,7 @@ part 'logic.g.dart';
 
 @JsonSerializable()
 class And extends Expr {
-  @JsonKey(name: "and")
+  @JsonKey(name: 'and')
   final Object value;
 
   And(this.value);
@@ -18,10 +18,10 @@ class And extends Expr {
 
 @JsonSerializable()
 class Contains extends Expr {
-  @JsonKey(name: "contains")
+  @JsonKey(name: 'contains')
   final Object path;
 
-  @JsonKey(name: "in")
+  @JsonKey(name: 'in')
   final Object in_;
 
   Contains(this.path, this.in_);
@@ -34,7 +34,7 @@ class Contains extends Expr {
 
 @JsonSerializable()
 class Equals extends Expr {
-  @JsonKey(name: "equals")
+  @JsonKey(name: 'equals')
   final Object values;
 
   Equals(this.values);
@@ -46,7 +46,7 @@ class Equals extends Expr {
 
 @JsonSerializable()
 class Exists extends Expr {
-  @JsonKey(name: "exists")
+  @JsonKey(name: 'exists')
   final Object ref;
 
   @JsonKey(disallowNullValue: true, includeIfNull: false)
@@ -61,7 +61,7 @@ class Exists extends Expr {
 
 @JsonSerializable()
 class GT extends Expr {
-  @JsonKey(name: "gt")
+  @JsonKey(name: 'gt')
   final Object values;
 
   GT(this.values);
@@ -73,7 +73,7 @@ class GT extends Expr {
 
 @JsonSerializable()
 class GTE extends Expr {
-  @JsonKey(name: "gte")
+  @JsonKey(name: 'gte')
   final Object values;
 
   GTE(this.values);
@@ -85,7 +85,7 @@ class GTE extends Expr {
 
 @JsonSerializable()
 class LT extends Expr {
-  @JsonKey(name: "lt")
+  @JsonKey(name: 'lt')
   final Object values;
 
   LT(this.values);
@@ -97,7 +97,7 @@ class LT extends Expr {
 
 @JsonSerializable()
 class LTE extends Expr {
-  @JsonKey(name: "lte")
+  @JsonKey(name: 'lte')
   final Object values;
 
   LTE(this.values);
@@ -109,7 +109,7 @@ class LTE extends Expr {
 
 @JsonSerializable()
 class Not extends Expr {
-  @JsonKey(name: "not")
+  @JsonKey(name: 'not')
   final Object value;
 
   Not(this.value);
@@ -121,7 +121,7 @@ class Not extends Expr {
 
 @JsonSerializable()
 class Or extends Expr {
-  @JsonKey(name: "or")
+  @JsonKey(name: 'or')
   final Object values;
 
   Or(this.values);

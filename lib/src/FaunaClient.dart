@@ -36,7 +36,7 @@ class FaunaClient {
   /// Example query [expression]:
   ///
   /// ```
-  /// Paginate(Match(Index("all_customers")))
+  /// Paginate(Match(Index('all_customers')))
   /// ```
   ///
   /// However some notable differences are:
@@ -63,8 +63,8 @@ class FaunaClient {
   /// Example JSON [expression]:
   /// ```
   /// {
-  ///   "paginate": {
-  ///     "match": {"index": "all_products"},
+  ///   'paginate': {
+  ///     'match': {'index': 'all_products'},
   ///   }
   /// }
   /// ```
