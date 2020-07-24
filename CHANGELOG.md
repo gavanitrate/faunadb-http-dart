@@ -2,7 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
-## [0.3.0] - 2020-08-07
+## [0.4.0] - 2020-07-24
+
+### Added
+
+- FaunaResponse class added to query export; this helps with autocomplete in IDEs
+
+### Changed
+
+- QueryResult class renamed to FaunaResponse class
+- Fixed date typo in CHANGELOG.md
+
+## [0.3.0] - 2020-07-08
 
 ### Added
 
@@ -42,6 +53,7 @@ All notable changes to this project will be documented in this file.
 - FaunaDBConfig class
 - FaunaDBClient class
 
+[0.3.0]: https://github.com/gavanitrate/faunadb-http-dart/compare/0.3.0...0.4.0
 [0.3.0]: https://github.com/gavanitrate/faunadb-http-dart/compare/0.2.1...0.3.0
 [0.2.1]: https://github.com/gavanitrate/faunadb-http-dart/compare/0.2.0...0.2.1
 [0.2.0]: https://github.com/gavanitrate/faunadb-http-dart/compare/0.1.1...0.2.0
