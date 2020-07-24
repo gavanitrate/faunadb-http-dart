@@ -30,6 +30,19 @@ Map<String, dynamic> _$RefResultToJson(RefResult instance) {
 
 QueryResult _$QueryResultFromJson(Map<String, dynamic> json) {
   return QueryResult(
+    json['lambda'],
+    Result.unwrap_values(json['expr']),
+  );
+}
+
+Map<String, dynamic> _$QueryResultToJson(QueryResult instance) =>
+    <String, dynamic>{
+      'lambda': instance.params,
+      'expr': instance.expression,
+    };
+
+FaunaResponse _$FaunaResponseFromJson(Map<String, dynamic> json) {
+  return FaunaResponse(
     resource: Result.unwrap_values(json['resource']),
     errors: (json['errors'] as List)
         ?.map((e) => e as Map<String, dynamic>)
@@ -37,7 +50,7 @@ QueryResult _$QueryResultFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$QueryResultToJson(QueryResult instance) {
+Map<String, dynamic> _$FaunaResponseToJson(FaunaResponse instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {

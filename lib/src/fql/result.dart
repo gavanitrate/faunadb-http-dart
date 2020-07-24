@@ -43,8 +43,18 @@ class Result {
       );
     } else if (data is Map<String, dynamic>) {
       return _replace(
+            "object",
+            (_) => Obj.fromJson(data),
+            data,
+          ) ??
+          _replace(
             "@set",
             (value) => Set.from([unwrap_values(value)]),
+            data,
+          ) ??
+          _replace(
+            "@query",
+            (value) => QueryResult.fromJson(value),
             data,
           ) ??
           _replace(
@@ -97,6 +107,27 @@ class RefResult {
 
 @JsonSerializable()
 class QueryResult {
+  @JsonKey(name: "lambda")
+  final Object params;
+
+  @JsonKey(name: "expr", fromJson: Result.unwrap_values)
+  final Map<String, dynamic> expression;
+
+  QueryResult(this.params, this.expression);
+
+  factory QueryResult.fromJson(Map<String, dynamic> json) =>
+      _$QueryResultFromJson(json);
+
+  Map<String, dynamic> toJson() => _$QueryResultToJson(this);
+
+  @override
+  String toString() {
+    return "Query(lambda: ${params}), expr: ${expression}";
+  }
+}
+
+@JsonSerializable()
+class FaunaResponse {
   @JsonKey(ignore: true)
   String raw;
 
@@ -112,16 +143,16 @@ class QueryResult {
 
   bool get hasErrors => (errors != null);
 
-  QueryResult({this.resource, this.errors});
+  FaunaResponse({this.resource, this.errors});
 
-  factory QueryResult.fromBody(String responseBody) {
-    final qr = QueryResult.fromJson(json.decode(responseBody));
+  factory FaunaResponse.fromBody(String responseBody) {
+    final qr = FaunaResponse.fromJson(json.decode(responseBody));
     qr.raw = responseBody;
     return qr;
   }
 
-  factory QueryResult.fromJson(Map<String, dynamic> json) =>
-      _$QueryResultFromJson(json);
+  factory FaunaResponse.fromJson(Map<String, dynamic> json) =>
+      _$FaunaResponseFromJson(json);
 
-  Map<String, dynamic> toJson() => _$QueryResultToJson(this);
+  Map<String, dynamic> toJson() => _$FaunaResponseToJson(this);
 }

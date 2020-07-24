@@ -63,4 +63,9 @@ class Obj extends Expr {
   factory Obj.fromJson(Map<String, dynamic> json) => _$ObjFromJson(json);
 
   Map<String, dynamic> toJson() => _$ObjToJson(this);
+
+  @override
+  String toString() {
+    return "Obj(${this.object})";
+  }
 }
