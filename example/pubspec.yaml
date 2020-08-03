@@ -1,7 +1,7 @@
 name: faunadb_http_example
 
 dependencies:
-  faunadb_http: ^0.4.0
+  faunadb_http: ^0.5.0
 
 dependency_overrides:
   faunadb_http:

@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.5.0] - 2020-08-03
+
+### Added
+
+- Page class
+- asRef method in RefResult class
+- asPage method in FaunaResponse class
+
 ## [0.4.1] - 2020-07-24
 
 ### Changed
@@ -60,6 +68,7 @@ All notable changes to this project will be documented in this file.
 - FaunaDBConfig class
 - FaunaDBClient class
 
+[0.5.0]: https://github.com/gavanitrate/faunadb-http-dart/compare/0.4.4...0.5.0
 [0.4.1]: https://github.com/gavanitrate/faunadb-http-dart/compare/0.4.0...0.4.1
 [0.4.0]: https://github.com/gavanitrate/faunadb-http-dart/compare/0.3.0...0.4.0
 [0.3.0]: https://github.com/gavanitrate/faunadb-http-dart/compare/0.2.1...0.3.0
