@@ -12,11 +12,11 @@ import 'package:faunadb_http/query.dart';
 
 void main() async {
   final config = FaunaConfig.build(
-    secret: "<your_secret_here>",
+    secret: '<your_secret_here>',
   );
   final client = FaunaClient(config);
 
-  final query = Paginate(Match(Index("all_customers")));
+  final query = Paginate(Match(Index('all_customers')));
   
   final result = await client.query(query);
   print(result);

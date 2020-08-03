@@ -41,12 +41,14 @@ Map<String, dynamic> _$KeyFromSecretToJson(KeyFromSecret instance) =>
     };
 
 Paginate _$PaginateFromJson(Map<String, dynamic> json) {
-  $checkKeys(json, disallowNullValues: const ['size']);
+  $checkKeys(json, disallowNullValues: const ['size', 'after']);
   return Paginate(
     json['paginate'] == null
         ? null
         : Expr.fromJson(json['paginate'] as Map<String, dynamic>),
     size: json['size'] as int,
+    before: json['before'],
+    after: json['after'],
   );
 }
 
@@ -62,6 +64,8 @@ Map<String, dynamic> _$PaginateToJson(Paginate instance) {
   }
 
   writeNotNull('size', instance.size);
+  val['before'] = instance.before;
+  writeNotNull('after', instance.after);
   return val;
 }
 

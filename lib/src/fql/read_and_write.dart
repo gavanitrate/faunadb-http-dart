@@ -2,6 +2,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 import 'expr.dart';
 import 'miscellaneous.dart';
+import 'page.dart';
 
 part 'read_and_write.g.dart';
 
@@ -41,12 +42,32 @@ class Paginate extends Expr {
   @JsonKey(disallowNullValue: true, includeIfNull: false)
   final int size;
 
-  Paginate(this.input, {this.size});
+  @JsonKey(disallowNullValue: false, includeIfNull: true)
+  final Object before;
+
+  @JsonKey(disallowNullValue: true, includeIfNull: false)
+  final Object after;
+
+  Paginate(
+    this.input, {
+    this.size,
+    this.before = CursorType.EMPTY,
+    this.after = CursorType.EMPTY,
+  });
 
   factory Paginate.fromJson(Map<String, dynamic> json) =>
       _$PaginateFromJson(json);
 
-  Map<String, dynamic> toJson() => _$PaginateToJson(this);
+  Map<String, dynamic> toJson() {
+    var json = _$PaginateToJson(this);
+    if (before == CursorType.EMPTY) {
+      json.remove("before");
+    }
+    if (after == CursorType.EMPTY) {
+      json.remove("after");
+    }
+    return json;
+  }
 }
 
 @JsonSerializable()

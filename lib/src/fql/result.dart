@@ -3,6 +3,8 @@ import 'dart:convert';
 import 'package:json_annotation/json_annotation.dart';
 
 import 'expr.dart';
+import 'miscellaneous.dart';
+import 'page.dart';
 
 part 'result.g.dart';
 
@@ -91,6 +93,10 @@ class RefResult {
 
   RefResult(this.id, this.collection);
 
+  Ref asRef() {
+    return Ref(Collection(this.collection.id), this.id);
+  }
+
   factory RefResult.fromJson(Map<String, dynamic> json) =>
       _$RefResultFromJson(json);
 
@@ -144,6 +150,23 @@ class FaunaResponse {
   bool get hasErrors => (errors != null);
 
   FaunaResponse({this.resource, this.errors});
+
+  /// Convenience method to build a Page object
+  /// from query result.
+  ///
+  /// Useful when performing a [Paginate] query.
+  Page asPage() {
+    final result = resource as Map;
+    final before = result["before"];
+    final after = result["after"];
+    final data = result["data"];
+
+    return Page.fromResource(
+      before: before,
+      after: after,
+      data: data,
+    );
+  }
 
   factory FaunaResponse.fromBody(String responseBody) {
     final qr = FaunaResponse.fromJson(json.decode(responseBody));
