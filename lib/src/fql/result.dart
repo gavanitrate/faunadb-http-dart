@@ -51,7 +51,7 @@ class Result {
           ) ??
           _replace(
             '@set',
-            (value) => Set.from([unwrap_values(value)]),
+            (value) => {unwrap_values(value)},
             data,
           ) ??
           _replace(
@@ -86,7 +86,7 @@ class RefResult {
   )
   final RefResult collection;
 
-  static _unwrapCollection(collection) {
+  static Object _unwrapCollection(collection) {
     if (collection == null) return null;
     return Result.unwrap_values(collection);
   }
@@ -94,7 +94,7 @@ class RefResult {
   RefResult(this.id, this.collection);
 
   Ref asRef() {
-    return Ref(Collection(this.collection.id), this.id);
+    return Ref(Collection(collection.id), id);
   }
 
   factory RefResult.fromJson(Map<String, dynamic> json) =>
@@ -157,9 +157,9 @@ class FaunaResponse {
   /// Useful when performing a [Paginate] query.
   Page asPage() {
     final result = resource as Map;
-    final before = result["before"];
-    final after = result["after"];
-    final data = result["data"];
+    final before = result['before'];
+    final after = result['after'];
+    final data = result['data'];
 
     return Page.fromResource(
       before: before,

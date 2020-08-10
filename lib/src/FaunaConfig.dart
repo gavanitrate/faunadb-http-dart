@@ -128,13 +128,13 @@ class FaunaConfig {
   /// Returns a [FaunaConfig] created by merging this configuration with [mergeWith].
   FaunaConfig merge(FaunaConfig mergeWith) {
     return FaunaConfig(
-      scheme: mergeWith.scheme ?? this.scheme,
-      domain: mergeWith.domain ?? this.domain,
-      port: mergeWith.port ?? this.port,
-      secret: mergeWith.secret ?? this.secret,
-      headers: mergeWith.headers ?? this.headers,
-      timeout: mergeWith.timeout ?? this.timeout,
-      queryTimeout: mergeWith.queryTimeout ?? this.queryTimeout,
+      scheme: mergeWith.scheme ?? scheme,
+      domain: mergeWith.domain ?? domain,
+      port: mergeWith.port ?? port,
+      secret: mergeWith.secret ?? secret,
+      headers: mergeWith.headers ?? headers,
+      timeout: mergeWith.timeout ?? timeout,
+      queryTimeout: mergeWith.queryTimeout ?? queryTimeout,
     );
   }
 }

@@ -7,7 +7,7 @@ part 'expr.g.dart';
 
 @JsonSerializable()
 class Expr {
-  static wrap_value(dynamic value) {
+  static Object wrap_value(dynamic value) {
     if (value is List) {
       return wrap_values(value);
     } else if (value is Map<String, dynamic>) {
@@ -62,10 +62,11 @@ class Obj extends Expr {
 
   factory Obj.fromJson(Map<String, dynamic> json) => _$ObjFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$ObjToJson(this);
 
   @override
   String toString() {
-    return 'Obj(${this.object})';
+    return 'Obj(${object})';
   }
 }

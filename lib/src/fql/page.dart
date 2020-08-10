@@ -35,10 +35,10 @@ class Page {
 
   @override
   String toString() {
-    return "Page(${{
-      "before": before,
-      "after": after,
-      "size": data.length
-    }.toString()})";
+    return 'Page(${{
+      'before': before,
+      'after': after,
+      'size': data.length
+    }.toString()})';
   }
 }

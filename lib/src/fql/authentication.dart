@@ -12,6 +12,7 @@ class HasIdentity extends Expr {
   factory HasIdentity.fromJson(Map<String, dynamic> json) =>
       _$HasIdentityFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => const {'has_identity': null};
 }
 
@@ -26,6 +27,7 @@ class Identify extends Expr {
   factory Identify.fromJson(Map<String, dynamic> json) =>
       _$IdentifyFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$IdentifyToJson(this);
 }
 
@@ -36,6 +38,7 @@ class Identity extends Expr {
   factory Identity.fromJson(Map<String, dynamic> json) =>
       _$IdentityFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => const {'identity': null};
 }
 
@@ -48,6 +51,7 @@ class Keys extends Expr {
 
   factory Keys.fromJson(Map<String, dynamic> json) => _$KeysFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$KeysToJson(this);
 }
 
@@ -62,6 +66,7 @@ class Login extends Expr {
 
   factory Login.fromJson(Map<String, dynamic> json) => _$LoginFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$LoginToJson(this);
 }
 
@@ -74,6 +79,7 @@ class Logout extends Expr {
 
   factory Logout.fromJson(Map<String, dynamic> json) => _$LogoutFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$LogoutToJson(this);
 }
 
@@ -83,5 +89,6 @@ class Tokens extends Expr {
 
   factory Tokens.fromJson(Map<String, dynamic> json) => _$TokensFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => const {'tokens': null};
 }

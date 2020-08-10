@@ -13,6 +13,7 @@ class Date extends Expr {
 
   factory Date.fromJson(Map<String, dynamic> json) => _$DateFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$DateToJson(this);
 }
 
@@ -26,6 +27,7 @@ class DayOfMonth extends Expr {
   factory DayOfMonth.fromJson(Map<String, dynamic> json) =>
       _$DayOfMonthFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$DayOfMonthToJson(this);
 }
 
@@ -39,6 +41,7 @@ class DayOfWeek extends Expr {
   factory DayOfWeek.fromJson(Map<String, dynamic> json) =>
       _$DayOfWeekFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$DayOfWeekToJson(this);
 }
 
@@ -52,6 +55,7 @@ class DayOfYear extends Expr {
   factory DayOfYear.fromJson(Map<String, dynamic> json) =>
       _$DayOfYearFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$DayOfYearToJson(this);
 }
 
@@ -66,6 +70,7 @@ class Epoch extends Expr {
 
   factory Epoch.fromJson(Map<String, dynamic> json) => _$EpochFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$EpochToJson(this);
 }
 
@@ -78,6 +83,7 @@ class Hour extends Expr {
 
   factory Hour.fromJson(Map<String, dynamic> json) => _$HourFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$HourToJson(this);
 }
 
@@ -90,6 +96,7 @@ class Minute extends Expr {
 
   factory Minute.fromJson(Map<String, dynamic> json) => _$MinuteFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$MinuteToJson(this);
 }
 
@@ -102,6 +109,7 @@ class Month extends Expr {
 
   factory Month.fromJson(Map<String, dynamic> json) => _$MonthFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$MonthToJson(this);
 }
 
@@ -111,11 +119,12 @@ class Now extends Expr {
   dynamic value;
 
   Now() {
-    this.value = null;
+    value = null;
   }
 
   factory Now.fromJson(Map<String, dynamic> json) => _$NowFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$NowToJson(this);
 }
 
@@ -128,6 +137,7 @@ class Second extends Expr {
 
   factory Second.fromJson(Map<String, dynamic> json) => _$SecondFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$SecondToJson(this);
 }
 
@@ -140,6 +150,7 @@ class Time extends Expr {
 
   factory Time.fromJson(Map<String, dynamic> json) => _$TimeFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$TimeToJson(this);
 }
 
@@ -152,5 +163,6 @@ class Year extends Expr {
 
   factory Year.fromJson(Map<String, dynamic> json) => _$YearFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$YearToJson(this);
 }

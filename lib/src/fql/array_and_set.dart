@@ -18,6 +18,7 @@ class Append extends Expr {
 
   factory Append.fromJson(Map<String, dynamic> json) => _$AppendFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$AppendToJson(this);
 }
 
@@ -30,6 +31,7 @@ class Count extends Expr {
 
   factory Count.fromJson(Map<String, dynamic> json) => _$CountFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$CountToJson(this);
 }
 
@@ -47,8 +49,9 @@ class Difference extends Expr {
     return Difference(diffs[0], diffs[1]);
   }
 
+  @override
   Map<String, dynamic> toJson() => {
-        'difference': [this.source, this.diff]
+        'difference': [source, diff]
       };
 }
 
@@ -62,6 +65,7 @@ class Distinct extends Expr {
   factory Distinct.fromJson(Map<String, dynamic> json) =>
       _$DistinctFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$DistinctToJson(this);
 }
 
@@ -77,6 +81,7 @@ class Drop extends Expr {
 
   factory Drop.fromJson(Map<String, dynamic> json) => _$DropFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$DropToJson(this);
 }
 
@@ -92,6 +97,7 @@ class Filter extends Expr {
 
   factory Filter.fromJson(Map<String, dynamic> json) => _$FilterFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$FilterToJson(this);
 }
 
@@ -107,6 +113,7 @@ class Foreach extends Expr {
   factory Foreach.fromJson(Map<String, dynamic> json) =>
       _$ForeachFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$ForeachToJson(this);
 }
 
@@ -120,6 +127,7 @@ class Intersection extends Expr {
   factory Intersection.fromJson(Map<String, dynamic> json) =>
       _$IntersectionFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$IntersectionToJson(this);
 }
 
@@ -133,6 +141,7 @@ class IsEmpty extends Expr {
   factory IsEmpty.fromJson(Map<String, dynamic> json) =>
       _$IsEmptyFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$IsEmptyToJson(this);
 }
 
@@ -146,6 +155,7 @@ class IsNonEmpty extends Expr {
   factory IsNonEmpty.fromJson(Map<String, dynamic> json) =>
       _$IsNonEmptyFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$IsNonEmptyToJson(this);
 }
 
@@ -160,6 +170,7 @@ class Join extends Expr {
 
   factory Join.fromJson(Map<String, dynamic> json) => _$JoinFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$JoinToJson(this);
 }
 
@@ -175,6 +186,7 @@ class Map_ extends Expr {
 
   factory Map_.fromJson(Map<String, dynamic> json) => _$Map_FromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$Map_ToJson(this);
 }
 
@@ -190,6 +202,7 @@ class Match extends Expr {
 
   factory Match.fromJson(Map<String, dynamic> json) => _$MatchFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$MatchToJson(this);
 }
 
@@ -206,6 +219,7 @@ class Prepend extends Expr {
   factory Prepend.fromJson(Map<String, dynamic> json) =>
       _$PrependFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$PrependToJson(this);
 }
 
@@ -219,6 +233,7 @@ class Singleton extends Expr {
   factory Singleton.fromJson(Map<String, dynamic> json) =>
       _$SingletonFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$SingletonToJson(this);
 }
 
@@ -234,6 +249,7 @@ class Take extends Expr {
 
   factory Take.fromJson(Map<String, dynamic> json) => _$TakeFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$TakeToJson(this);
 }
 
@@ -246,5 +262,6 @@ class Union extends Expr {
 
   factory Union.fromJson(Map<String, dynamic> json) => _$UnionFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$UnionToJson(this);
 }

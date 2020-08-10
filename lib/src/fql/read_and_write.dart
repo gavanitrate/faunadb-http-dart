@@ -18,6 +18,7 @@ class Get extends Expr {
 
   factory Get.fromJson(Map<String, dynamic> json) => _$GetFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$GetToJson(this);
 }
 
@@ -31,6 +32,7 @@ class KeyFromSecret extends Expr {
   factory KeyFromSecret.fromJson(Map<String, dynamic> json) =>
       _$KeyFromSecretFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$KeyFromSecretToJson(this);
 }
 
@@ -58,13 +60,14 @@ class Paginate extends Expr {
   factory Paginate.fromJson(Map<String, dynamic> json) =>
       _$PaginateFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() {
     var json = _$PaginateToJson(this);
     if (before == CursorType.EMPTY) {
-      json.remove("before");
+      json.remove('before');
     }
     if (after == CursorType.EMPTY) {
-      json.remove("after");
+      json.remove('after');
     }
     return json;
   }
@@ -84,6 +87,7 @@ class Select extends Expr {
 
   factory Select.fromJson(Map<String, dynamic> json) => _$SelectFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$SelectToJson(this);
 }
 
@@ -99,6 +103,7 @@ class Create extends Expr {
 
   factory Create.fromJson(Map<String, dynamic> json) => _$CreateFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$CreateToJson(this);
 }
 
@@ -112,6 +117,7 @@ class CreateCollection extends Expr {
   factory CreateCollection.fromJson(Map<String, dynamic> json) =>
       _$CreateCollectionFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$CreateCollectionToJson(this);
 }
 
@@ -125,6 +131,7 @@ class CreateDatabase extends Expr {
   factory CreateDatabase.fromJson(Map<String, dynamic> json) =>
       _$CreateDatabaseFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$CreateDatabaseToJson(this);
 }
 
@@ -138,6 +145,7 @@ class CreateFunction extends Expr {
   factory CreateFunction.fromJson(Map<String, dynamic> json) =>
       _$CreateFunctionFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$CreateFunctionToJson(this);
 }
 
@@ -151,6 +159,7 @@ class CreateIndex extends Expr {
   factory CreateIndex.fromJson(Map<String, dynamic> json) =>
       _$CreateIndexFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$CreateIndexToJson(this);
 }
 
@@ -164,6 +173,7 @@ class CreateKey extends Expr {
   factory CreateKey.fromJson(Map<String, dynamic> json) =>
       _$CreateKeyFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$CreateKeyToJson(this);
 }
 
@@ -177,6 +187,7 @@ class CreateRole extends Expr {
   factory CreateRole.fromJson(Map<String, dynamic> json) =>
       _$CreateRoleFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$CreateRoleToJson(this);
 }
 
@@ -189,6 +200,7 @@ class Delete extends Expr {
 
   factory Delete.fromJson(Map<String, dynamic> json) => _$DeleteFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$DeleteToJson(this);
 }
 
@@ -201,6 +213,7 @@ class Events extends Expr {
 
   factory Events.fromJson(Map<String, dynamic> json) => _$EventsFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$EventsToJson(this);
 }
 
@@ -220,6 +233,7 @@ class Insert extends Expr {
 
   factory Insert.fromJson(Map<String, dynamic> json) => _$InsertFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$InsertToJson(this);
 }
 
@@ -236,6 +250,7 @@ class Remove extends Expr {
 
   factory Remove.fromJson(Map<String, dynamic> json) => _$RemoveFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$RemoveToJson(this);
 }
 
@@ -252,6 +267,7 @@ class Replace extends Expr {
   factory Replace.fromJson(Map<String, dynamic> json) =>
       _$ReplaceFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$ReplaceToJson(this);
 }
 
@@ -267,5 +283,6 @@ class Update extends Expr {
 
   factory Update.fromJson(Map<String, dynamic> json) => _$UpdateFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$UpdateToJson(this);
 }

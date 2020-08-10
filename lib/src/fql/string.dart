@@ -17,6 +17,7 @@ class Casefold extends Expr {
   factory Casefold.fromJson(Map<String, dynamic> json) =>
       _$CasefoldFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$CasefoldToJson(this);
 }
 
@@ -32,6 +33,7 @@ class Concat extends Expr {
 
   factory Concat.fromJson(Map<String, dynamic> json) => _$ConcatFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$ConcatToJson(this);
 }
 
@@ -50,6 +52,7 @@ class FindStr extends Expr {
   factory FindStr.fromJson(Map<String, dynamic> json) =>
       _$FindStrFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$FindStrToJson(this);
 }
 
@@ -72,6 +75,7 @@ class FindStrRegex extends Expr {
   factory FindStrRegex.fromJson(Map<String, dynamic> json) =>
       _$FindStrRegexFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$FindStrRegexToJson(this);
 }
 
@@ -84,6 +88,7 @@ class LTrim extends Expr {
 
   factory LTrim.fromJson(Map<String, dynamic> json) => _$LTrimFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$LTrimToJson(this);
 }
 
@@ -96,6 +101,7 @@ class Length extends Expr {
 
   factory Length.fromJson(Map<String, dynamic> json) => _$LengthFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$LengthToJson(this);
 }
 
@@ -109,6 +115,7 @@ class LowerCase extends Expr {
   factory LowerCase.fromJson(Map<String, dynamic> json) =>
       _$LowerCaseFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$LowerCaseToJson(this);
 }
 
@@ -121,6 +128,7 @@ class RTrim extends Expr {
 
   factory RTrim.fromJson(Map<String, dynamic> json) => _$RTrimFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$RTrimToJson(this);
 }
 
@@ -136,6 +144,7 @@ class Repeat extends Expr {
 
   factory Repeat.fromJson(Map<String, dynamic> json) => _$RepeatFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$RepeatToJson(this);
 }
 
@@ -153,6 +162,7 @@ class ReplaceStr extends Expr {
   factory ReplaceStr.fromJson(Map<String, dynamic> json) =>
       _$ReplaceStrFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$ReplaceStrToJson(this);
 }
 
@@ -173,6 +183,7 @@ class ReplaceStrRegex extends Expr {
   factory ReplaceStrRegex.fromJson(Map<String, dynamic> json) =>
       _$ReplaceStrRegexFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$ReplaceStrRegexToJson(this);
 }
 
@@ -185,6 +196,7 @@ class Space extends Expr {
 
   factory Space.fromJson(Map<String, dynamic> json) => _$SpaceFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$SpaceToJson(this);
 }
 
@@ -203,6 +215,7 @@ class SubString extends Expr {
   factory SubString.fromJson(Map<String, dynamic> json) =>
       _$SubStringFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$SubStringToJson(this);
 }
 
@@ -216,6 +229,7 @@ class TitleCase extends Expr {
   factory TitleCase.fromJson(Map<String, dynamic> json) =>
       _$TitleCaseFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$TitleCaseToJson(this);
 }
 
@@ -228,6 +242,7 @@ class Trim extends Expr {
 
   factory Trim.fromJson(Map<String, dynamic> json) => _$TrimFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$TrimToJson(this);
 }
 
@@ -241,5 +256,6 @@ class UpperCase extends Expr {
   factory UpperCase.fromJson(Map<String, dynamic> json) =>
       _$UpperCaseFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$UpperCaseToJson(this);
 }

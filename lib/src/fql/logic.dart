@@ -13,6 +13,7 @@ class And extends Expr {
 
   factory And.fromJson(Map<String, dynamic> json) => _$AndFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$AndToJson(this);
 }
 
@@ -29,6 +30,7 @@ class Contains extends Expr {
   factory Contains.fromJson(Map<String, dynamic> json) =>
       _$ContainsFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$ContainsToJson(this);
 }
 
@@ -41,6 +43,7 @@ class Equals extends Expr {
 
   factory Equals.fromJson(Map<String, dynamic> json) => _$EqualsFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$EqualsToJson(this);
 }
 
@@ -56,6 +59,7 @@ class Exists extends Expr {
 
   factory Exists.fromJson(Map<String, dynamic> json) => _$ExistsFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$ExistsToJson(this);
 }
 
@@ -68,6 +72,7 @@ class GT extends Expr {
 
   factory GT.fromJson(Map<String, dynamic> json) => _$GTFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$GTToJson(this);
 }
 
@@ -80,6 +85,7 @@ class GTE extends Expr {
 
   factory GTE.fromJson(Map<String, dynamic> json) => _$GTEFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$GTEToJson(this);
 }
 
@@ -92,6 +98,7 @@ class LT extends Expr {
 
   factory LT.fromJson(Map<String, dynamic> json) => _$LTFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$LTToJson(this);
 }
 
@@ -104,6 +111,7 @@ class LTE extends Expr {
 
   factory LTE.fromJson(Map<String, dynamic> json) => _$LTEFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$LTEToJson(this);
 }
 
@@ -116,6 +124,7 @@ class Not extends Expr {
 
   factory Not.fromJson(Map<String, dynamic> json) => _$NotFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$NotToJson(this);
 }
 
@@ -128,5 +137,6 @@ class Or extends Expr {
 
   factory Or.fromJson(Map<String, dynamic> json) => _$OrFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$OrToJson(this);
 }

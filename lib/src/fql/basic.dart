@@ -17,6 +17,7 @@ class At extends Expr {
 
   factory At.fromJson(Map<String, dynamic> json) => _$AtFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$AtToJson(this);
 }
 
@@ -31,6 +32,7 @@ class Call extends Expr {
 
   factory Call.fromJson(Map<String, dynamic> json) => _$CallFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$CallToJson(this);
 }
 
@@ -43,6 +45,7 @@ class Do extends Expr {
 
   factory Do.fromJson(Map<String, dynamic> json) => _$DoFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$DoToJson(this);
 }
 
@@ -61,6 +64,7 @@ class If extends Expr {
 
   factory If.fromJson(Map<String, dynamic> json) => _$IfFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$IfToJson(this);
 }
 
@@ -76,6 +80,7 @@ class Lambda extends Expr {
 
   factory Lambda.fromJson(Map<String, dynamic> json) => _$LambdaFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$LambdaToJson(this);
 }
 
@@ -91,6 +96,7 @@ class Let extends Expr {
 
   factory Let.fromJson(Map<String, dynamic> json) => _$LetFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$LetToJson(this);
 }
 
@@ -103,5 +109,6 @@ class Var extends Expr {
 
   factory Var.fromJson(Map<String, dynamic> json) => _$VarFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$VarToJson(this);
 }

@@ -13,6 +13,7 @@ class Abs extends Expr {
 
   factory Abs.fromJson(Map<String, dynamic> json) => _$AbsFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$AbsToJson(this);
 }
 
@@ -25,6 +26,7 @@ class Acos extends Expr {
 
   factory Acos.fromJson(Map<String, dynamic> json) => _$AcosFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$AcosToJson(this);
 }
 
@@ -37,6 +39,7 @@ class Add extends Expr {
 
   factory Add.fromJson(Map<String, dynamic> json) => _$AddFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$AddToJson(this);
 }
 
@@ -49,6 +52,7 @@ class Asin extends Expr {
 
   factory Asin.fromJson(Map<String, dynamic> json) => _$AsinFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$AsinToJson(this);
 }
 
@@ -61,6 +65,7 @@ class Atan extends Expr {
 
   factory Atan.fromJson(Map<String, dynamic> json) => _$AtanFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$AtanToJson(this);
 }
 
@@ -73,6 +78,7 @@ class BitAnd extends Expr {
 
   factory BitAnd.fromJson(Map<String, dynamic> json) => _$BitAndFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$BitAndToJson(this);
 }
 
@@ -85,6 +91,7 @@ class BitNot extends Expr {
 
   factory BitNot.fromJson(Map<String, dynamic> json) => _$BitNotFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$BitNotToJson(this);
 }
 
@@ -97,6 +104,7 @@ class BitOr extends Expr {
 
   factory BitOr.fromJson(Map<String, dynamic> json) => _$BitOrFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$BitOrToJson(this);
 }
 
@@ -109,6 +117,7 @@ class BitXor extends Expr {
 
   factory BitXor.fromJson(Map<String, dynamic> json) => _$BitXorFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$BitXorToJson(this);
 }
 
@@ -121,6 +130,7 @@ class Ceil extends Expr {
 
   factory Ceil.fromJson(Map<String, dynamic> json) => _$CeilFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$CeilToJson(this);
 }
 
@@ -133,6 +143,7 @@ class Cos extends Expr {
 
   factory Cos.fromJson(Map<String, dynamic> json) => _$CosFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$CosToJson(this);
 }
 
@@ -145,6 +156,7 @@ class Cosh extends Expr {
 
   factory Cosh.fromJson(Map<String, dynamic> json) => _$CoshFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$CoshToJson(this);
 }
 
@@ -158,6 +170,7 @@ class Degrees extends Expr {
   factory Degrees.fromJson(Map<String, dynamic> json) =>
       _$DegreesFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$DegreesToJson(this);
 }
 
@@ -170,6 +183,7 @@ class Divide extends Expr {
 
   factory Divide.fromJson(Map<String, dynamic> json) => _$DivideFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$DivideToJson(this);
 }
 
@@ -182,6 +196,7 @@ class Exp extends Expr {
 
   factory Exp.fromJson(Map<String, dynamic> json) => _$ExpFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$ExpToJson(this);
 }
 
@@ -194,6 +209,7 @@ class Floor extends Expr {
 
   factory Floor.fromJson(Map<String, dynamic> json) => _$FloorFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$FloorToJson(this);
 }
 
@@ -209,6 +225,7 @@ class Hypot extends Expr {
 
   factory Hypot.fromJson(Map<String, dynamic> json) => _$HypotFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$HypotToJson(this);
 }
 
@@ -221,6 +238,7 @@ class Ln extends Expr {
 
   factory Ln.fromJson(Map<String, dynamic> json) => _$LnFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$LnToJson(this);
 }
 
@@ -233,6 +251,7 @@ class Log extends Expr {
 
   factory Log.fromJson(Map<String, dynamic> json) => _$LogFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$LogToJson(this);
 }
 
@@ -245,6 +264,7 @@ class Max extends Expr {
 
   factory Max.fromJson(Map<String, dynamic> json) => _$MaxFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$MaxToJson(this);
 }
 
@@ -257,6 +277,7 @@ class Mean extends Expr {
 
   factory Mean.fromJson(Map<String, dynamic> json) => _$MeanFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$MeanToJson(this);
 }
 
@@ -269,6 +290,7 @@ class Min extends Expr {
 
   factory Min.fromJson(Map<String, dynamic> json) => _$MinFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$MinToJson(this);
 }
 
@@ -281,6 +303,7 @@ class Modulo extends Expr {
 
   factory Modulo.fromJson(Map<String, dynamic> json) => _$ModuloFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$ModuloToJson(this);
 }
 
@@ -294,6 +317,7 @@ class Multiply extends Expr {
   factory Multiply.fromJson(Map<String, dynamic> json) =>
       _$MultiplyFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$MultiplyToJson(this);
 }
 
@@ -309,6 +333,7 @@ class Pow extends Expr {
 
   factory Pow.fromJson(Map<String, dynamic> json) => _$PowFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$PowToJson(this);
 }
 
@@ -322,6 +347,7 @@ class Radians extends Expr {
   factory Radians.fromJson(Map<String, dynamic> json) =>
       _$RadiansFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$RadiansToJson(this);
 }
 
@@ -337,6 +363,7 @@ class Round extends Expr {
 
   factory Round.fromJson(Map<String, dynamic> json) => _$RoundFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$RoundToJson(this);
 }
 
@@ -349,6 +376,7 @@ class Sign extends Expr {
 
   factory Sign.fromJson(Map<String, dynamic> json) => _$SignFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$SignToJson(this);
 }
 
@@ -361,6 +389,7 @@ class Sin extends Expr {
 
   factory Sin.fromJson(Map<String, dynamic> json) => _$SinFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$SinToJson(this);
 }
 
@@ -373,6 +402,7 @@ class Sinh extends Expr {
 
   factory Sinh.fromJson(Map<String, dynamic> json) => _$SinhFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$SinhToJson(this);
 }
 
@@ -385,6 +415,7 @@ class Sqrt extends Expr {
 
   factory Sqrt.fromJson(Map<String, dynamic> json) => _$SqrtFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$SqrtToJson(this);
 }
 
@@ -398,6 +429,7 @@ class Subtract extends Expr {
   factory Subtract.fromJson(Map<String, dynamic> json) =>
       _$SubtractFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$SubtractToJson(this);
 }
 
@@ -410,6 +442,7 @@ class Sum extends Expr {
 
   factory Sum.fromJson(Map<String, dynamic> json) => _$SumFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$SumToJson(this);
 }
 
@@ -422,6 +455,7 @@ class Tan extends Expr {
 
   factory Tan.fromJson(Map<String, dynamic> json) => _$TanFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$TanToJson(this);
 }
 
@@ -434,6 +468,7 @@ class Tanh extends Expr {
 
   factory Tanh.fromJson(Map<String, dynamic> json) => _$TanhFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$TanhToJson(this);
 }
 
@@ -449,5 +484,6 @@ class Trunc extends Expr {
 
   factory Trunc.fromJson(Map<String, dynamic> json) => _$TruncFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$TruncToJson(this);
 }

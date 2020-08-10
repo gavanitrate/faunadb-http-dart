@@ -14,6 +14,7 @@ class Abort extends Expr {
 
   factory Abort.fromJson(Map<String, dynamic> json) => _$AbortFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$AbortToJson(this);
 }
 
@@ -30,6 +31,7 @@ class Collection extends Ref {
   factory Collection.fromJson(Map<String, dynamic> json) =>
       _$CollectionFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$CollectionToJson(this);
 }
 
@@ -43,6 +45,7 @@ class Collections extends Ref {
   factory Collections.fromJson(Map<String, dynamic> json) =>
       _$CollectionsFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$CollectionsToJson(this);
 }
 
@@ -59,6 +62,7 @@ class Database extends Ref {
   factory Database.fromJson(Map<String, dynamic> json) =>
       _$DatabaseFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$DatabaseToJson(this);
 }
 
@@ -72,6 +76,7 @@ class Databases extends Ref {
   factory Databases.fromJson(Map<String, dynamic> json) =>
       _$DatabasesFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$DatabasesToJson(this);
 }
 
@@ -85,6 +90,7 @@ class Documents extends Ref {
   factory Documents.fromJson(Map<String, dynamic> json) =>
       _$DocumentsFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$DocumentsToJson(this);
 }
 
@@ -101,6 +107,7 @@ class Function_ extends Ref {
   factory Function_.fromJson(Map<String, dynamic> json) =>
       _$Function_FromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$Function_ToJson(this);
 }
 
@@ -114,6 +121,7 @@ class Functions extends Ref {
   factory Functions.fromJson(Map<String, dynamic> json) =>
       _$FunctionsFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$FunctionsToJson(this);
 }
 
@@ -129,6 +137,7 @@ class Index extends Ref {
 
   factory Index.fromJson(Map<String, dynamic> json) => _$IndexFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$IndexToJson(this);
 }
 
@@ -142,6 +151,7 @@ class Indexes extends Ref {
   factory Indexes.fromJson(Map<String, dynamic> json) =>
       _$IndexesFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$IndexesToJson(this);
 }
 
@@ -151,6 +161,7 @@ class NewId extends Expr {
 
   factory NewId.fromJson(Map<String, dynamic> json) => _$NewIdFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => const {'new_id': null};
 }
 
@@ -163,6 +174,7 @@ class Query extends Expr {
 
   factory Query.fromJson(Map<String, dynamic> json) => _$QueryFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$QueryToJson(this);
 }
 
@@ -179,6 +191,7 @@ class Ref extends Expr {
 
   factory Ref.fromJson(Map<String, dynamic> json) => _$RefFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$RefToJson(this);
 }
 
@@ -194,6 +207,7 @@ class Role extends Expr {
 
   factory Role.fromJson(Map<String, dynamic> json) => _$RoleFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$RoleToJson(this);
 }
 
@@ -206,5 +220,6 @@ class Roles extends Expr {
 
   factory Roles.fromJson(Map<String, dynamic> json) => _$RolesFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$RolesToJson(this);
 }
