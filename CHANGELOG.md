@@ -4,7 +4,6 @@ All notable changes to this project will be documented in this file.
 
 ## [0.5.2] - 2020-08-10
 
-
 ### Changed
 
 - Revert to stable environment sdk range
@@ -85,6 +84,7 @@ All notable changes to this project will be documented in this file.
 - FaunaDBConfig class
 - FaunaDBClient class
 
+[0.5.2]: https://github.com/gavanitrate/faunadb-http-dart/compare/0.5.1...0.5.2
 [0.5.1]: https://github.com/gavanitrate/faunadb-http-dart/compare/0.5.0...0.5.1
 [0.5.0]: https://github.com/gavanitrate/faunadb-http-dart/compare/0.4.4...0.5.0
 [0.4.1]: https://github.com/gavanitrate/faunadb-http-dart/compare/0.4.0...0.4.1
