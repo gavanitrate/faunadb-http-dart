@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.5.1] - 2020-08-10
+
+### Added
+
+- Static analysis options file
+
+### Changed
+
+- Updated source code to pass pedantic statis analysis
+
 ## [0.5.0] - 2020-08-03
 
 ### Added
@@ -68,6 +78,7 @@ All notable changes to this project will be documented in this file.
 - FaunaDBConfig class
 - FaunaDBClient class
 
+[0.5.1]: https://github.com/gavanitrate/faunadb-http-dart/compare/0.5.0...0.5.1
 [0.5.0]: https://github.com/gavanitrate/faunadb-http-dart/compare/0.4.4...0.5.0
 [0.4.1]: https://github.com/gavanitrate/faunadb-http-dart/compare/0.4.0...0.4.1
 [0.4.0]: https://github.com/gavanitrate/faunadb-http-dart/compare/0.3.0...0.4.0
