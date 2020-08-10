@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.5.2] - 2020-08-10
+
+
+### Changed
+
+- Revert to stable environment sdk range
+
 ## [0.5.1] - 2020-08-10
 
 ### Added
