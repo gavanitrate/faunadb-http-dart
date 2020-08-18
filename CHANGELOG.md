@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.6.0] - 2020-08-18
+
+### Changed
+
+- More permissive types for query functions in `read_and_write.dart`
+
 ## [0.5.2] - 2020-08-10
 
 ### Changed
@@ -84,6 +90,7 @@ All notable changes to this project will be documented in this file.
 - FaunaDBConfig class
 - FaunaDBClient class
 
+[0.6.0]: https://github.com/gavanitrate/faunadb-http-dart/compare/0.5.2...0.6.0
 [0.5.2]: https://github.com/gavanitrate/faunadb-http-dart/compare/0.5.1...0.5.2
 [0.5.1]: https://github.com/gavanitrate/faunadb-http-dart/compare/0.5.0...0.5.1
 [0.5.0]: https://github.com/gavanitrate/faunadb-http-dart/compare/0.4.4...0.5.0

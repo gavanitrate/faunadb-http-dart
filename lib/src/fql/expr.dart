@@ -13,7 +13,7 @@ class Expr {
     } else if (value is Map<String, dynamic>) {
       return Obj(value);
     } else if (value is DateTime) {
-      return value.toIso8601String();
+      return value.microsecondsSinceEpoch;
     } else {
       return value;
     }
@@ -56,7 +56,7 @@ class Obj extends Expr {
     fromJson: Result.unwrap_values,
     toJson: Expr.wrap_values,
   )
-  final Map<String, dynamic> object;
+  final Object object;
 
   Obj(this.object);
 

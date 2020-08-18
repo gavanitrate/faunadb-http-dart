@@ -86,7 +86,7 @@ class RefResult {
   )
   final RefResult collection;
 
-  static Object _unwrapCollection(collection) {
+  static RefResult _unwrapCollection(collection) {
     if (collection == null) return null;
     return Result.unwrap_values(collection);
   }
@@ -117,7 +117,7 @@ class QueryResult {
   final Object params;
 
   @JsonKey(name: 'expr', fromJson: Result.unwrap_values)
-  final Map<String, dynamic> expression;
+  final Object expression;
 
   QueryResult(this.params, this.expression);
 

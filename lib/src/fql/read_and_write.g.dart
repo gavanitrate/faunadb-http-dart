@@ -9,7 +9,9 @@ part of 'read_and_write.dart';
 Get _$GetFromJson(Map<String, dynamic> json) {
   $checkKeys(json, disallowNullValues: const ['ts']);
   return Get(
-    json['get'],
+    json['get'] == null
+        ? null
+        : Expr.fromJson(json['get'] as Map<String, dynamic>),
     ts: json['ts'] == null ? null : DateTime.parse(json['ts'] as String),
   );
 }
@@ -25,7 +27,7 @@ Map<String, dynamic> _$GetToJson(Get instance) {
     }
   }
 
-  writeNotNull('ts', instance.ts?.toIso8601String());
+  writeNotNull('ts', Expr.wrap_value(instance.ts));
   return val;
 }
 
@@ -41,14 +43,18 @@ Map<String, dynamic> _$KeyFromSecretToJson(KeyFromSecret instance) =>
     };
 
 Paginate _$PaginateFromJson(Map<String, dynamic> json) {
-  $checkKeys(json, disallowNullValues: const ['size', 'after']);
+  $checkKeys(json,
+      disallowNullValues: const ['ts', 'after', 'size', 'events', 'sources']);
   return Paginate(
     json['paginate'] == null
         ? null
         : Expr.fromJson(json['paginate'] as Map<String, dynamic>),
+    ts: json['ts'] == null ? null : DateTime.parse(json['ts'] as String),
     size: json['size'] as int,
     before: json['before'],
     after: json['after'],
+    events: json['events'] as bool,
+    sources: json['sources'] as bool,
   );
 }
 
@@ -63,9 +69,12 @@ Map<String, dynamic> _$PaginateToJson(Paginate instance) {
     }
   }
 
-  writeNotNull('size', instance.size);
+  writeNotNull('ts', Expr.wrap_value(instance.ts));
   val['before'] = instance.before;
   writeNotNull('after', instance.after);
+  writeNotNull('size', instance.size);
+  writeNotNull('events', instance.events);
+  writeNotNull('sources', instance.sources);
   return val;
 }
 
@@ -76,7 +85,9 @@ Select _$SelectFromJson(Map<String, dynamic> json) {
     json['from'] == null
         ? null
         : Expr.fromJson(json['from'] as Map<String, dynamic>),
-    default_: json['default'],
+    default_: json['default'] == null
+        ? null
+        : Expr.fromJson(json['default'] as Map<String, dynamic>),
   );
 }
 
@@ -100,7 +111,7 @@ Create _$CreateFromJson(Map<String, dynamic> json) {
   return Create(
     json['create'] == null
         ? null
-        : Collection.fromJson(json['create'] as Map<String, dynamic>),
+        : Expr.fromJson(json['create'] as Map<String, dynamic>),
     json['params'] == null
         ? null
         : Obj.fromJson(json['params'] as Map<String, dynamic>),
@@ -193,7 +204,7 @@ Delete _$DeleteFromJson(Map<String, dynamic> json) {
   return Delete(
     json['delete'] == null
         ? null
-        : Ref.fromJson(json['delete'] as Map<String, dynamic>),
+        : Expr.fromJson(json['delete'] as Map<String, dynamic>),
   );
 }
 
@@ -235,7 +246,7 @@ Remove _$RemoveFromJson(Map<String, dynamic> json) {
   return Remove(
     json['remove'] == null
         ? null
-        : Ref.fromJson(json['remove'] as Map<String, dynamic>),
+        : Expr.fromJson(json['remove'] as Map<String, dynamic>),
     json['ts'],
     json['action'],
   );
@@ -251,7 +262,7 @@ Replace _$ReplaceFromJson(Map<String, dynamic> json) {
   return Replace(
     json['replace'] == null
         ? null
-        : Ref.fromJson(json['replace'] as Map<String, dynamic>),
+        : Expr.fromJson(json['replace'] as Map<String, dynamic>),
     json['params'] == null
         ? null
         : Obj.fromJson(json['params'] as Map<String, dynamic>),
@@ -267,7 +278,7 @@ Update _$UpdateFromJson(Map<String, dynamic> json) {
   return Update(
     json['update'] == null
         ? null
-        : Ref.fromJson(json['update'] as Map<String, dynamic>),
+        : Expr.fromJson(json['update'] as Map<String, dynamic>),
     json['params'] == null
         ? null
         : Obj.fromJson(json['params'] as Map<String, dynamic>),

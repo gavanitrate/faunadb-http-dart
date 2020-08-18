@@ -9,9 +9,13 @@ part 'read_and_write.g.dart';
 @JsonSerializable()
 class Get extends Expr {
   @JsonKey(name: 'get')
-  final Object ref;
+  final Expr ref;
 
-  @JsonKey(disallowNullValue: true, includeIfNull: false)
+  @JsonKey(
+    disallowNullValue: true,
+    includeIfNull: false,
+    toJson: Expr.wrap_value,
+  )
   final DateTime ts;
 
   Get(this.ref, {this.ts});
@@ -41,8 +45,12 @@ class Paginate extends Expr {
   @JsonKey(name: 'paginate')
   final Expr input;
 
-  @JsonKey(disallowNullValue: true, includeIfNull: false)
-  final int size;
+  @JsonKey(
+    disallowNullValue: true,
+    includeIfNull: false,
+    toJson: Expr.wrap_value,
+  )
+  final DateTime ts;
 
   @JsonKey(disallowNullValue: false, includeIfNull: true)
   final Object before;
@@ -50,11 +58,23 @@ class Paginate extends Expr {
   @JsonKey(disallowNullValue: true, includeIfNull: false)
   final Object after;
 
+  @JsonKey(disallowNullValue: true, includeIfNull: false)
+  final int size;
+
+  @JsonKey(disallowNullValue: true, includeIfNull: false)
+  final bool events;
+
+  @JsonKey(disallowNullValue: true, includeIfNull: false)
+  final bool sources;
+
   Paginate(
     this.input, {
+    this.ts,
     this.size,
     this.before = CursorType.EMPTY,
     this.after = CursorType.EMPTY,
+    this.events,
+    this.sources,
   });
 
   factory Paginate.fromJson(Map<String, dynamic> json) =>
@@ -81,7 +101,7 @@ class Select extends Expr {
   final Expr from;
 
   @JsonKey(name: 'default', disallowNullValue: true, includeIfNull: false)
-  final Object default_;
+  final Expr default_;
 
   Select(this.path, this.from, {this.default_});
 
@@ -94,7 +114,7 @@ class Select extends Expr {
 @JsonSerializable()
 class Create extends Expr {
   @JsonKey(name: 'create')
-  final Collection collection;
+  final Expr collection;
 
   @JsonKey(name: 'params')
   final Obj param_object;
@@ -194,7 +214,7 @@ class CreateRole extends Expr {
 @JsonSerializable()
 class Delete extends Expr {
   @JsonKey(name: 'delete')
-  final Ref ref;
+  final Expr ref;
 
   Delete(this.ref);
 
@@ -240,7 +260,7 @@ class Insert extends Expr {
 @JsonSerializable()
 class Remove extends Expr {
   @JsonKey(name: 'remove')
-  final Ref ref;
+  final Expr ref;
 
   final Object ts;
 
@@ -257,7 +277,7 @@ class Remove extends Expr {
 @JsonSerializable()
 class Replace extends Expr {
   @JsonKey(name: 'replace')
-  final Ref ref;
+  final Expr ref;
 
   @JsonKey(name: 'params')
   final Obj param_object;
@@ -274,7 +294,7 @@ class Replace extends Expr {
 @JsonSerializable()
 class Update extends Expr {
   @JsonKey(name: 'update')
-  final Ref ref;
+  final Expr ref;
 
   @JsonKey(name: 'params')
   final Obj param_object;
