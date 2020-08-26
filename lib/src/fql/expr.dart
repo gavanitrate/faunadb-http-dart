@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:faunadb_http/query.dart';
 import 'package:faunadb_http/src/fql/result.dart';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -13,7 +14,7 @@ class Expr {
     } else if (value is Map<String, dynamic>) {
       return Obj(value);
     } else if (value is DateTime) {
-      return value.microsecondsSinceEpoch;
+      return Time(value.toUtc().toIso8601String());
     } else {
       return value;
     }
