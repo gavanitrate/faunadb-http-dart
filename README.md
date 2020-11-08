@@ -75,7 +75,7 @@ Check out the [FQL Cheat Sheet][cheat_sheet] to see all valid FQL functions.
   // read
   //
 
-  final callDoubleFunction = Call(Function_('double'), 2);
+  final callDoubleFunction = Call(Function_('double'), arguments: 2);
 
   final paginateUsers = Paginate(
     Match(Index('user-by-name'), terms: ['Gavan Singh']),
