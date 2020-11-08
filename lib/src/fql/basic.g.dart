@@ -23,16 +23,27 @@ Map<String, dynamic> _$AtToJson(At instance) => <String, dynamic>{
     };
 
 Call _$CallFromJson(Map<String, dynamic> json) {
+  $checkKeys(json, disallowNullValues: const ['arguments']);
   return Call(
     json['call'],
-    json['arguments'],
+    arguments: json['arguments'],
   );
 }
 
-Map<String, dynamic> _$CallToJson(Call instance) => <String, dynamic>{
-      'call': instance.function,
-      'arguments': instance.arguments,
-    };
+Map<String, dynamic> _$CallToJson(Call instance) {
+  final val = <String, dynamic>{
+    'call': instance.function,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('arguments', instance.arguments);
+  return val;
+}
 
 Do _$DoFromJson(Map<String, dynamic> json) {
   return Do(

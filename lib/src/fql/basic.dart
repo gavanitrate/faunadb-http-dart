@@ -26,9 +26,10 @@ class Call extends Expr {
   @JsonKey(name: 'call')
   final Object function;
 
+  @JsonKey(disallowNullValue: true, includeIfNull: false)
   final Object arguments;
 
-  Call(this.function, this.arguments);
+  Call(this.function, {this.arguments});
 
   factory Call.fromJson(Map<String, dynamic> json) => _$CallFromJson(json);
 
