@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.8.0] - 2020-11-08
+
+### Added
+
+- `example/crud.dart` - Has several example FQL queries
+
+### Changed
+
+- `Call` arguments are now optional
+- Update documentation
+
 ## [0.7.0] - 2020-08-26
 
 ### Changed
@@ -34,9 +45,9 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
-- Page class
-- asRef method in RefResult class
-- asPage method in FaunaResponse class
+- `Page` class
+- `asRef` method in `RefResult` class
+- `asPage` method in `FaunaResponse` class
 
 ## [0.4.1] - 2020-07-24
 
@@ -49,11 +60,11 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
-- FaunaResponse class added to query export; this helps with autocomplete in IDEs
+- `FaunaResponse` class added to query export; this helps with autocomplete in IDEs
 
 ### Changed
 
-- QueryResult class renamed to FaunaResponse class
+- `QueryResult` class renamed to `FaunaResponse` class
 - Fixed date typo in CHANGELOG.md
 
 ## [0.3.0] - 2020-07-08
@@ -65,7 +76,7 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 
-- FaunaClient.query accepts both raw JSON or composed queries
+- `FaunaClient.query` accepts both raw JSON or composed queries
 
 ## [0.2.1] - 2020-06-21
 
@@ -81,21 +92,22 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 
-- Add headers, timeout, queryTimeout parameters in FaunaDBConfig class
+- Add `headers`, `timeout`, `queryTimeout` parameters in `FaunaDBConfig` class
 
 ## [0.1.1] - 2020-06-19
 
 ### Changed
 
-- Specified data types to FaunaDBConfig.create method 
+- Specified data types to `FaunaDBConfig.create` method 
 
 ## [0.1.0] - 2020-06-19
 
 ### Added
 
-- FaunaDBConfig class
-- FaunaDBClient class
+- `FaunaDBConfig` class
+- `FaunaDBClient` class
 
+[0.8.0]: https://github.com/gavanitrate/faunadb-http-dart/compare/0.7.0...0.8.0
 [0.7.0]: https://github.com/gavanitrate/faunadb-http-dart/compare/0.6.0...0.7.0
 [0.6.0]: https://github.com/gavanitrate/faunadb-http-dart/compare/0.5.2...0.6.0
 [0.5.2]: https://github.com/gavanitrate/faunadb-http-dart/compare/0.5.1...0.5.2
