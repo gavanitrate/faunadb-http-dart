@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.8.1] - 2020-11-08
+
+### Changed
+
+- Update documentation
+
 ## [0.8.0] - 2020-11-08
 
 ### Added
@@ -107,6 +113,7 @@ All notable changes to this project will be documented in this file.
 - `FaunaDBConfig` class
 - `FaunaDBClient` class
 
+[0.8.1]: https://github.com/gavanitrate/faunadb-http-dart/compare/0.8.0...0.8.1
 [0.8.0]: https://github.com/gavanitrate/faunadb-http-dart/compare/0.7.0...0.8.0
 [0.7.0]: https://github.com/gavanitrate/faunadb-http-dart/compare/0.6.0...0.7.0
 [0.6.0]: https://github.com/gavanitrate/faunadb-http-dart/compare/0.5.2...0.6.0
