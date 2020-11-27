@@ -9,8 +9,7 @@ part 'authentication.g.dart';
 class HasIdentity extends Expr {
   HasIdentity();
 
-  factory HasIdentity.fromJson(Map<String, dynamic> json) =>
-      _$HasIdentityFromJson(json);
+  factory HasIdentity.fromJson(Map<String, dynamic> json) => _$HasIdentityFromJson(json);
 
   @override
   Map<String, dynamic> toJson() => const {'has_identity': null};
@@ -24,8 +23,7 @@ class Identify extends Expr {
 
   Identify(this.identity, this.password);
 
-  factory Identify.fromJson(Map<String, dynamic> json) =>
-      _$IdentifyFromJson(json);
+  factory Identify.fromJson(Map<String, dynamic> json) => _$IdentifyFromJson(json);
 
   @override
   Map<String, dynamic> toJson() => _$IdentifyToJson(this);
@@ -35,8 +33,7 @@ class Identify extends Expr {
 class Identity extends Expr {
   Identity();
 
-  factory Identity.fromJson(Map<String, dynamic> json) =>
-      _$IdentityFromJson(json);
+  factory Identity.fromJson(Map<String, dynamic> json) => _$IdentityFromJson(json);
 
   @override
   Map<String, dynamic> toJson() => const {'identity': null};
@@ -60,6 +57,7 @@ class Login extends Expr {
   @JsonKey(name: 'login')
   final Object identity;
 
+  @JsonKey(name: 'params')
   final Obj param_object;
 
   Login(this.identity, this.param_object);

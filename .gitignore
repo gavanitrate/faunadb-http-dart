@@ -2,3 +2,5 @@
 .dart_tool/
 .packages
 doc/
+.vscode/
+.DS_Store
