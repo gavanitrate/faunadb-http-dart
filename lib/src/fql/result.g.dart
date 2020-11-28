@@ -45,7 +45,8 @@ FaunaResponse _$FaunaResponseFromJson(Map<String, dynamic> json) {
   return FaunaResponse(
     resource: Result.unwrap_values(json['resource']),
     errors: (json['errors'] as List)
-        ?.map((e) => e as Map<String, dynamic>)
+        ?.map((e) =>
+            e == null ? null : QueryError.fromJson(e as Map<String, dynamic>))
         ?.toList(),
   );
 }
@@ -60,6 +61,6 @@ Map<String, dynamic> _$FaunaResponseToJson(FaunaResponse instance) {
   }
 
   writeNotNull('resource', Expr.wrap_values(instance.resource));
-  writeNotNull('errors', instance.errors);
+  val['errors'] = instance.errors;
   return val;
 }

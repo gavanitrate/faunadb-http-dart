@@ -5,6 +5,7 @@ export 'src/fql/expr.dart';
 export 'src/fql/logic.dart';
 export 'src/fql/math.dart';
 export 'src/fql/miscellaneous.dart';
+export 'src/fql/query_error.dart';
 export 'src/fql/read_and_write.dart';
 export 'src/fql/string.dart';
 export 'src/fql/time_and_date.dart';
