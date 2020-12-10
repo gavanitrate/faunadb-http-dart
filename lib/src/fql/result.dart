@@ -136,6 +136,10 @@ class FaunaResponse {
   @JsonKey(ignore: true)
   String raw;
 
+  Map<String, dynamic> asMap() {
+    return json.decode(raw) as Map<String, dynamic>;
+  }
+
   @JsonKey(
     includeIfNull: false,
     fromJson: Result.unwrap_values,
