@@ -60,6 +60,7 @@ class Login extends Expr {
   @JsonKey(name: 'login')
   final Object identity;
 
+  @JsonKey(name: 'params')
   final Obj param_object;
 
   Login(this.identity, this.param_object);
