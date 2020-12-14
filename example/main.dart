@@ -13,7 +13,7 @@ void main(List<String> arguments) async {
   // final config = FaunaDBConfig.build(secret: '<your_secret_here>');
   final client = FaunaClient(config);
 
-  final query = CreateCollection(Obj({'name': 'users'}));
+  final query = CurrentToken();
   print('query=>\n${query}');
 
   final response = await client.query(query);

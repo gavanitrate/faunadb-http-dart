@@ -6,6 +6,46 @@ import 'miscellaneous.dart';
 part 'authentication.g.dart';
 
 @JsonSerializable(createToJson: false)
+class Credentials extends Expr {
+  Credentials();
+
+  factory Credentials.fromJson(Map<String, dynamic> json) =>
+      _$CredentialsFromJson(json);
+
+  Map<String, dynamic> toJson() => const {'credentials': null};
+}
+
+@JsonSerializable()
+class CurrentIdentity extends Expr {
+  CurrentIdentity();
+
+  factory CurrentIdentity.fromJson(Map<String, dynamic> json) =>
+      _$CurrentIdentityFromJson(json);
+
+  Map<String, dynamic> toJson() => const {'current_identity': null};
+}
+
+@JsonSerializable(createToJson: false)
+class CurrentToken extends Expr {
+  CurrentToken();
+
+  factory CurrentToken.fromJson(Map<String, dynamic> json) =>
+      _$CurrentTokenFromJson(json);
+
+  Map<String, dynamic> toJson() => const {'current_token': null};
+}
+
+@JsonSerializable(createToJson: false)
+class HasCurrentToken extends Expr {
+  HasCurrentToken();
+
+  factory HasCurrentToken.fromJson(Map<String, dynamic> json) =>
+      _$HasCurrentTokenFromJson(json);
+
+  Map<String, dynamic> toJson() => const {'has_current_token': null};
+}
+
+@JsonSerializable(createToJson: false)
 class HasIdentity extends Expr {
   HasIdentity();
 
