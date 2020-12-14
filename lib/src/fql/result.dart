@@ -151,6 +151,11 @@ class FaunaResponse {
 
   FaunaResponse({this.resource, this.errors});
 
+  /// Convenience method to convert result to a Dart Map
+  Map<String, dynamic> asMap() {
+    return json.decode(raw) as Map<String, dynamic>;
+  }
+
   /// Convenience method to build a Page object
   /// from query result.
   ///
