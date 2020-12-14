@@ -6,6 +6,22 @@ part of 'authentication.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
+Credentials _$CredentialsFromJson(Map<String, dynamic> json) {
+  return Credentials();
+}
+
+CurrentIdentity _$CurrentIdentityFromJson(Map<String, dynamic> json) {
+  return CurrentIdentity();
+}
+
+CurrentToken _$CurrentTokenFromJson(Map<String, dynamic> json) {
+  return CurrentToken();
+}
+
+HasCurrentToken _$HasCurrentTokenFromJson(Map<String, dynamic> json) {
+  return HasCurrentToken();
+}
+
 HasIdentity _$HasIdentityFromJson(Map<String, dynamic> json) {
   return HasIdentity();
 }
@@ -41,15 +57,15 @@ Map<String, dynamic> _$KeysToJson(Keys instance) => <String, dynamic>{
 Login _$LoginFromJson(Map<String, dynamic> json) {
   return Login(
     json['login'],
-    json['param_object'] == null
+    json['params'] == null
         ? null
-        : Obj.fromJson(json['param_object'] as Map<String, dynamic>),
+        : Obj.fromJson(json['params'] as Map<String, dynamic>),
   );
 }
 
 Map<String, dynamic> _$LoginToJson(Login instance) => <String, dynamic>{
       'login': instance.identity,
-      'param_object': instance.param_object,
+      'params': instance.param_object,
     };
 
 Logout _$LogoutFromJson(Map<String, dynamic> json) {

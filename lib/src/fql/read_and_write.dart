@@ -258,6 +258,25 @@ class Insert extends Expr {
 }
 
 @JsonSerializable()
+class Merge extends Expr {
+  @JsonKey(name: 'merge')
+  final Object object1;
+
+  @JsonKey(name: 'with')
+  final Object object2;
+
+  @JsonKey(name: 'lambda', disallowNullValue: true, includeIfNull: false)
+  final Object customResolver;
+
+  Merge(this.object1, this.object2, {this.customResolver});
+
+  factory Merge.fromJson(Map<String, dynamic> json) => _$MergeFromJson(json);
+
+  @override
+  Map<String, dynamic> toJson() => _$MergeToJson(this);
+}
+
+@JsonSerializable()
 class Remove extends Expr {
   @JsonKey(name: 'remove')
   final Expr ref;

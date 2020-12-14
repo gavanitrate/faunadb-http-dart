@@ -242,6 +242,31 @@ Map<String, dynamic> _$InsertToJson(Insert instance) => <String, dynamic>{
       'params': instance.param_object,
     };
 
+Merge _$MergeFromJson(Map<String, dynamic> json) {
+  $checkKeys(json, disallowNullValues: const ['lambda']);
+  return Merge(
+    json['merge'],
+    json['with'],
+    customResolver: json['lambda'],
+  );
+}
+
+Map<String, dynamic> _$MergeToJson(Merge instance) {
+  final val = <String, dynamic>{
+    'merge': instance.object1,
+    'with': instance.object2,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('lambda', instance.customResolver);
+  return val;
+}
+
 Remove _$RemoveFromJson(Map<String, dynamic> json) {
   return Remove(
     json['remove'] == null

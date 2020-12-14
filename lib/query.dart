@@ -1,6 +1,7 @@
 export 'src/fql/array_and_set.dart';
 export 'src/fql/authentication.dart';
 export 'src/fql/basic.dart';
+export 'src/fql/conversion.dart';
 export 'src/fql/expr.dart';
 export 'src/fql/logic.dart';
 export 'src/fql/math.dart';
