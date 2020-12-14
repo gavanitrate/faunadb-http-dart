@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.9.0] - 2020-12-14
+
+### Added
+
+- Authentication FQL functions:
+    - Credentials, CurrentIdentity, CurrentToken, HasCurrentToken
+- Conversion FQL functions:
+    - ToArray, ToDate, ToDouble, ToInteger, ToMicros, ToMillis, ToNumber, ToObject, ToSeconds, ToString, ToTime
+
+### Changed
+
+- Fixed `Login` FQL function (incorrect JSON name of parameter)
+
 ## [0.8.1] - 2020-11-08
 
 ### Changed
@@ -23,7 +36,7 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 
-- `DateTime` automatically converted to FaunaTime data type inside of Expressions 
+- `DateTime` automatically converted to FaunaTime data type inside of Expressions
 
 ## [0.6.0] - 2020-08-18
 
@@ -104,7 +117,7 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 
-- Specified data types to `FaunaDBConfig.create` method 
+- Specified data types to `FaunaDBConfig.create` method
 
 ## [0.1.0] - 2020-06-19
 
@@ -113,17 +126,32 @@ All notable changes to this project will be documented in this file.
 - `FaunaDBConfig` class
 - `FaunaDBClient` class
 
+[0.9.0]: https://github.com/gavanitrate/faunadb-http-dart/compare/0.8.1...0.9.0
+
 [0.8.1]: https://github.com/gavanitrate/faunadb-http-dart/compare/0.8.0...0.8.1
+
 [0.8.0]: https://github.com/gavanitrate/faunadb-http-dart/compare/0.7.0...0.8.0
+
 [0.7.0]: https://github.com/gavanitrate/faunadb-http-dart/compare/0.6.0...0.7.0
+
 [0.6.0]: https://github.com/gavanitrate/faunadb-http-dart/compare/0.5.2...0.6.0
+
 [0.5.2]: https://github.com/gavanitrate/faunadb-http-dart/compare/0.5.1...0.5.2
+
 [0.5.1]: https://github.com/gavanitrate/faunadb-http-dart/compare/0.5.0...0.5.1
+
 [0.5.0]: https://github.com/gavanitrate/faunadb-http-dart/compare/0.4.4...0.5.0
+
 [0.4.1]: https://github.com/gavanitrate/faunadb-http-dart/compare/0.4.0...0.4.1
+
 [0.4.0]: https://github.com/gavanitrate/faunadb-http-dart/compare/0.3.0...0.4.0
+
 [0.3.0]: https://github.com/gavanitrate/faunadb-http-dart/compare/0.2.1...0.3.0
+
 [0.2.1]: https://github.com/gavanitrate/faunadb-http-dart/compare/0.2.0...0.2.1
+
 [0.2.0]: https://github.com/gavanitrate/faunadb-http-dart/compare/0.1.1...0.2.0
+
 [0.1.1]: https://github.com/gavanitrate/faunadb-http-dart/compare/0.1.0...0.1.1
+
 [0.1.0]: https://github.com/gavanitrate/faunadb-http-dart/releases/tag/0.1.0
