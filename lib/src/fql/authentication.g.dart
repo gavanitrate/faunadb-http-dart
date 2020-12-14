@@ -14,9 +14,6 @@ CurrentIdentity _$CurrentIdentityFromJson(Map<String, dynamic> json) {
   return CurrentIdentity();
 }
 
-Map<String, dynamic> _$CurrentIdentityToJson(CurrentIdentity instance) =>
-    <String, dynamic>{};
-
 CurrentToken _$CurrentTokenFromJson(Map<String, dynamic> json) {
   return CurrentToken();
 }

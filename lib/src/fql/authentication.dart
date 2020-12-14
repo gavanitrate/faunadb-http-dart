@@ -12,16 +12,18 @@ class Credentials extends Expr {
   factory Credentials.fromJson(Map<String, dynamic> json) =>
       _$CredentialsFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => const {'credentials': null};
 }
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class CurrentIdentity extends Expr {
   CurrentIdentity();
 
   factory CurrentIdentity.fromJson(Map<String, dynamic> json) =>
       _$CurrentIdentityFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => const {'current_identity': null};
 }
 
@@ -32,6 +34,7 @@ class CurrentToken extends Expr {
   factory CurrentToken.fromJson(Map<String, dynamic> json) =>
       _$CurrentTokenFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => const {'current_token': null};
 }
 
@@ -42,6 +45,7 @@ class HasCurrentToken extends Expr {
   factory HasCurrentToken.fromJson(Map<String, dynamic> json) =>
       _$HasCurrentTokenFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => const {'has_current_token': null};
 }
 
