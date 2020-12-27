@@ -3,7 +3,7 @@
 A pure Dart implementation of a [FaunaDB][faunadb] client.
 This library also provides query classes that closely mimic FQL functions.
 
-[faunadb]: https://fauna.com/ 
+[faunadb]: https://fauna.com/
 
 
 ## Usage
@@ -21,7 +21,7 @@ void main() async {
   final client = FaunaClient(config);
 
   final query = Paginate(Match(Index('all_customers')));
-  
+
   final result = await client.query(query);
   print(result);
 
@@ -83,6 +83,24 @@ Check out the [FQL Cheat Sheet][cheat_sheet] to see all valid FQL functions.
 
   final readUser = Get(Ref(Collection('users'), '281080202238362125'));
 
+  final readAllUsers = Map_(
+      Paginate(Match(Index('all_Users'))),
+      Lambda(
+        'userRef',
+        Let(
+          {
+            'userDoc': Get(Var('userRef')),
+          },
+          Obj(
+            {
+              'id': Select(['ref', 'id'], Var('userDoc')),
+              'name': Select(['data', 'name'], Var('userDoc')),
+            },
+          ),
+        ),
+      ),
+    );
+
   final paginateCollections = Paginate(Collections());
 
   //
@@ -113,7 +131,7 @@ Here are examples of each type of difference.
 - Optional FQL arguments are named arguments in Dart.
   - `Repeat('x', number: 10)`
   - `Paginate(Collections(), size: 2)`
-  
+
 - FQL functions with a variable number of arguments (such as Sum, GT etc.) accept a Dart List instead.
   - `Add([1, Var('x')])`
 
@@ -121,4 +139,3 @@ Here are examples of each type of difference.
   - `Map` becomes `Map_`
   - `Function` becomes `Function_`
   - `default` becomes `default_`
- 
