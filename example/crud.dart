@@ -48,6 +48,24 @@ void main(List<String> arguments) async {
 
   final readUser = Get(Ref(Collection('users'), '281080202238362125'));
 
+  final readAllUsers = Map_(
+    Paginate(Match(Index('all_Users'))),
+    Lambda(
+      'userRef',
+      Let(
+        {
+          'userDoc': Get(Var('userRef')),
+        },
+        Obj(
+          {
+            'id': Select(['ref', 'id'], Var('userDoc')),
+            'name': Select(['data', 'name'], Var('userDoc')),
+          },
+        ),
+      ),
+    ),
+  );
+
   final paginateCollections = Paginate(Collections());
 
   //
