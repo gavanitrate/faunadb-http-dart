@@ -164,6 +164,7 @@ class Join extends Expr {
   @JsonKey(name: 'join')
   final Object source;
 
+  @JsonKey(name: 'with')
   final Object detail;
 
   Join(this.source, this.detail);
