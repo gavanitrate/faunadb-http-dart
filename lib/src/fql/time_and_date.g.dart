@@ -131,6 +131,49 @@ Map<String, dynamic> _$TimeToJson(Time instance) => <String, dynamic>{
       'time': instance.str,
     };
 
+TimeAdd _$TimeAddFromJson(Map<String, dynamic> json) {
+  return TimeAdd(
+    json['time_add'],
+    json['offset'],
+    json['unit'],
+  );
+}
+
+Map<String, dynamic> _$TimeAddToJson(TimeAdd instance) => <String, dynamic>{
+      'time_add': instance.base,
+      'offset': instance.offset,
+      'unit': instance.unit,
+    };
+
+TimeDiff _$TimeDiffFromJson(Map<String, dynamic> json) {
+  return TimeDiff(
+    json['time_diff'],
+    json['other'],
+    json['unit'],
+  );
+}
+
+Map<String, dynamic> _$TimeDiffToJson(TimeDiff instance) => <String, dynamic>{
+      'time_diff': instance.start,
+      'other': instance.finish,
+      'unit': instance.unit,
+    };
+
+TimeSubtract _$TimeSubtractFromJson(Map<String, dynamic> json) {
+  return TimeSubtract(
+    json['time_subtract'],
+    json['offset'],
+    json['unit'],
+  );
+}
+
+Map<String, dynamic> _$TimeSubtractToJson(TimeSubtract instance) =>
+    <String, dynamic>{
+      'time_subtract': instance.base,
+      'offset': instance.offset,
+      'unit': instance.unit,
+    };
+
 Year _$YearFromJson(Map<String, dynamic> json) {
   return Year(
     json['year'] == null

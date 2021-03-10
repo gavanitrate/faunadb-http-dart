@@ -155,6 +155,61 @@ class Time extends Expr {
 }
 
 @JsonSerializable()
+class TimeAdd extends Expr {
+  @JsonKey(name: 'time_add')
+  final Object base;
+
+  final Object offset;
+
+  final Object unit;
+
+  TimeAdd(this.base, this.offset, this.unit);
+
+  factory TimeAdd.fromJson(Map<String, dynamic> json) =>
+      _$TimeAddFromJson(json);
+
+  @override
+  Map<String, dynamic> toJson() => _$TimeAddToJson(this);
+}
+
+@JsonSerializable()
+class TimeDiff extends Expr {
+  @JsonKey(name: 'time_diff')
+  final Object start;
+
+  @JsonKey(name: 'other')
+  final Object finish;
+
+  final Object unit;
+
+  TimeDiff(this.start, this.finish, this.unit);
+
+  factory TimeDiff.fromJson(Map<String, dynamic> json) =>
+      _$TimeDiffFromJson(json);
+
+  @override
+  Map<String, dynamic> toJson() => _$TimeDiffToJson(this);
+}
+
+@JsonSerializable()
+class TimeSubtract extends Expr {
+  @JsonKey(name: 'time_subtract')
+  final Object base;
+
+  final Object offset;
+
+  final Object unit;
+
+  TimeSubtract(this.base, this.offset, this.unit);
+
+  factory TimeSubtract.fromJson(Map<String, dynamic> json) =>
+      _$TimeSubtractFromJson(json);
+
+  @override
+  Map<String, dynamic> toJson() => _$TimeSubtractToJson(this);
+}
+
+@JsonSerializable()
 class Year extends Expr {
   @JsonKey(name: 'year')
   final Expr timestamp;
