@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.10.0] - 2021-03-10
+
+### Added
+
+- Time FQL functions:
+    - `TimeAdd`, `TimeSubtract`, `TimeDiff`
+
 ## [0.9.1] - 2021-02-25
 
 ### Changed
@@ -13,9 +20,10 @@ All notable changes to this project will be documented in this file.
 ### Added
 
 - Authentication FQL functions:
-  - Credentials, CurrentIdentity, CurrentToken, HasCurrentToken
+    - `Credentials`, `CurrentIdentity`, `CurrentToken`, `HasCurrentToken`
 - Conversion FQL functions:
-  - ToArray, ToDate, ToDouble, ToInteger, ToMicros, ToMillis, ToNumber, ToObject, ToSeconds, ToString, ToTime
+    - `ToArray`, `ToDate`, `ToDouble`, `ToInteger`, `ToMicros`, `ToMillis`, `ToNumber`, `ToObject`, `ToSeconds`
+      , `ToString`, `ToTime`
 
 ### Changed
 
@@ -131,6 +139,8 @@ All notable changes to this project will be documented in this file.
 
 - `FaunaDBConfig` class
 - `FaunaDBClient` class
+
+[0.10.0]: https://github.com/gavanitrate/faunadb-http-dart/compare/0.9.1...0.10.0
 
 [0.9.1]: https://github.com/gavanitrate/faunadb-http-dart/compare/0.9.0...0.9.1
 
