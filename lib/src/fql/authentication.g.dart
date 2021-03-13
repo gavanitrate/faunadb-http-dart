@@ -28,7 +28,7 @@ HasIdentity _$HasIdentityFromJson(Map<String, dynamic> json) {
 
 Identify _$IdentifyFromJson(Map<String, dynamic> json) {
   return Identify(
-    json['identity'] ?? Ref.fromJson(json['identity'] as Map<String, dynamic>),
+    Ref.fromJson(json['identity'] as Map<String, dynamic>),
     json['password'] as String,
   );
 }
@@ -54,8 +54,8 @@ Map<String, dynamic> _$KeysToJson(Keys instance) => <String, dynamic>{
 
 Login _$LoginFromJson(Map<String, dynamic> json) {
   return Login(
-    json['login'],
-    json['params'] ?? Obj.fromJson(json['params'] as Map<String, dynamic>),
+    json['login'] as Object,
+    Obj.fromJson(json['params'] as Map<String, dynamic>),
   );
 }
 
@@ -66,7 +66,7 @@ Map<String, dynamic> _$LoginToJson(Login instance) => <String, dynamic>{
 
 Logout _$LogoutFromJson(Map<String, dynamic> json) {
   return Logout(
-    all_tokens: json['logout'] as bool,
+    all_tokens: json['logout'] as bool?,
   );
 }
 

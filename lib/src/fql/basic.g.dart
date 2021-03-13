@@ -8,8 +8,8 @@ part of 'basic.dart';
 
 At _$AtFromJson(Map<String, dynamic> json) {
   return At(
-    json['at'] ?? Time.fromJson(json['at'] as Map<String, dynamic>),
-    json['expr'] ?? Expr.fromJson(json['expr'] as Map<String, dynamic>),
+    Time.fromJson(json['at'] as Map<String, dynamic>),
+    Expr.fromJson(json['expr'] as Map<String, dynamic>),
   );
 }
 
@@ -21,7 +21,7 @@ Map<String, dynamic> _$AtToJson(At instance) => <String, dynamic>{
 Call _$CallFromJson(Map<String, dynamic> json) {
   $checkKeys(json, disallowNullValues: const ['arguments']);
   return Call(
-    json['call'],
+    json['call'] as Object,
     arguments: json['arguments'],
   );
 }
@@ -43,7 +43,7 @@ Map<String, dynamic> _$CallToJson(Call instance) {
 
 Do _$DoFromJson(Map<String, dynamic> json) {
   return Do(
-    json['do'] as List,
+    json['do'] as List<dynamic>,
   );
 }
 
@@ -53,9 +53,9 @@ Map<String, dynamic> _$DoToJson(Do instance) => <String, dynamic>{
 
 If _$IfFromJson(Map<String, dynamic> json) {
   return If(
-    json['if'],
-    json['then'],
-    json['else'],
+    json['if'] as Object,
+    json['then'] as Object,
+    json['else'] as Object,
   );
 }
 
@@ -67,8 +67,8 @@ Map<String, dynamic> _$IfToJson(If instance) => <String, dynamic>{
 
 Lambda _$LambdaFromJson(Map<String, dynamic> json) {
   return Lambda(
-    json['lambda'],
-    json['expr'] ?? Expr.fromJson(json['expr'] as Map<String, dynamic>),
+    json['lambda'] as Object,
+    Expr.fromJson(json['expr'] as Map<String, dynamic>),
   );
 }
 
@@ -80,7 +80,7 @@ Map<String, dynamic> _$LambdaToJson(Lambda instance) => <String, dynamic>{
 Let _$LetFromJson(Map<String, dynamic> json) {
   return Let(
     json['let'] as Map<String, dynamic>,
-    json['in'] ?? Expr.fromJson(json['in'] as Map<String, dynamic>),
+    Expr.fromJson(json['in'] as Map<String, dynamic>),
   );
 }
 

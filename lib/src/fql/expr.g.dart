@@ -15,7 +15,7 @@ Map<String, dynamic> _$ExprToJson(Expr instance) => <String, dynamic>{};
 Obj _$ObjFromJson(Map<String, dynamic> json) {
   $checkKeys(json, requiredKeys: const ['object']);
   return Obj(
-    Result.unwrap_values(json['object'])!,
+    Result.unwrap_values(json['object']),
   );
 }
 

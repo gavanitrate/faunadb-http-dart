@@ -8,8 +8,8 @@ part of 'array_and_set.dart';
 
 Append _$AppendFromJson(Map<String, dynamic> json) {
   return Append(
-    json['append'],
-    json['collection'],
+    json['append'] as Object,
+    json['collection'] as Object,
   );
 }
 
@@ -20,7 +20,7 @@ Map<String, dynamic> _$AppendToJson(Append instance) => <String, dynamic>{
 
 Count _$CountFromJson(Map<String, dynamic> json) {
   return Count(
-    json['count'],
+    json['count'] as Object,
   );
 }
 
@@ -30,7 +30,7 @@ Map<String, dynamic> _$CountToJson(Count instance) => <String, dynamic>{
 
 Distinct _$DistinctFromJson(Map<String, dynamic> json) {
   return Distinct(
-    json['distinct'],
+    json['distinct'] as Object,
   );
 }
 
@@ -40,8 +40,8 @@ Map<String, dynamic> _$DistinctToJson(Distinct instance) => <String, dynamic>{
 
 Drop _$DropFromJson(Map<String, dynamic> json) {
   return Drop(
-    json['drop'],
-    json['collection'],
+    json['drop'] as Object,
+    json['collection'] as Object,
   );
 }
 
@@ -52,8 +52,8 @@ Map<String, dynamic> _$DropToJson(Drop instance) => <String, dynamic>{
 
 Filter _$FilterFromJson(Map<String, dynamic> json) {
   return Filter(
-    json['collection'],
-    json['filter'] ?? Lambda.fromJson(json['filter'] as Map<String, dynamic>),
+    json['collection'] as Object,
+    Lambda.fromJson(json['filter'] as Map<String, dynamic>),
   );
 }
 
@@ -64,8 +64,8 @@ Map<String, dynamic> _$FilterToJson(Filter instance) => <String, dynamic>{
 
 Foreach _$ForeachFromJson(Map<String, dynamic> json) {
   return Foreach(
-    json['foreach'],
-    json['lambda'] ?? Lambda.fromJson(json['lambda'] as Map<String, dynamic>),
+    json['foreach'] as Object,
+    Lambda.fromJson(json['lambda'] as Map<String, dynamic>),
   );
 }
 
@@ -76,7 +76,7 @@ Map<String, dynamic> _$ForeachToJson(Foreach instance) => <String, dynamic>{
 
 Intersection _$IntersectionFromJson(Map<String, dynamic> json) {
   return Intersection(
-    json['intersection'],
+    json['intersection'] as Object,
   );
 }
 
@@ -87,7 +87,7 @@ Map<String, dynamic> _$IntersectionToJson(Intersection instance) =>
 
 IsEmpty _$IsEmptyFromJson(Map<String, dynamic> json) {
   return IsEmpty(
-    json['is_empty'],
+    json['is_empty'] as Object,
   );
 }
 
@@ -97,7 +97,7 @@ Map<String, dynamic> _$IsEmptyToJson(IsEmpty instance) => <String, dynamic>{
 
 IsNonEmpty _$IsNonEmptyFromJson(Map<String, dynamic> json) {
   return IsNonEmpty(
-    json['is_non_empty'],
+    json['is_non_empty'] as Object,
   );
 }
 
@@ -108,8 +108,8 @@ Map<String, dynamic> _$IsNonEmptyToJson(IsNonEmpty instance) =>
 
 Join _$JoinFromJson(Map<String, dynamic> json) {
   return Join(
-    json['join'],
-    json['with'],
+    json['join'] as Object,
+    json['with'] as Object,
   );
 }
 
@@ -120,8 +120,8 @@ Map<String, dynamic> _$JoinToJson(Join instance) => <String, dynamic>{
 
 Map_ _$Map_FromJson(Map<String, dynamic> json) {
   return Map_(
-    json['collection'],
-    json['map'] ?? Lambda.fromJson(json['map'] as Map<String, dynamic>),
+    json['collection'] as Object,
+    Lambda.fromJson(json['map'] as Map<String, dynamic>),
   );
 }
 
@@ -133,8 +133,8 @@ Map<String, dynamic> _$Map_ToJson(Map_ instance) => <String, dynamic>{
 Match _$MatchFromJson(Map<String, dynamic> json) {
   $checkKeys(json, disallowNullValues: const ['terms']);
   return Match(
-    json['match'],
-    terms: json['terms'] as List,
+    json['match'] as Object,
+    terms: json['terms'] as List<dynamic>?,
   );
 }
 
@@ -155,8 +155,8 @@ Map<String, dynamic> _$MatchToJson(Match instance) {
 
 Prepend _$PrependFromJson(Map<String, dynamic> json) {
   return Prepend(
-    json['prepend'],
-    json['collection'],
+    json['prepend'] as Object,
+    json['collection'] as Object,
   );
 }
 
@@ -167,8 +167,7 @@ Map<String, dynamic> _$PrependToJson(Prepend instance) => <String, dynamic>{
 
 Singleton _$SingletonFromJson(Map<String, dynamic> json) {
   return Singleton(
-    json['singleton'] ??
-        Ref.fromJson(json['singleton'] as Map<String, dynamic>),
+    Ref.fromJson(json['singleton'] as Map<String, dynamic>),
   );
 }
 
@@ -178,8 +177,8 @@ Map<String, dynamic> _$SingletonToJson(Singleton instance) => <String, dynamic>{
 
 Take _$TakeFromJson(Map<String, dynamic> json) {
   return Take(
-    json['take'],
-    json['collection'],
+    json['take'] as Object,
+    json['collection'] as Object,
   );
 }
 
@@ -190,7 +189,7 @@ Map<String, dynamic> _$TakeToJson(Take instance) => <String, dynamic>{
 
 Union _$UnionFromJson(Map<String, dynamic> json) {
   return Union(
-    json['union'],
+    json['union'] as Object,
   );
 }
 

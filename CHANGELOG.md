@@ -13,11 +13,8 @@ All notable changes to this project will be documented in this file.
     - json_annotation: ^4.0.0
 - Updated development dependencies:
     - json_serializable: ^4.0.2
-    - build_runner: ^1.12.1
+    - build_runner: ^1.10.1
     - pedantic: ^1.11.0
-- Added dependency override to prevent version discrepancies:
-    - build: ^2.0.0
-
 
 ## [0.10.0] - 2021-03-10
 

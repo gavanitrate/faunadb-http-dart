@@ -57,7 +57,7 @@ class Obj extends Expr {
     fromJson: Result.unwrap_values,
     toJson: Expr.wrap_values,
   )
-  final Object object;
+  final Object? object;
 
   Obj(this.object);
 

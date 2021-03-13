@@ -12,8 +12,5 @@ dependencies:
 
 dev_dependencies:
   json_serializable: ^4.0.2
-  build_runner: ^1.12.1
+  build_runner: ^1.10.1
   pedantic: ^1.11.0
-
-dependency_overrides:
-  build: ^2.0.0

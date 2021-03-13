@@ -14,7 +14,7 @@ void main(List<String> arguments) async {
   final client = FaunaClient(config);
 
   final query = Paginate(Collections());
-  print('query=>\n${query}');
+  print('query=>\n$query');
 
   final response = await client.query(query);
   if (response.hasErrors) {

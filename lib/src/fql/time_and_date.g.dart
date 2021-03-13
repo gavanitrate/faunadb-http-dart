@@ -18,8 +18,7 @@ Map<String, dynamic> _$DateToJson(Date instance) => <String, dynamic>{
 
 DayOfMonth _$DayOfMonthFromJson(Map<String, dynamic> json) {
   return DayOfMonth(
-    json['day_of_month'] ??
-        Expr.fromJson(json['day_of_month'] as Map<String, dynamic>),
+    Expr.fromJson(json['day_of_month'] as Map<String, dynamic>),
   );
 }
 
@@ -30,8 +29,7 @@ Map<String, dynamic> _$DayOfMonthToJson(DayOfMonth instance) =>
 
 DayOfWeek _$DayOfWeekFromJson(Map<String, dynamic> json) {
   return DayOfWeek(
-    json['day_of_week'] ??
-        Expr.fromJson(json['day_of_week'] as Map<String, dynamic>),
+    Expr.fromJson(json['day_of_week'] as Map<String, dynamic>),
   );
 }
 
@@ -41,8 +39,7 @@ Map<String, dynamic> _$DayOfWeekToJson(DayOfWeek instance) => <String, dynamic>{
 
 DayOfYear _$DayOfYearFromJson(Map<String, dynamic> json) {
   return DayOfYear(
-    json['day_of_year'] ??
-        Expr.fromJson(json['day_of_year'] as Map<String, dynamic>),
+    Expr.fromJson(json['day_of_year'] as Map<String, dynamic>),
   );
 }
 
@@ -64,7 +61,7 @@ Map<String, dynamic> _$EpochToJson(Epoch instance) => <String, dynamic>{
 
 Hour _$HourFromJson(Map<String, dynamic> json) {
   return Hour(
-    json['hour'] ?? Expr.fromJson(json['hour'] as Map<String, dynamic>),
+    Expr.fromJson(json['hour'] as Map<String, dynamic>),
   );
 }
 
@@ -74,7 +71,7 @@ Map<String, dynamic> _$HourToJson(Hour instance) => <String, dynamic>{
 
 Minute _$MinuteFromJson(Map<String, dynamic> json) {
   return Minute(
-    json['minute'] ?? Expr.fromJson(json['minute'] as Map<String, dynamic>),
+    Expr.fromJson(json['minute'] as Map<String, dynamic>),
   );
 }
 
@@ -84,7 +81,7 @@ Map<String, dynamic> _$MinuteToJson(Minute instance) => <String, dynamic>{
 
 Month _$MonthFromJson(Map<String, dynamic> json) {
   return Month(
-    json['month'] ?? Expr.fromJson(json['month'] as Map<String, dynamic>),
+    Expr.fromJson(json['month'] as Map<String, dynamic>),
   );
 }
 
@@ -102,7 +99,7 @@ Map<String, dynamic> _$NowToJson(Now instance) => <String, dynamic>{
 
 Second _$SecondFromJson(Map<String, dynamic> json) {
   return Second(
-    json['second'] ?? Expr.fromJson(json['second'] as Map<String, dynamic>),
+    Expr.fromJson(json['second'] as Map<String, dynamic>),
   );
 }
 
@@ -122,9 +119,9 @@ Map<String, dynamic> _$TimeToJson(Time instance) => <String, dynamic>{
 
 TimeAdd _$TimeAddFromJson(Map<String, dynamic> json) {
   return TimeAdd(
-    json['time_add'],
-    json['offset'],
-    json['unit'],
+    json['time_add'] as Object,
+    json['offset'] as Object,
+    json['unit'] as Object,
   );
 }
 
@@ -136,9 +133,9 @@ Map<String, dynamic> _$TimeAddToJson(TimeAdd instance) => <String, dynamic>{
 
 TimeDiff _$TimeDiffFromJson(Map<String, dynamic> json) {
   return TimeDiff(
-    json['time_diff'],
-    json['other'],
-    json['unit'],
+    json['time_diff'] as Object,
+    json['other'] as Object,
+    json['unit'] as Object,
   );
 }
 
@@ -150,9 +147,9 @@ Map<String, dynamic> _$TimeDiffToJson(TimeDiff instance) => <String, dynamic>{
 
 TimeSubtract _$TimeSubtractFromJson(Map<String, dynamic> json) {
   return TimeSubtract(
-    json['time_subtract'],
-    json['offset'],
-    json['unit'],
+    json['time_subtract'] as Object,
+    json['offset'] as Object,
+    json['unit'] as Object,
   );
 }
 
@@ -165,7 +162,7 @@ Map<String, dynamic> _$TimeSubtractToJson(TimeSubtract instance) =>
 
 Year _$YearFromJson(Map<String, dynamic> json) {
   return Year(
-    json['year'] ?? Expr.fromJson(json['year'] as Map<String, dynamic>),
+    Expr.fromJson(json['year'] as Map<String, dynamic>),
   );
 }
 

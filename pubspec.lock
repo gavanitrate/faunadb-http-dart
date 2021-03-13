@@ -30,19 +30,19 @@ packages:
     source: hosted
     version: "2.5.0"
   build:
-    dependency: "direct overridden"
+    dependency: transitive
     description:
       name: build
       url: "https://pub.dev"
     source: hosted
-    version: "2.0.0"
+    version: "1.6.3"
   build_config:
     dependency: transitive
     description:
       name: build_config
       url: "https://pub.dev"
     source: hosted
-    version: "0.4.7"
+    version: "0.4.6"
   build_daemon:
     dependency: transitive
     description:
@@ -56,21 +56,21 @@ packages:
       name: build_resolvers
       url: "https://pub.dev"
     source: hosted
-    version: "2.0.0"
+    version: "1.5.4"
   build_runner:
     dependency: "direct dev"
     description:
       name: build_runner
       url: "https://pub.dev"
     source: hosted
-    version: "1.12.1"
+    version: "1.11.5"
   build_runner_core:
     dependency: transitive
     description:
       name: build_runner_core
       url: "https://pub.dev"
     source: hosted
-    version: "6.1.12"
+    version: "6.1.10"
   built_collection:
     dependency: transitive
     description:
@@ -98,7 +98,7 @@ packages:
       name: checked_yaml
       url: "https://pub.dev"
     source: hosted
-    version: "2.0.1"
+    version: "1.0.4"
   cli_util:
     dependency: transitive
     description:
@@ -168,7 +168,7 @@ packages:
       name: graphs
       url: "https://pub.dev"
     source: hosted
-    version: "1.0.0"
+    version: "0.2.0"
   http:
     dependency: "direct main"
     description:
@@ -287,7 +287,7 @@ packages:
       name: pubspec_parse
       url: "https://pub.dev"
     source: hosted
-    version: "1.0.0"
+    version: "0.1.8"
   shelf:
     dependency: transitive
     description:
