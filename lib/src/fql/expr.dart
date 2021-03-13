@@ -68,6 +68,6 @@ class Obj extends Expr {
 
   @override
   String toString() {
-    return 'Obj(${object})';
+    return 'Obj($object)';
   }
 }
