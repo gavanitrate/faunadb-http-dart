@@ -16,7 +16,7 @@ class Get extends Expr {
     includeIfNull: false,
     toJson: Expr.wrap_value,
   )
-  final DateTime ts;
+  final DateTime? ts;
 
   Get(this.ref, {this.ts});
 
@@ -50,7 +50,7 @@ class Paginate extends Expr {
     includeIfNull: false,
     toJson: Expr.wrap_value,
   )
-  final DateTime ts;
+  final DateTime? ts;
 
   @JsonKey(disallowNullValue: false, includeIfNull: true)
   final Object before;
@@ -59,13 +59,13 @@ class Paginate extends Expr {
   final Object after;
 
   @JsonKey(disallowNullValue: true, includeIfNull: false)
-  final int size;
+  final int? size;
 
   @JsonKey(disallowNullValue: true, includeIfNull: false)
-  final bool events;
+  final bool? events;
 
   @JsonKey(disallowNullValue: true, includeIfNull: false)
-  final bool sources;
+  final bool? sources;
 
   Paginate(
     this.input, {
@@ -101,7 +101,7 @@ class Select extends Expr {
   final Expr from;
 
   @JsonKey(name: 'default', disallowNullValue: true, includeIfNull: false)
-  final Expr default_;
+  final Expr? default_;
 
   Select(this.path, this.from, {this.default_});
 
@@ -266,7 +266,7 @@ class Merge extends Expr {
   final Object object2;
 
   @JsonKey(name: 'lambda', disallowNullValue: true, includeIfNull: false)
-  final Object customResolver;
+  final Object? customResolver;
 
   Merge(this.object1, this.object2, {this.customResolver});
 

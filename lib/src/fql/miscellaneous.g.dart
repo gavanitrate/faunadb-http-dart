@@ -173,9 +173,7 @@ NewId _$NewIdFromJson(Map<String, dynamic> json) {
 
 Query _$QueryFromJson(Map<String, dynamic> json) {
   return Query(
-    json['query'] == null
-        ? null
-        : Lambda.fromJson(json['query'] as Map<String, dynamic>),
+    json['query'] ?? Lambda.fromJson(json['query'] as Map<String, dynamic>),
   );
 }
 

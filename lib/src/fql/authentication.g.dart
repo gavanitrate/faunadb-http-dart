@@ -28,9 +28,7 @@ HasIdentity _$HasIdentityFromJson(Map<String, dynamic> json) {
 
 Identify _$IdentifyFromJson(Map<String, dynamic> json) {
   return Identify(
-    json['identity'] == null
-        ? null
-        : Ref.fromJson(json['identity'] as Map<String, dynamic>),
+    json['identity'] ?? Ref.fromJson(json['identity'] as Map<String, dynamic>),
     json['password'] as String,
   );
 }
@@ -57,9 +55,7 @@ Map<String, dynamic> _$KeysToJson(Keys instance) => <String, dynamic>{
 Login _$LoginFromJson(Map<String, dynamic> json) {
   return Login(
     json['login'],
-    json['params'] == null
-        ? null
-        : Obj.fromJson(json['params'] as Map<String, dynamic>),
+    json['params'] ?? Obj.fromJson(json['params'] as Map<String, dynamic>),
   );
 }
 

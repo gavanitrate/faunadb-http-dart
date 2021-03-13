@@ -53,9 +53,7 @@ Map<String, dynamic> _$DropToJson(Drop instance) => <String, dynamic>{
 Filter _$FilterFromJson(Map<String, dynamic> json) {
   return Filter(
     json['collection'],
-    json['filter'] == null
-        ? null
-        : Lambda.fromJson(json['filter'] as Map<String, dynamic>),
+    json['filter'] ?? Lambda.fromJson(json['filter'] as Map<String, dynamic>),
   );
 }
 
@@ -67,9 +65,7 @@ Map<String, dynamic> _$FilterToJson(Filter instance) => <String, dynamic>{
 Foreach _$ForeachFromJson(Map<String, dynamic> json) {
   return Foreach(
     json['foreach'],
-    json['lambda'] == null
-        ? null
-        : Lambda.fromJson(json['lambda'] as Map<String, dynamic>),
+    json['lambda'] ?? Lambda.fromJson(json['lambda'] as Map<String, dynamic>),
   );
 }
 
@@ -125,9 +121,7 @@ Map<String, dynamic> _$JoinToJson(Join instance) => <String, dynamic>{
 Map_ _$Map_FromJson(Map<String, dynamic> json) {
   return Map_(
     json['collection'],
-    json['map'] == null
-        ? null
-        : Lambda.fromJson(json['map'] as Map<String, dynamic>),
+    json['map'] ?? Lambda.fromJson(json['map'] as Map<String, dynamic>),
   );
 }
 
@@ -173,9 +167,8 @@ Map<String, dynamic> _$PrependToJson(Prepend instance) => <String, dynamic>{
 
 Singleton _$SingletonFromJson(Map<String, dynamic> json) {
   return Singleton(
-    json['singleton'] == null
-        ? null
-        : Ref.fromJson(json['singleton'] as Map<String, dynamic>),
+    json['singleton'] ??
+        Ref.fromJson(json['singleton'] as Map<String, dynamic>),
   );
 }
 

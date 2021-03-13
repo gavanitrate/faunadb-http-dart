@@ -8,12 +8,8 @@ part of 'basic.dart';
 
 At _$AtFromJson(Map<String, dynamic> json) {
   return At(
-    json['at'] == null
-        ? null
-        : Time.fromJson(json['at'] as Map<String, dynamic>),
-    json['expr'] == null
-        ? null
-        : Expr.fromJson(json['expr'] as Map<String, dynamic>),
+    json['at'] ?? Time.fromJson(json['at'] as Map<String, dynamic>),
+    json['expr'] ?? Expr.fromJson(json['expr'] as Map<String, dynamic>),
   );
 }
 
@@ -72,9 +68,7 @@ Map<String, dynamic> _$IfToJson(If instance) => <String, dynamic>{
 Lambda _$LambdaFromJson(Map<String, dynamic> json) {
   return Lambda(
     json['lambda'],
-    json['expr'] == null
-        ? null
-        : Expr.fromJson(json['expr'] as Map<String, dynamic>),
+    json['expr'] ?? Expr.fromJson(json['expr'] as Map<String, dynamic>),
   );
 }
 
@@ -86,9 +80,7 @@ Map<String, dynamic> _$LambdaToJson(Lambda instance) => <String, dynamic>{
 Let _$LetFromJson(Map<String, dynamic> json) {
   return Let(
     json['let'] as Map<String, dynamic>,
-    json['in'] == null
-        ? null
-        : Expr.fromJson(json['in'] as Map<String, dynamic>),
+    json['in'] ?? Expr.fromJson(json['in'] as Map<String, dynamic>),
   );
 }
 

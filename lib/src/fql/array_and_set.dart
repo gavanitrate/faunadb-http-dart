@@ -197,7 +197,7 @@ class Match extends Expr {
   final Object index;
 
   @JsonKey(disallowNullValue: true, includeIfNull: false)
-  final List terms;
+  final List? terms;
 
   Match(this.index, {this.terms});
 

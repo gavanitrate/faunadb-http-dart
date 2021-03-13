@@ -27,7 +27,7 @@ class Call extends Expr {
   final Object function;
 
   @JsonKey(disallowNullValue: true, includeIfNull: false)
-  final Object arguments;
+  final Object? arguments;
 
   Call(this.function, {this.arguments});
 

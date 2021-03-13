@@ -11,7 +11,7 @@ class FaunaConfig {
   final String secret;
 
   /// FaunaDB URL scheme (http, https).
-  final String scheme;
+  final Scheme scheme;
 
   /// FaunaDB URL domain.
   final String domain;
@@ -29,10 +29,10 @@ class FaunaConfig {
   ///
   /// If specified, this value is sent as the
   /// `X-Query-Timeout` header in [requestHeaders].
-  final Duration queryTimeout;
-  String _baseUrl;
-  String _authToken;
-  Map<String, String> _requestHeaders;
+  final Duration? queryTimeout;
+  String? _baseUrl;
+  String? _authToken;
+  Map<String, String>? _requestHeaders;
 
   // ??= operator used to cache computed getters
   // https://flutterigniter.com/dart-getter-cache-computed-properties/
@@ -53,12 +53,12 @@ class FaunaConfig {
       _requestHeaders ??= _buildRequestHeaders();
 
   String _buildBaseUrl() {
-    return scheme + '://' + domain + ':' + port.toString();
+    return '${scheme.toString().split('.')[1]}://$domain:$port';
   }
 
   String _buildAuthToken() {
-    final bytes = utf8.encode(secret + ':');
-    return 'Basic ' + base64.encode(bytes);
+    final bytes = utf8.encode('$secret:');
+    return 'Basic ${base64.encode(bytes)}';
   }
 
   Map<String, String> _buildRequestHeaders() {
@@ -79,19 +79,19 @@ class FaunaConfig {
     if (queryTimeout != null) {
       reqHeaders.putIfAbsent(
         'X-Query-Timeout',
-        () => queryTimeout.inMilliseconds.toString(),
+        () => queryTimeout!.inMilliseconds.toString(),
       );
     }
     return reqHeaders;
   }
 
   FaunaConfig({
-    this.secret,
-    this.scheme,
-    this.domain,
-    this.port,
-    this.headers,
-    this.timeout,
+    required this.secret,
+    this.scheme = Scheme.HTTPS,
+    this.domain = 'db.fauna.com',
+    this.port = 443,
+    this.headers = const <String, String>{},
+    this.timeout = const Duration(minutes: 1),
     this.queryTimeout,
   });
 
@@ -102,22 +102,25 @@ class FaunaConfig {
   /// [keys-docs]: https://docs.fauna.com/fauna/current/security/keys.html
   ///
   /// By default, [baseUrl] is https://db.fauna.com:443.
-  /// This is the URL the [FaunaClient] will make query requests to.
+  /// This is the URL the [FaunaClient] will query.
   factory FaunaConfig.build({
-    String secret,
-    String scheme = 'https',
+    required String secret,
+    Scheme scheme = Scheme.HTTPS,
     String domain = 'db.fauna.com',
-    int port,
+    int port = 443,
     Map<String, String> headers = const {},
     Duration timeout = const Duration(minutes: 1),
-    Duration queryTimeout,
+    Duration? queryTimeout,
   }) {
-    final isHttp = (scheme == 'https');
-    final defaultPort = (isHttp ? 443 : 80);
+    // If the scheme is HTTPS and a custom port was not specified, set to 80
+    if (scheme != Scheme.HTTPS && port == 443) {
+      port = 80;
+    }
+
     return FaunaConfig(
       scheme: scheme,
       domain: domain,
-      port: port ?? defaultPort,
+      port: port,
       secret: secret,
       headers: headers,
       timeout: timeout,
@@ -126,15 +129,19 @@ class FaunaConfig {
   }
 
   /// Returns a [FaunaConfig] created by merging this configuration with [mergeWith].
+  @Deprecated(
+      'Thanks to null-safety, the reason for merging two configurations has largely been eliminated.')
   FaunaConfig merge(FaunaConfig mergeWith) {
     return FaunaConfig(
-      scheme: mergeWith.scheme ?? scheme,
-      domain: mergeWith.domain ?? domain,
-      port: mergeWith.port ?? port,
-      secret: mergeWith.secret ?? secret,
-      headers: mergeWith.headers ?? headers,
-      timeout: mergeWith.timeout ?? timeout,
+      scheme: mergeWith.scheme,
+      domain: mergeWith.domain,
+      port: mergeWith.port,
+      secret: mergeWith.secret,
+      headers: mergeWith.headers,
+      timeout: mergeWith.timeout,
       queryTimeout: mergeWith.queryTimeout ?? queryTimeout,
     );
   }
 }
+
+enum Scheme { HTTP, HTTPS }

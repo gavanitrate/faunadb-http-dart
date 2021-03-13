@@ -24,7 +24,7 @@ Map<String, dynamic> _$RefResultToJson(RefResult instance) {
     }
   }
 
-  writeNotNull('collection', instance.collection?.toJson());
+  writeNotNull('collection', instance.collection!.toJson());
   return val;
 }
 
@@ -44,9 +44,8 @@ Map<String, dynamic> _$QueryResultToJson(QueryResult instance) =>
 FaunaResponse _$FaunaResponseFromJson(Map<String, dynamic> json) {
   return FaunaResponse(
     resource: Result.unwrap_values(json['resource']),
-    errors: (json['errors'] as List)
-        ?.map((e) => e as Map<String, dynamic>)
-        ?.toList(),
+    errors:
+        (json['errors'] as List).map((e) => e as Map<String, dynamic>).toList(),
   );
 }
 
