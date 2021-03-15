@@ -5,6 +5,32 @@ import 'expr.dart';
 part 'logic.g.dart';
 
 @JsonSerializable()
+class All extends Expr {
+  @JsonKey(name: 'all')
+  final Object values;
+
+  All(this.values);
+
+  factory All.fromJson(Map<String, dynamic> json) => _$AllFromJson(json);
+
+  @override
+  Map<String, dynamic> toJson() => _$AllToJson(this);
+}
+
+@JsonSerializable()
+class Any extends Expr {
+  @JsonKey(name: 'any')
+  final Object values;
+
+  Any(this.values);
+
+  factory Any.fromJson(Map<String, dynamic> json) => _$AnyFromJson(json);
+
+  @override
+  Map<String, dynamic> toJson() => _$AnyToJson(this);
+}
+
+@JsonSerializable()
 class And extends Expr {
   @JsonKey(name: 'and')
   final Object value;

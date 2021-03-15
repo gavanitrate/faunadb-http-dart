@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.11.0] - 2021-03-15
+
+### Added
+
+- Set FQL functions:
+    - `All`, `Any`,`Range`, `Reduce`
+
 ## [0.10.0] - 2021-03-10
 
 ### Added
@@ -139,6 +146,8 @@ All notable changes to this project will be documented in this file.
 
 - `FaunaDBConfig` class
 - `FaunaDBClient` class
+
+[0.11.0]: https://github.com/gavanitrate/faunadb-http-dart/compare/0.10.0...0.11.0
 
 [0.10.0]: https://github.com/gavanitrate/faunadb-http-dart/compare/0.9.1...0.10.0
 

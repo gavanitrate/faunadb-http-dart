@@ -171,6 +171,46 @@ Map<String, dynamic> _$PrependToJson(Prepend instance) => <String, dynamic>{
       'collection': instance.elems,
     };
 
+Range _$RangeFromJson(Map<String, dynamic> json) {
+  return Range(
+    json['range'],
+    json['from'],
+    json['to'],
+  );
+}
+
+Map<String, dynamic> _$RangeToJson(Range instance) => <String, dynamic>{
+      'range': instance.set,
+      'from': instance.start,
+      'to': instance.end,
+    };
+
+Reduce _$ReduceFromJson(Map<String, dynamic> json) {
+  return Reduce(
+    json['reduce'] == null
+        ? null
+        : Lambda.fromJson(json['reduce'] as Map<String, dynamic>),
+    json['initial'],
+    json['collection'],
+  );
+}
+
+Map<String, dynamic> _$ReduceToJson(Reduce instance) => <String, dynamic>{
+      'reduce': instance.reducer,
+      'initial': instance.initial,
+      'collection': instance.arrayOrSet,
+    };
+
+Reverse _$ReverseFromJson(Map<String, dynamic> json) {
+  return Reverse(
+    json['reverse'],
+  );
+}
+
+Map<String, dynamic> _$ReverseToJson(Reverse instance) => <String, dynamic>{
+      'reverse': instance.source,
+    };
+
 Singleton _$SingletonFromJson(Map<String, dynamic> json) {
   return Singleton(
     json['singleton'] == null
