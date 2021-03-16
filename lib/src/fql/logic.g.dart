@@ -6,6 +6,26 @@ part of 'logic.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
+All _$AllFromJson(Map<String, dynamic> json) {
+  return All(
+    json['all'] as Object,
+  );
+}
+
+Map<String, dynamic> _$AllToJson(All instance) => <String, dynamic>{
+      'all': instance.values,
+    };
+
+Any _$AnyFromJson(Map<String, dynamic> json) {
+  return Any(
+    json['any'] as Object,
+  );
+}
+
+Map<String, dynamic> _$AnyToJson(Any instance) => <String, dynamic>{
+      'any': instance.values,
+    };
+
 And _$AndFromJson(Map<String, dynamic> json) {
   return And(
     json['and'] as Object,

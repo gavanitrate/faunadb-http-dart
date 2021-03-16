@@ -11,6 +11,6 @@ dependencies:
   json_annotation: ^4.0.0
 
 dev_dependencies:
-  json_serializable: ^4.0.2
-  build_runner: ^1.10.1
+  json_serializable: ^4.0.3
+  build_runner: ^1.12.1
   pedantic: ^1.11.0

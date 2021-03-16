@@ -2,19 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
-## [0.12.0] - 2021-03-13
+## [0.12.0] - 2021-03-16
 
 ### Changed
 
 - Adjustments to null safety
 - Function `merge` has been deprecated due to null-safety changes.
-- Updated dependencies:
-    - http: ^0.13.0
-    - json_annotation: ^4.0.0
-- Updated development dependencies:
-    - json_serializable: ^4.0.2
-    - build_runner: ^1.10.1
-    - pedantic: ^1.11.0
+- Updated dependencies
+
+## [0.11.0] - 2021-03-15
+
+### Added
+
+- Set FQL functions:
+    - `All`, `Any`,`Range`, `Reduce`
 
 ## [0.10.0] - 2021-03-10
 
@@ -153,6 +154,10 @@ All notable changes to this project will be documented in this file.
 
 - `FaunaDBConfig` class
 - `FaunaDBClient` class
+
+[0.12.0]: https://github.com/gavanitrate/faunadb-http-dart/compare/0.11.0...0.12.0
+
+[0.11.0]: https://github.com/gavanitrate/faunadb-http-dart/compare/0.10.0...0.11.0
 
 [0.10.0]: https://github.com/gavanitrate/faunadb-http-dart/compare/0.9.1...0.10.0
 
