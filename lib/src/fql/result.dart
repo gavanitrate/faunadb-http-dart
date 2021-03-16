@@ -9,7 +9,7 @@ import 'page.dart';
 part 'result.g.dart';
 
 class Result {
-  static Object _replace(
+  static Object? _replace(
     String key,
     Function constructor,
     Map<String, dynamic> data,
@@ -20,7 +20,7 @@ class Result {
     return null;
   }
 
-  static Object unwrap_value(String key, dynamic value) {
+  static Object? unwrap_value(String? key, dynamic value) {
     if (value is List) {
       return unwrap_values(value);
     } else if (value is Map<String, dynamic>) {
@@ -34,7 +34,7 @@ class Result {
     }
   }
 
-  static Object unwrap_values(Object data) {
+  static Object? unwrap_values(Object? data) {
     if (data == null) return null;
 
     if (data is List) {
@@ -84,17 +84,17 @@ class RefResult {
     fromJson: _unwrapCollection,
     includeIfNull: false,
   )
-  final RefResult collection;
+  final RefResult? collection;
 
-  static RefResult _unwrapCollection(collection) {
+  static RefResult? _unwrapCollection(collection) {
     if (collection == null) return null;
-    return Result.unwrap_values(collection);
+    return Result.unwrap_values(collection) as RefResult;
   }
 
   RefResult(this.id, this.collection);
 
   Ref asRef() {
-    return Ref(Collection(collection.id), id);
+    return Ref(Collection(collection!.id), id);
   }
 
   factory RefResult.fromJson(Map<String, dynamic> json) =>
@@ -105,9 +105,9 @@ class RefResult {
   @override
   String toString() {
     if (collection != null) {
-      return 'Ref(id: ${id}, collection: ${collection.toString()})';
+      return 'Ref(id: $id, collection: ${collection.toString()})';
     }
-    return 'Ref(id: ${id})';
+    return 'Ref(id: $id)';
   }
 }
 
@@ -117,7 +117,7 @@ class QueryResult {
   final Object params;
 
   @JsonKey(name: 'expr', fromJson: Result.unwrap_values)
-  final Object expression;
+  final Object? expression;
 
   QueryResult(this.params, this.expression);
 
@@ -128,24 +128,24 @@ class QueryResult {
 
   @override
   String toString() {
-    return 'Query(lambda: ${params}), expr: ${expression}';
+    return 'Query(lambda: $params), expr: $expression';
   }
 }
 
 @JsonSerializable()
 class FaunaResponse {
   @JsonKey(ignore: true)
-  String raw;
+  String? raw;
 
   @JsonKey(
     includeIfNull: false,
     fromJson: Result.unwrap_values,
     toJson: Expr.wrap_values,
   )
-  final Object resource;
+  final Object? resource;
 
-  @JsonKey(nullable: true, includeIfNull: false)
-  final List<Map<String, dynamic>> errors;
+  @JsonKey(includeIfNull: false)
+  final List<Map<String, dynamic>>? errors;
 
   bool get hasErrors => (errors != null);
 
@@ -153,7 +153,7 @@ class FaunaResponse {
 
   /// Convenience method to convert result to a Dart Map
   Map<String, dynamic> asMap() {
-    return json.decode(raw) as Map<String, dynamic>;
+    return json.decode(raw!) as Map<String, dynamic>;
   }
 
   /// Convenience method to build a Page object

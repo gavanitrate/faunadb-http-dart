@@ -9,8 +9,8 @@ part of 'string.dart';
 Casefold _$CasefoldFromJson(Map<String, dynamic> json) {
   $checkKeys(json, disallowNullValues: const ['normalizer']);
   return Casefold(
-    json['casefold'],
-    normalizer: json['normalizer'] as String,
+    json['casefold'] as Object,
+    normalizer: json['normalizer'] as String?,
   );
 }
 
@@ -32,8 +32,8 @@ Map<String, dynamic> _$CasefoldToJson(Casefold instance) {
 Concat _$ConcatFromJson(Map<String, dynamic> json) {
   $checkKeys(json, disallowNullValues: const ['seperator']);
   return Concat(
-    json['concat'],
-    seperator: json['seperator'] as String,
+    json['concat'] as Object,
+    seperator: json['seperator'] as String?,
   );
 }
 
@@ -55,8 +55,8 @@ Map<String, dynamic> _$ConcatToJson(Concat instance) {
 FindStr _$FindStrFromJson(Map<String, dynamic> json) {
   $checkKeys(json, disallowNullValues: const ['start']);
   return FindStr(
-    json['findstr'],
-    json['find'],
+    json['findstr'] as Object,
+    json['find'] as Object,
     start: json['start'],
   );
 }
@@ -80,8 +80,8 @@ Map<String, dynamic> _$FindStrToJson(FindStr instance) {
 FindStrRegex _$FindStrRegexFromJson(Map<String, dynamic> json) {
   $checkKeys(json, disallowNullValues: const ['start', 'num_results']);
   return FindStrRegex(
-    json['findstrregex'],
-    json['pattern'],
+    json['findstrregex'] as Object,
+    json['pattern'] as Object,
     start: json['start'],
     max_results: json['num_results'],
   );
@@ -106,7 +106,7 @@ Map<String, dynamic> _$FindStrRegexToJson(FindStrRegex instance) {
 
 LTrim _$LTrimFromJson(Map<String, dynamic> json) {
   return LTrim(
-    json['ltrim'],
+    json['ltrim'] as Object,
   );
 }
 
@@ -116,7 +116,7 @@ Map<String, dynamic> _$LTrimToJson(LTrim instance) => <String, dynamic>{
 
 Length _$LengthFromJson(Map<String, dynamic> json) {
   return Length(
-    json['length'],
+    json['length'] as Object,
   );
 }
 
@@ -126,7 +126,7 @@ Map<String, dynamic> _$LengthToJson(Length instance) => <String, dynamic>{
 
 LowerCase _$LowerCaseFromJson(Map<String, dynamic> json) {
   return LowerCase(
-    json['lowercase'],
+    json['lowercase'] as Object,
   );
 }
 
@@ -136,7 +136,7 @@ Map<String, dynamic> _$LowerCaseToJson(LowerCase instance) => <String, dynamic>{
 
 RTrim _$RTrimFromJson(Map<String, dynamic> json) {
   return RTrim(
-    json['rtrim'],
+    json['rtrim'] as Object,
   );
 }
 
@@ -147,7 +147,7 @@ Map<String, dynamic> _$RTrimToJson(RTrim instance) => <String, dynamic>{
 Repeat _$RepeatFromJson(Map<String, dynamic> json) {
   $checkKeys(json, disallowNullValues: const ['number']);
   return Repeat(
-    json['repeat'],
+    json['repeat'] as Object,
     number: json['number'],
   );
 }
@@ -169,9 +169,9 @@ Map<String, dynamic> _$RepeatToJson(Repeat instance) {
 
 ReplaceStr _$ReplaceStrFromJson(Map<String, dynamic> json) {
   return ReplaceStr(
-    json['replacestr'],
-    json['find'],
-    json['replace'],
+    json['replacestr'] as Object,
+    json['find'] as Object,
+    json['replace'] as Object,
   );
 }
 
@@ -185,9 +185,9 @@ Map<String, dynamic> _$ReplaceStrToJson(ReplaceStr instance) =>
 ReplaceStrRegex _$ReplaceStrRegexFromJson(Map<String, dynamic> json) {
   $checkKeys(json, disallowNullValues: const ['first']);
   return ReplaceStrRegex(
-    json['replacestrregex'],
-    json['pattern'],
-    json['replace'],
+    json['replacestrregex'] as Object,
+    json['pattern'] as Object,
+    json['replace'] as Object,
     first_only: json['first'],
   );
 }
@@ -211,7 +211,7 @@ Map<String, dynamic> _$ReplaceStrRegexToJson(ReplaceStrRegex instance) {
 
 Space _$SpaceFromJson(Map<String, dynamic> json) {
   return Space(
-    json['space'],
+    json['space'] as Object,
   );
 }
 
@@ -222,8 +222,8 @@ Map<String, dynamic> _$SpaceToJson(Space instance) => <String, dynamic>{
 SubString _$SubStringFromJson(Map<String, dynamic> json) {
   $checkKeys(json, disallowNullValues: const ['length']);
   return SubString(
-    json['substring'],
-    json['start'],
+    json['substring'] as Object,
+    json['start'] as Object,
     length: json['length'],
   );
 }
@@ -246,7 +246,7 @@ Map<String, dynamic> _$SubStringToJson(SubString instance) {
 
 TitleCase _$TitleCaseFromJson(Map<String, dynamic> json) {
   return TitleCase(
-    json['titlecase'],
+    json['titlecase'] as Object,
   );
 }
 
@@ -256,7 +256,7 @@ Map<String, dynamic> _$TitleCaseToJson(TitleCase instance) => <String, dynamic>{
 
 Trim _$TrimFromJson(Map<String, dynamic> json) {
   return Trim(
-    json['trim'],
+    json['trim'] as Object,
   );
 }
 
@@ -266,7 +266,7 @@ Map<String, dynamic> _$TrimToJson(Trim instance) => <String, dynamic>{
 
 UpperCase _$UpperCaseFromJson(Map<String, dynamic> json) {
   return UpperCase(
-    json['uppercase'],
+    json['uppercase'] as Object,
   );
 }
 

@@ -8,7 +8,7 @@ part of 'conversion.dart';
 
 ToArray _$ToArrayFromJson(Map<String, dynamic> json) {
   return ToArray(
-    json['to_array'],
+    json['to_array'] as Object,
   );
 }
 
@@ -18,7 +18,7 @@ Map<String, dynamic> _$ToArrayToJson(ToArray instance) => <String, dynamic>{
 
 ToDate _$ToDateFromJson(Map<String, dynamic> json) {
   return ToDate(
-    json['to_date'],
+    json['to_date'] as Object,
   );
 }
 
@@ -28,7 +28,7 @@ Map<String, dynamic> _$ToDateToJson(ToDate instance) => <String, dynamic>{
 
 ToDouble _$ToDoubleFromJson(Map<String, dynamic> json) {
   return ToDouble(
-    json['to_double'],
+    json['to_double'] as Object,
   );
 }
 
@@ -38,7 +38,7 @@ Map<String, dynamic> _$ToDoubleToJson(ToDouble instance) => <String, dynamic>{
 
 ToInteger _$ToIntegerFromJson(Map<String, dynamic> json) {
   return ToInteger(
-    json['to_integer'],
+    json['to_integer'] as Object,
   );
 }
 
@@ -48,7 +48,7 @@ Map<String, dynamic> _$ToIntegerToJson(ToInteger instance) => <String, dynamic>{
 
 ToMicros _$ToMicrosFromJson(Map<String, dynamic> json) {
   return ToMicros(
-    json['to_micros'],
+    json['to_micros'] as Object,
   );
 }
 
@@ -58,7 +58,7 @@ Map<String, dynamic> _$ToMicrosToJson(ToMicros instance) => <String, dynamic>{
 
 ToMillis _$ToMillisFromJson(Map<String, dynamic> json) {
   return ToMillis(
-    json['to_millis'],
+    json['to_millis'] as Object,
   );
 }
 
@@ -68,7 +68,7 @@ Map<String, dynamic> _$ToMillisToJson(ToMillis instance) => <String, dynamic>{
 
 ToNumber _$ToNumberFromJson(Map<String, dynamic> json) {
   return ToNumber(
-    json['to_number'],
+    json['to_number'] as Object,
   );
 }
 
@@ -78,7 +78,7 @@ Map<String, dynamic> _$ToNumberToJson(ToNumber instance) => <String, dynamic>{
 
 ToObject _$ToObjectFromJson(Map<String, dynamic> json) {
   return ToObject(
-    json['to_object'],
+    json['to_object'] as Object,
   );
 }
 
@@ -88,7 +88,7 @@ Map<String, dynamic> _$ToObjectToJson(ToObject instance) => <String, dynamic>{
 
 ToSeconds _$ToSecondsFromJson(Map<String, dynamic> json) {
   return ToSeconds(
-    json['to_seconds'],
+    json['to_seconds'] as Object,
   );
 }
 
@@ -98,7 +98,7 @@ Map<String, dynamic> _$ToSecondsToJson(ToSeconds instance) => <String, dynamic>{
 
 ToString _$ToStringFromJson(Map<String, dynamic> json) {
   return ToString(
-    json['to_string'],
+    json['to_string'] as Object,
   );
 }
 
@@ -108,7 +108,7 @@ Map<String, dynamic> _$ToStringToJson(ToString instance) => <String, dynamic>{
 
 ToTime _$ToTimeFromJson(Map<String, dynamic> json) {
   return ToTime(
-    json['to_time'],
+    json['to_time'] as Object,
   );
 }
 

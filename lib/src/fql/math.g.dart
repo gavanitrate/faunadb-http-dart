@@ -8,7 +8,7 @@ part of 'math.dart';
 
 Abs _$AbsFromJson(Map<String, dynamic> json) {
   return Abs(
-    json['abs'],
+    json['abs'] as Object,
   );
 }
 
@@ -18,7 +18,7 @@ Map<String, dynamic> _$AbsToJson(Abs instance) => <String, dynamic>{
 
 Acos _$AcosFromJson(Map<String, dynamic> json) {
   return Acos(
-    json['acos'],
+    json['acos'] as Object,
   );
 }
 
@@ -28,7 +28,7 @@ Map<String, dynamic> _$AcosToJson(Acos instance) => <String, dynamic>{
 
 Add _$AddFromJson(Map<String, dynamic> json) {
   return Add(
-    json['add'],
+    json['add'] as Object,
   );
 }
 
@@ -38,7 +38,7 @@ Map<String, dynamic> _$AddToJson(Add instance) => <String, dynamic>{
 
 Asin _$AsinFromJson(Map<String, dynamic> json) {
   return Asin(
-    json['asin'],
+    json['asin'] as Object,
   );
 }
 
@@ -48,7 +48,7 @@ Map<String, dynamic> _$AsinToJson(Asin instance) => <String, dynamic>{
 
 Atan _$AtanFromJson(Map<String, dynamic> json) {
   return Atan(
-    json['atan'],
+    json['atan'] as Object,
   );
 }
 
@@ -58,7 +58,7 @@ Map<String, dynamic> _$AtanToJson(Atan instance) => <String, dynamic>{
 
 BitAnd _$BitAndFromJson(Map<String, dynamic> json) {
   return BitAnd(
-    json['bitand'],
+    json['bitand'] as Object,
   );
 }
 
@@ -68,7 +68,7 @@ Map<String, dynamic> _$BitAndToJson(BitAnd instance) => <String, dynamic>{
 
 BitNot _$BitNotFromJson(Map<String, dynamic> json) {
   return BitNot(
-    json['bitnot'],
+    json['bitnot'] as Object,
   );
 }
 
@@ -78,7 +78,7 @@ Map<String, dynamic> _$BitNotToJson(BitNot instance) => <String, dynamic>{
 
 BitOr _$BitOrFromJson(Map<String, dynamic> json) {
   return BitOr(
-    json['bitor'],
+    json['bitor'] as Object,
   );
 }
 
@@ -88,7 +88,7 @@ Map<String, dynamic> _$BitOrToJson(BitOr instance) => <String, dynamic>{
 
 BitXor _$BitXorFromJson(Map<String, dynamic> json) {
   return BitXor(
-    json['bitxor'],
+    json['bitxor'] as Object,
   );
 }
 
@@ -98,7 +98,7 @@ Map<String, dynamic> _$BitXorToJson(BitXor instance) => <String, dynamic>{
 
 Ceil _$CeilFromJson(Map<String, dynamic> json) {
   return Ceil(
-    json['ceil'],
+    json['ceil'] as Object,
   );
 }
 
@@ -108,7 +108,7 @@ Map<String, dynamic> _$CeilToJson(Ceil instance) => <String, dynamic>{
 
 Cos _$CosFromJson(Map<String, dynamic> json) {
   return Cos(
-    json['cos'],
+    json['cos'] as Object,
   );
 }
 
@@ -118,7 +118,7 @@ Map<String, dynamic> _$CosToJson(Cos instance) => <String, dynamic>{
 
 Cosh _$CoshFromJson(Map<String, dynamic> json) {
   return Cosh(
-    json['cosh'],
+    json['cosh'] as Object,
   );
 }
 
@@ -128,7 +128,7 @@ Map<String, dynamic> _$CoshToJson(Cosh instance) => <String, dynamic>{
 
 Degrees _$DegreesFromJson(Map<String, dynamic> json) {
   return Degrees(
-    json['degrees'],
+    json['degrees'] as Object,
   );
 }
 
@@ -138,7 +138,7 @@ Map<String, dynamic> _$DegreesToJson(Degrees instance) => <String, dynamic>{
 
 Divide _$DivideFromJson(Map<String, dynamic> json) {
   return Divide(
-    json['divide'],
+    json['divide'] as Object,
   );
 }
 
@@ -148,7 +148,7 @@ Map<String, dynamic> _$DivideToJson(Divide instance) => <String, dynamic>{
 
 Exp _$ExpFromJson(Map<String, dynamic> json) {
   return Exp(
-    json['exp'],
+    json['exp'] as Object,
   );
 }
 
@@ -158,7 +158,7 @@ Map<String, dynamic> _$ExpToJson(Exp instance) => <String, dynamic>{
 
 Floor _$FloorFromJson(Map<String, dynamic> json) {
   return Floor(
-    json['floor'],
+    json['floor'] as Object,
   );
 }
 
@@ -169,7 +169,7 @@ Map<String, dynamic> _$FloorToJson(Floor instance) => <String, dynamic>{
 Hypot _$HypotFromJson(Map<String, dynamic> json) {
   $checkKeys(json, disallowNullValues: const ['b']);
   return Hypot(
-    json['hypot'],
+    json['hypot'] as Object,
     b: json['b'],
   );
 }
@@ -191,7 +191,7 @@ Map<String, dynamic> _$HypotToJson(Hypot instance) {
 
 Ln _$LnFromJson(Map<String, dynamic> json) {
   return Ln(
-    json['ln'],
+    json['ln'] as Object,
   );
 }
 
@@ -201,7 +201,7 @@ Map<String, dynamic> _$LnToJson(Ln instance) => <String, dynamic>{
 
 Log _$LogFromJson(Map<String, dynamic> json) {
   return Log(
-    json['log'],
+    json['log'] as Object,
   );
 }
 
@@ -211,7 +211,7 @@ Map<String, dynamic> _$LogToJson(Log instance) => <String, dynamic>{
 
 Max _$MaxFromJson(Map<String, dynamic> json) {
   return Max(
-    json['max'],
+    json['max'] as Object,
   );
 }
 
@@ -221,7 +221,7 @@ Map<String, dynamic> _$MaxToJson(Max instance) => <String, dynamic>{
 
 Mean _$MeanFromJson(Map<String, dynamic> json) {
   return Mean(
-    json['mean'],
+    json['mean'] as Object,
   );
 }
 
@@ -231,7 +231,7 @@ Map<String, dynamic> _$MeanToJson(Mean instance) => <String, dynamic>{
 
 Min _$MinFromJson(Map<String, dynamic> json) {
   return Min(
-    json['min'],
+    json['min'] as Object,
   );
 }
 
@@ -241,7 +241,7 @@ Map<String, dynamic> _$MinToJson(Min instance) => <String, dynamic>{
 
 Modulo _$ModuloFromJson(Map<String, dynamic> json) {
   return Modulo(
-    json['modulo'],
+    json['modulo'] as Object,
   );
 }
 
@@ -251,7 +251,7 @@ Map<String, dynamic> _$ModuloToJson(Modulo instance) => <String, dynamic>{
 
 Multiply _$MultiplyFromJson(Map<String, dynamic> json) {
   return Multiply(
-    json['multiply'],
+    json['multiply'] as Object,
   );
 }
 
@@ -261,8 +261,8 @@ Map<String, dynamic> _$MultiplyToJson(Multiply instance) => <String, dynamic>{
 
 Pow _$PowFromJson(Map<String, dynamic> json) {
   return Pow(
-    json['pow'],
-    json['exp'],
+    json['pow'] as Object,
+    json['exp'] as Object,
   );
 }
 
@@ -273,7 +273,7 @@ Map<String, dynamic> _$PowToJson(Pow instance) => <String, dynamic>{
 
 Radians _$RadiansFromJson(Map<String, dynamic> json) {
   return Radians(
-    json['radians'],
+    json['radians'] as Object,
   );
 }
 
@@ -284,7 +284,7 @@ Map<String, dynamic> _$RadiansToJson(Radians instance) => <String, dynamic>{
 Round _$RoundFromJson(Map<String, dynamic> json) {
   $checkKeys(json, disallowNullValues: const ['precision']);
   return Round(
-    json['round'],
+    json['round'] as Object,
     precision: json['precision'],
   );
 }
@@ -306,7 +306,7 @@ Map<String, dynamic> _$RoundToJson(Round instance) {
 
 Sign _$SignFromJson(Map<String, dynamic> json) {
   return Sign(
-    json['sign'],
+    json['sign'] as Object,
   );
 }
 
@@ -316,7 +316,7 @@ Map<String, dynamic> _$SignToJson(Sign instance) => <String, dynamic>{
 
 Sin _$SinFromJson(Map<String, dynamic> json) {
   return Sin(
-    json['sin'],
+    json['sin'] as Object,
   );
 }
 
@@ -326,7 +326,7 @@ Map<String, dynamic> _$SinToJson(Sin instance) => <String, dynamic>{
 
 Sinh _$SinhFromJson(Map<String, dynamic> json) {
   return Sinh(
-    json['sinh'],
+    json['sinh'] as Object,
   );
 }
 
@@ -336,7 +336,7 @@ Map<String, dynamic> _$SinhToJson(Sinh instance) => <String, dynamic>{
 
 Sqrt _$SqrtFromJson(Map<String, dynamic> json) {
   return Sqrt(
-    json['sqrt'],
+    json['sqrt'] as Object,
   );
 }
 
@@ -346,7 +346,7 @@ Map<String, dynamic> _$SqrtToJson(Sqrt instance) => <String, dynamic>{
 
 Subtract _$SubtractFromJson(Map<String, dynamic> json) {
   return Subtract(
-    json['subtract'],
+    json['subtract'] as Object,
   );
 }
 
@@ -356,7 +356,7 @@ Map<String, dynamic> _$SubtractToJson(Subtract instance) => <String, dynamic>{
 
 Sum _$SumFromJson(Map<String, dynamic> json) {
   return Sum(
-    json['sum'],
+    json['sum'] as Object,
   );
 }
 
@@ -366,7 +366,7 @@ Map<String, dynamic> _$SumToJson(Sum instance) => <String, dynamic>{
 
 Tan _$TanFromJson(Map<String, dynamic> json) {
   return Tan(
-    json['tan'],
+    json['tan'] as Object,
   );
 }
 
@@ -376,7 +376,7 @@ Map<String, dynamic> _$TanToJson(Tan instance) => <String, dynamic>{
 
 Tanh _$TanhFromJson(Map<String, dynamic> json) {
   return Tanh(
-    json['tanh'],
+    json['tanh'] as Object,
   );
 }
 
@@ -387,7 +387,7 @@ Map<String, dynamic> _$TanhToJson(Tanh instance) => <String, dynamic>{
 Trunc _$TruncFromJson(Map<String, dynamic> json) {
   $checkKeys(json, disallowNullValues: const ['precision']);
   return Trunc(
-    json['trunc'],
+    json['trunc'] as Object,
     precision: json['precision'],
   );
 }

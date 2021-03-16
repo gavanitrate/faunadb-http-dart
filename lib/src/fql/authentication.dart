@@ -89,7 +89,7 @@ class Identity extends Expr {
 @JsonSerializable()
 class Keys extends Expr {
   @JsonKey(name: 'keys', includeIfNull: true)
-  final Object database;
+  final Object? database;
 
   Keys({this.database});
 
@@ -118,7 +118,7 @@ class Login extends Expr {
 @JsonSerializable()
 class Logout extends Expr {
   @JsonKey(name: 'logout', includeIfNull: true)
-  final bool all_tokens;
+  final bool? all_tokens;
 
   Logout({this.all_tokens});
 

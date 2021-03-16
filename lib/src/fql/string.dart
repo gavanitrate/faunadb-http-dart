@@ -10,7 +10,7 @@ class Casefold extends Expr {
   final Object value;
 
   @JsonKey(disallowNullValue: true, includeIfNull: false)
-  final String normalizer;
+  final String? normalizer;
 
   Casefold(this.value, {this.normalizer});
 
@@ -27,7 +27,7 @@ class Concat extends Expr {
   final Object value;
 
   @JsonKey(disallowNullValue: true, includeIfNull: false)
-  final String seperator;
+  final String? seperator;
 
   Concat(this.value, {this.seperator});
 
@@ -45,7 +45,7 @@ class FindStr extends Expr {
   final Object find;
 
   @JsonKey(disallowNullValue: true, includeIfNull: false)
-  final Object start;
+  final Object? start;
 
   FindStr(this.value, this.find, {this.start});
 
@@ -65,10 +65,10 @@ class FindStrRegex extends Expr {
   final Object find;
 
   @JsonKey(disallowNullValue: true, includeIfNull: false)
-  final Object start;
+  final Object? start;
 
   @JsonKey(name: 'num_results', disallowNullValue: true, includeIfNull: false)
-  final Object max_results;
+  final Object? max_results;
 
   FindStrRegex(this.value, this.find, {this.start, this.max_results});
 
@@ -138,7 +138,7 @@ class Repeat extends Expr {
   final Object value;
 
   @JsonKey(disallowNullValue: true, includeIfNull: false)
-  final Object number;
+  final Object? number;
 
   Repeat(this.value, {this.number});
 
@@ -176,7 +176,7 @@ class ReplaceStrRegex extends Expr {
   final Object replace;
 
   @JsonKey(name: 'first', disallowNullValue: true, includeIfNull: false)
-  final Object first_only;
+  final Object? first_only;
 
   ReplaceStrRegex(this.value, this.pattern, this.replace, {this.first_only});
 
@@ -208,7 +208,7 @@ class SubString extends Expr {
   final Object start;
 
   @JsonKey(disallowNullValue: true, includeIfNull: false)
-  final Object length;
+  final Object? length;
 
   SubString(this.value, this.start, {this.length});
 

@@ -24,7 +24,7 @@ class Collection extends Ref {
   final Object name;
 
   @JsonKey(disallowNullValue: true, includeIfNull: false)
-  final Object database;
+  final Object? database;
 
   Collection(this.name, {this.database}) : super.empty();
 
@@ -38,7 +38,7 @@ class Collection extends Ref {
 @JsonSerializable()
 class Collections extends Ref {
   @JsonKey(name: 'collections', includeIfNull: true)
-  final Object database;
+  final Object? database;
 
   Collections({this.database}) : super.empty();
 
@@ -55,7 +55,7 @@ class Database extends Ref {
   final Object name;
 
   @JsonKey(name: 'scope', disallowNullValue: true, includeIfNull: false)
-  final Ref database;
+  final Ref? database;
 
   Database(this.name, {this.database}) : super.empty();
 
@@ -69,7 +69,7 @@ class Database extends Ref {
 @JsonSerializable()
 class Databases extends Ref {
   @JsonKey(name: 'databases', includeIfNull: true)
-  final Object database;
+  final Object? database;
 
   Databases({this.database}) : super.empty();
 
@@ -100,7 +100,7 @@ class Function_ extends Ref {
   final String name;
 
   @JsonKey(disallowNullValue: true, includeIfNull: false)
-  final Ref database;
+  final Ref? database;
 
   Function_(this.name, {this.database}) : super.empty();
 
@@ -114,7 +114,7 @@ class Function_ extends Ref {
 @JsonSerializable()
 class Functions extends Ref {
   @JsonKey(name: 'functions', includeIfNull: true)
-  final Ref database;
+  final Ref? database;
 
   Functions({this.database}) : super.empty();
 
@@ -131,7 +131,7 @@ class Index extends Ref {
   final Object name;
 
   @JsonKey(disallowNullValue: true, includeIfNull: false)
-  final Object database;
+  final Object? database;
 
   Index(this.name, {this.database}) : super.empty();
 
@@ -144,7 +144,7 @@ class Index extends Ref {
 @JsonSerializable()
 class Indexes extends Ref {
   @JsonKey(name: 'indexes', includeIfNull: true)
-  final Ref database;
+  final Ref? database;
 
   Indexes({this.database}) : super.empty();
 
@@ -181,9 +181,9 @@ class Query extends Expr {
 @JsonSerializable()
 class Ref extends Expr {
   @JsonKey(name: 'ref')
-  final Expr schema_ref;
+  final Expr? schema_ref;
 
-  final String id;
+  final String? id;
 
   Ref(this.schema_ref, this.id);
 
@@ -201,7 +201,7 @@ class Role extends Expr {
   final String name;
 
   @JsonKey(disallowNullValue: true, includeIfNull: false)
-  final Object database;
+  final Object? database;
 
   Role(this.name, {this.database});
 
@@ -214,7 +214,7 @@ class Role extends Expr {
 @JsonSerializable()
 class Roles extends Expr {
   @JsonKey(name: 'roles', includeIfNull: true)
-  final Ref database;
+  final Ref? database;
 
   Roles({this.database});
 

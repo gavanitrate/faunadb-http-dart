@@ -71,11 +71,14 @@ class FaunaClient {
   ///
   /// Throws [TimeoutException] if query response is not received within
   /// [config.timeout].
-  Future<FaunaResponse> query(Object expression, {FaunaConfig options}) {
-    final config = (options == null ? this.config : this.config.merge(options));
+  Future<FaunaResponse> query(Object expression, {FaunaConfig? options}) {
+    final config = (options ?? this.config);
     return _httpClient
         .post(
-          config.baseUrl,
+          Uri(
+            scheme: config.scheme.toString().split('.')[1].toLowerCase(),
+            host: config.domain,
+          ),
           headers: config.requestHeaders,
           body: json.encode(expression),
         )

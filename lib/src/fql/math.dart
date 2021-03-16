@@ -219,7 +219,7 @@ class Hypot extends Expr {
   final Object a;
 
   @JsonKey(disallowNullValue: true, includeIfNull: false)
-  final Object b;
+  final Object? b;
 
   Hypot(this.a, {this.b});
 
@@ -357,7 +357,7 @@ class Round extends Expr {
   final Object value;
 
   @JsonKey(disallowNullValue: true, includeIfNull: false)
-  final Object precision;
+  final Object? precision;
 
   Round(this.value, {this.precision});
 
@@ -478,7 +478,7 @@ class Trunc extends Expr {
   final Object value;
 
   @JsonKey(disallowNullValue: true, includeIfNull: false)
-  final Object precision;
+  final Object? precision;
 
   Trunc(this.value, {this.precision});
 

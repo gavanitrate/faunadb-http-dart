@@ -53,7 +53,7 @@ class Exists extends Expr {
   final Object ref;
 
   @JsonKey(disallowNullValue: true, includeIfNull: false)
-  final Object ts;
+  final Object? ts;
 
   Exists(this.ref, {this.ts});
 

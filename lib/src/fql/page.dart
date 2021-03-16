@@ -9,7 +9,8 @@ class Page {
 
   Page(this.before, this.after, this.data);
 
-  factory Page.fromResource({Object before, Object after, Object data}) {
+  factory Page.fromResource(
+      {required Object before, required Object after, required List data}) {
     var beforeCursor = before;
     if (before is List) {
       beforeCursor = List.from(before).map((element) {
