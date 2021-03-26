@@ -134,6 +134,31 @@ Map<String, dynamic> _$LowerCaseToJson(LowerCase instance) => <String, dynamic>{
       'lowercase': instance.value,
     };
 
+NGram _$NGramFromJson(Map<String, dynamic> json) {
+  $checkKeys(json, disallowNullValues: const ['min', 'max']);
+  return NGram(
+    json['ngram'] as Object,
+    min: json['min'],
+    max: json['max'],
+  );
+}
+
+Map<String, dynamic> _$NGramToJson(NGram instance) {
+  final val = <String, dynamic>{
+    'ngram': instance.input,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('min', instance.min);
+  writeNotNull('max', instance.max);
+  return val;
+}
+
 RTrim _$RTrimFromJson(Map<String, dynamic> json) {
   return RTrim(
     json['rtrim'] as Object,

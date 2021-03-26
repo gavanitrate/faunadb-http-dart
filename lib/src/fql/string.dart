@@ -119,6 +119,29 @@ class LowerCase extends Expr {
   Map<String, dynamic> toJson() => _$LowerCaseToJson(this);
 }
 
+/*
+* NOT YET OFFICIALLY SUPPORTED BY THE FAUNA TEAM
+* https://docs.fauna.com/fauna/current/tutorials/basics/indexes.html#any_letter
+* */
+@JsonSerializable()
+class NGram extends Expr {
+  @JsonKey(name: 'ngram')
+  final Object input;
+
+  @JsonKey(disallowNullValue: true, includeIfNull: false)
+  final Object? min;
+
+  @JsonKey(disallowNullValue: true, includeIfNull: false)
+  final Object? max;
+
+  NGram(this.input, {this.min, this.max});
+
+  factory NGram.fromJson(Map<String, dynamic> json) => _$NGramFromJson(json);
+
+  @override
+  Map<String, dynamic> toJson() => _$NGramToJson(this);
+}
+
 @JsonSerializable()
 class RTrim extends Expr {
   @JsonKey(name: 'rtrim')

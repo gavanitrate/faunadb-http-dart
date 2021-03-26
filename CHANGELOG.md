@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.13.0] - 2021-03-26
+
+### Added
+
+- String `NGram` FQL function
+
 ## [0.12.0] - 2021-03-16
 
 ### Changed
@@ -154,6 +160,8 @@ All notable changes to this project will be documented in this file.
 
 - `FaunaDBConfig` class
 - `FaunaDBClient` class
+
+[0.13.0]: https://github.com/gavanitrate/faunadb-http-dart/compare/0.12.0...0.13.0
 
 [0.12.0]: https://github.com/gavanitrate/faunadb-http-dart/compare/0.11.0...0.12.0
 
