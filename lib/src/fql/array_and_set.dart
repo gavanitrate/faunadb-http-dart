@@ -278,7 +278,7 @@ class Reverse extends Expr {
 @JsonSerializable()
 class Singleton extends Expr {
   @JsonKey(name: 'singleton')
-  final Ref ref;
+  final Expr ref;
 
   Singleton(this.ref);
 

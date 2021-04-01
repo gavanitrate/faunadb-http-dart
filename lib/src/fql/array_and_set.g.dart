@@ -205,7 +205,7 @@ Map<String, dynamic> _$ReverseToJson(Reverse instance) => <String, dynamic>{
 
 Singleton _$SingletonFromJson(Map<String, dynamic> json) {
   return Singleton(
-    Ref.fromJson(json['singleton'] as Map<String, dynamic>),
+    Expr.fromJson(json['singleton'] as Map<String, dynamic>),
   );
 }
 

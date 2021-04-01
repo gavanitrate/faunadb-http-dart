@@ -1,5 +1,5 @@
 name: faunadb_http
-version: 0.13.0
+version: 0.13.1
 description: A pure Dart implementation of a FaunaDB client and provides query classes that closely mimic FQL functions.
 homepage: https://github.com/gavanitrate/faunadb-http-dart
 

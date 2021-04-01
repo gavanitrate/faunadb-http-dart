@@ -240,7 +240,7 @@ class Events extends Expr {
 @JsonSerializable()
 class Insert extends Expr {
   @JsonKey(name: 'insert')
-  final Ref ref;
+  final Expr ref;
 
   final Object ts;
 

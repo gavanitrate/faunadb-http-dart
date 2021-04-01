@@ -56,7 +56,7 @@ Database _$DatabaseFromJson(Map<String, dynamic> json) {
     json['database'] as Object,
     database: json['scope'] == null
         ? null
-        : Ref.fromJson(json['scope'] as Map<String, dynamic>),
+        : Expr.fromJson(json['scope'] as Map<String, dynamic>),
   );
 }
 
@@ -101,7 +101,7 @@ Function_ _$Function_FromJson(Map<String, dynamic> json) {
     json['function'] as String,
     database: json['database'] == null
         ? null
-        : Ref.fromJson(json['database'] as Map<String, dynamic>),
+        : Expr.fromJson(json['database'] as Map<String, dynamic>),
   );
 }
 
@@ -124,7 +124,7 @@ Functions _$FunctionsFromJson(Map<String, dynamic> json) {
   return Functions(
     database: json['functions'] == null
         ? null
-        : Ref.fromJson(json['functions'] as Map<String, dynamic>),
+        : Expr.fromJson(json['functions'] as Map<String, dynamic>),
   );
 }
 
@@ -159,7 +159,7 @@ Indexes _$IndexesFromJson(Map<String, dynamic> json) {
   return Indexes(
     database: json['indexes'] == null
         ? null
-        : Ref.fromJson(json['indexes'] as Map<String, dynamic>),
+        : Expr.fromJson(json['indexes'] as Map<String, dynamic>),
   );
 }
 
@@ -222,7 +222,7 @@ Roles _$RolesFromJson(Map<String, dynamic> json) {
   return Roles(
     database: json['roles'] == null
         ? null
-        : Ref.fromJson(json['roles'] as Map<String, dynamic>),
+        : Expr.fromJson(json['roles'] as Map<String, dynamic>),
   );
 }
 

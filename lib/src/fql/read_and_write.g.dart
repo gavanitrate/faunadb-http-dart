@@ -200,7 +200,7 @@ Map<String, dynamic> _$EventsToJson(Events instance) => <String, dynamic>{
 
 Insert _$InsertFromJson(Map<String, dynamic> json) {
   return Insert(
-    Ref.fromJson(json['insert'] as Map<String, dynamic>),
+    Expr.fromJson(json['insert'] as Map<String, dynamic>),
     json['ts'] as Object,
     json['action'] as Object,
     Obj.fromJson(json['params'] as Map<String, dynamic>),

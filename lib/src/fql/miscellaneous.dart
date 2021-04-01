@@ -55,7 +55,7 @@ class Database extends Ref {
   final Object name;
 
   @JsonKey(name: 'scope', disallowNullValue: true, includeIfNull: false)
-  final Ref? database;
+  final Expr? database;
 
   Database(this.name, {this.database}) : super.empty();
 
@@ -100,7 +100,7 @@ class Function_ extends Ref {
   final String name;
 
   @JsonKey(disallowNullValue: true, includeIfNull: false)
-  final Ref? database;
+  final Expr? database;
 
   Function_(this.name, {this.database}) : super.empty();
 
@@ -114,7 +114,7 @@ class Function_ extends Ref {
 @JsonSerializable()
 class Functions extends Ref {
   @JsonKey(name: 'functions', includeIfNull: true)
-  final Ref? database;
+  final Expr? database;
 
   Functions({this.database}) : super.empty();
 
@@ -144,7 +144,7 @@ class Index extends Ref {
 @JsonSerializable()
 class Indexes extends Ref {
   @JsonKey(name: 'indexes', includeIfNull: true)
-  final Ref? database;
+  final Expr? database;
 
   Indexes({this.database}) : super.empty();
 
@@ -214,7 +214,7 @@ class Role extends Expr {
 @JsonSerializable()
 class Roles extends Expr {
   @JsonKey(name: 'roles', includeIfNull: true)
-  final Ref? database;
+  final Expr? database;
 
   Roles({this.database});
 

@@ -62,7 +62,7 @@ class HasIdentity extends Expr {
 
 @JsonSerializable()
 class Identify extends Expr {
-  final Ref identity;
+  final Expr identity;
 
   final String password;
 
