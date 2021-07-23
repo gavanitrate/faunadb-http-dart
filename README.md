@@ -140,6 +140,14 @@ each type of difference.
     - `Function` becomes `Function_`
     - `default` becomes `default_`
 
+## Build
+
+The `json_serializable` package provides JSON serialization to the query classes.
+
+Run `pub run build_runner build` to generate the boilerplate code to add JSON serialization.
+
+`pub run build_runner watch` is great when trying things out.
+
 ## Contributors
 
 Can be found in `CONTRIBUTORS.md`
