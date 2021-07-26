@@ -2,12 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.13.2] - 2021-07-26
+
+### Changed
+
+- Fixed bug - `FaunaClient.query()` was not using port property
+
 ## [0.13.1] - 2021-04-02
 
 ### Changed
 
 - All `Ref` type parameters updated to be `Expr`; allows more flexible query creation
-
 
 ## [0.13.0] - 2021-03-26
 

@@ -75,10 +75,7 @@ class FaunaClient {
     final config = (options ?? this.config);
     return _httpClient
         .post(
-          Uri(
-            scheme: config.scheme.toString().split('.')[1].toLowerCase(),
-            host: config.domain,
-          ),
+          config.baseUrl,
           headers: config.requestHeaders,
           body: json.encode(expression),
         )

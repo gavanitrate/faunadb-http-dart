@@ -1,5 +1,7 @@
 import 'dart:convert';
 
+enum Scheme { HTTP, HTTPS }
+
 /// Configuration for a [FaunaClient].
 ///
 /// It is recommended to use [FaunaConfig.build] to build a configuration.
@@ -30,7 +32,7 @@ class FaunaConfig {
   /// If specified, this value is sent as the
   /// `X-Query-Timeout` header in [requestHeaders].
   final Duration? queryTimeout;
-  String? _baseUrl;
+  Uri? _baseUrl;
   String? _authToken;
   Map<String, String>? _requestHeaders;
 
@@ -39,7 +41,7 @@ class FaunaConfig {
 
   /// The computed URL to send query requests to.
   /// Built from [scheme], [domain], [port].
-  String get baseUrl => _baseUrl ??= _buildBaseUrl();
+  Uri get baseUrl => _baseUrl ??= _buildBaseUrl();
 
   /// Base64 encoded Basic auth token.
   /// Built from [secret].
@@ -52,8 +54,9 @@ class FaunaConfig {
   Map<String, String> get requestHeaders =>
       _requestHeaders ??= _buildRequestHeaders();
 
-  String _buildBaseUrl() {
-    return '${scheme.toString().split('.')[1]}://$domain:$port';
+  Uri _buildBaseUrl() {
+    final schemeStr = scheme.toString().split('.')[1];
+    return Uri(scheme: schemeStr, host: domain, port: port);
   }
 
   String _buildAuthToken() {
@@ -107,20 +110,15 @@ class FaunaConfig {
     required String secret,
     Scheme scheme = Scheme.HTTPS,
     String domain = 'db.fauna.com',
-    int port = 443,
+    int? port,
     Map<String, String> headers = const {},
     Duration timeout = const Duration(minutes: 1),
     Duration? queryTimeout,
   }) {
-    // If the scheme is HTTPS and a custom port was not specified, set to 80
-    if (scheme != Scheme.HTTPS && port == 443) {
-      port = 80;
-    }
-
     return FaunaConfig(
       scheme: scheme,
       domain: domain,
-      port: port,
+      port: port ?? ((scheme == Scheme.HTTPS) ? 443 : 80),
       secret: secret,
       headers: headers,
       timeout: timeout,
@@ -143,5 +141,3 @@ class FaunaConfig {
     );
   }
 }
-
-enum Scheme { HTTP, HTTPS }
