@@ -6,18 +6,19 @@ part of 'miscellaneous.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Abort _$AbortFromJson(Map<String, dynamic> json) {
-  return Abort(
-    json['abort'] as Object,
-  );
-}
+Abort _$AbortFromJson(Map<String, dynamic> json) => Abort(
+      json['abort'] as Object,
+    );
 
 Map<String, dynamic> _$AbortToJson(Abort instance) => <String, dynamic>{
       'abort': instance.message,
     };
 
 Collection _$CollectionFromJson(Map<String, dynamic> json) {
-  $checkKeys(json, disallowNullValues: const ['database']);
+  $checkKeys(
+    json,
+    disallowNullValues: const ['database'],
+  );
   return Collection(
     json['collection'] as Object,
     database: json['database'],
@@ -39,11 +40,9 @@ Map<String, dynamic> _$CollectionToJson(Collection instance) {
   return val;
 }
 
-Collections _$CollectionsFromJson(Map<String, dynamic> json) {
-  return Collections(
-    database: json['collections'],
-  );
-}
+Collections _$CollectionsFromJson(Map<String, dynamic> json) => Collections(
+      database: json['collections'],
+    );
 
 Map<String, dynamic> _$CollectionsToJson(Collections instance) =>
     <String, dynamic>{
@@ -51,7 +50,10 @@ Map<String, dynamic> _$CollectionsToJson(Collections instance) =>
     };
 
 Database _$DatabaseFromJson(Map<String, dynamic> json) {
-  $checkKeys(json, disallowNullValues: const ['scope']);
+  $checkKeys(
+    json,
+    disallowNullValues: const ['scope'],
+  );
   return Database(
     json['database'] as Object,
     database: json['scope'] == null
@@ -75,28 +77,27 @@ Map<String, dynamic> _$DatabaseToJson(Database instance) {
   return val;
 }
 
-Databases _$DatabasesFromJson(Map<String, dynamic> json) {
-  return Databases(
-    database: json['databases'],
-  );
-}
+Databases _$DatabasesFromJson(Map<String, dynamic> json) => Databases(
+      database: json['databases'],
+    );
 
 Map<String, dynamic> _$DatabasesToJson(Databases instance) => <String, dynamic>{
       'databases': instance.database,
     };
 
-Documents _$DocumentsFromJson(Map<String, dynamic> json) {
-  return Documents(
-    json['documents'] as Object,
-  );
-}
+Documents _$DocumentsFromJson(Map<String, dynamic> json) => Documents(
+      json['documents'] as Object,
+    );
 
 Map<String, dynamic> _$DocumentsToJson(Documents instance) => <String, dynamic>{
       'documents': instance.collection,
     };
 
 Function_ _$Function_FromJson(Map<String, dynamic> json) {
-  $checkKeys(json, disallowNullValues: const ['database']);
+  $checkKeys(
+    json,
+    disallowNullValues: const ['database'],
+  );
   return Function_(
     json['function'] as String,
     database: json['database'] == null
@@ -120,20 +121,21 @@ Map<String, dynamic> _$Function_ToJson(Function_ instance) {
   return val;
 }
 
-Functions _$FunctionsFromJson(Map<String, dynamic> json) {
-  return Functions(
-    database: json['functions'] == null
-        ? null
-        : Expr.fromJson(json['functions'] as Map<String, dynamic>),
-  );
-}
+Functions _$FunctionsFromJson(Map<String, dynamic> json) => Functions(
+      database: json['functions'] == null
+          ? null
+          : Expr.fromJson(json['functions'] as Map<String, dynamic>),
+    );
 
 Map<String, dynamic> _$FunctionsToJson(Functions instance) => <String, dynamic>{
       'functions': instance.database,
     };
 
 Index _$IndexFromJson(Map<String, dynamic> json) {
-  $checkKeys(json, disallowNullValues: const ['database']);
+  $checkKeys(
+    json,
+    disallowNullValues: const ['database'],
+  );
   return Index(
     json['index'] as Object,
     database: json['database'],
@@ -155,40 +157,32 @@ Map<String, dynamic> _$IndexToJson(Index instance) {
   return val;
 }
 
-Indexes _$IndexesFromJson(Map<String, dynamic> json) {
-  return Indexes(
-    database: json['indexes'] == null
-        ? null
-        : Expr.fromJson(json['indexes'] as Map<String, dynamic>),
-  );
-}
+Indexes _$IndexesFromJson(Map<String, dynamic> json) => Indexes(
+      database: json['indexes'] == null
+          ? null
+          : Expr.fromJson(json['indexes'] as Map<String, dynamic>),
+    );
 
 Map<String, dynamic> _$IndexesToJson(Indexes instance) => <String, dynamic>{
       'indexes': instance.database,
     };
 
-NewId _$NewIdFromJson(Map<String, dynamic> json) {
-  return NewId();
-}
+NewId _$NewIdFromJson(Map<String, dynamic> json) => NewId();
 
-Query _$QueryFromJson(Map<String, dynamic> json) {
-  return Query(
-    Lambda.fromJson(json['query'] as Map<String, dynamic>),
-  );
-}
+Query _$QueryFromJson(Map<String, dynamic> json) => Query(
+      Lambda.fromJson(json['query'] as Map<String, dynamic>),
+    );
 
 Map<String, dynamic> _$QueryToJson(Query instance) => <String, dynamic>{
       'query': instance.lambda,
     };
 
-Ref _$RefFromJson(Map<String, dynamic> json) {
-  return Ref(
-    json['ref'] == null
-        ? null
-        : Expr.fromJson(json['ref'] as Map<String, dynamic>),
-    json['id'] as String?,
-  );
-}
+Ref _$RefFromJson(Map<String, dynamic> json) => Ref(
+      json['ref'] == null
+          ? null
+          : Expr.fromJson(json['ref'] as Map<String, dynamic>),
+      json['id'] as String?,
+    );
 
 Map<String, dynamic> _$RefToJson(Ref instance) => <String, dynamic>{
       'ref': instance.schema_ref,
@@ -196,7 +190,10 @@ Map<String, dynamic> _$RefToJson(Ref instance) => <String, dynamic>{
     };
 
 Role _$RoleFromJson(Map<String, dynamic> json) {
-  $checkKeys(json, disallowNullValues: const ['database']);
+  $checkKeys(
+    json,
+    disallowNullValues: const ['database'],
+  );
   return Role(
     json['role'] as String,
     database: json['database'],
@@ -218,13 +215,11 @@ Map<String, dynamic> _$RoleToJson(Role instance) {
   return val;
 }
 
-Roles _$RolesFromJson(Map<String, dynamic> json) {
-  return Roles(
-    database: json['roles'] == null
-        ? null
-        : Expr.fromJson(json['roles'] as Map<String, dynamic>),
-  );
-}
+Roles _$RolesFromJson(Map<String, dynamic> json) => Roles(
+      database: json['roles'] == null
+          ? null
+          : Expr.fromJson(json['roles'] as Map<String, dynamic>),
+    );
 
 Map<String, dynamic> _$RolesToJson(Roles instance) => <String, dynamic>{
       'roles': instance.database,

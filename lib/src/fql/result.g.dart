@@ -6,12 +6,10 @@ part of 'result.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-RefResult _$RefResultFromJson(Map<String, dynamic> json) {
-  return RefResult(
-    json['id'] as String,
-    RefResult._unwrapCollection(json['collection']),
-  );
-}
+RefResult _$RefResultFromJson(Map<String, dynamic> json) => RefResult(
+      json['id'] as String,
+      RefResult._unwrapCollection(json['collection']),
+    );
 
 Map<String, dynamic> _$RefResultToJson(RefResult instance) {
   final val = <String, dynamic>{
@@ -28,12 +26,10 @@ Map<String, dynamic> _$RefResultToJson(RefResult instance) {
   return val;
 }
 
-QueryResult _$QueryResultFromJson(Map<String, dynamic> json) {
-  return QueryResult(
-    json['lambda'] as Object,
-    Result.unwrap_values(json['expr']),
-  );
-}
+QueryResult _$QueryResultFromJson(Map<String, dynamic> json) => QueryResult(
+      json['lambda'] as Object,
+      Result.unwrap_values(json['expr']),
+    );
 
 Map<String, dynamic> _$QueryResultToJson(QueryResult instance) =>
     <String, dynamic>{
@@ -41,14 +37,13 @@ Map<String, dynamic> _$QueryResultToJson(QueryResult instance) =>
       'expr': instance.expression,
     };
 
-FaunaResponse _$FaunaResponseFromJson(Map<String, dynamic> json) {
-  return FaunaResponse(
-    resource: Result.unwrap_values(json['resource']),
-    errors: (json['errors'] as List<dynamic>?)
-        ?.map((e) => e as Map<String, dynamic>)
-        .toList(),
-  );
-}
+FaunaResponse _$FaunaResponseFromJson(Map<String, dynamic> json) =>
+    FaunaResponse(
+      resource: Result.unwrap_values(json['resource']),
+      errors: (json['errors'] as List<dynamic>?)
+          ?.map((e) => e as Map<String, dynamic>)
+          .toList(),
+    );
 
 Map<String, dynamic> _$FaunaResponseToJson(FaunaResponse instance) {
   final val = <String, dynamic>{};

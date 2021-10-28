@@ -62,11 +62,11 @@ class HasIdentity extends Expr {
 
 @JsonSerializable()
 class Identify extends Expr {
-  final Expr identity;
+  final Expr identify;
 
   final String password;
 
-  Identify(this.identity, this.password);
+  Identify(this.identify, this.password);
 
   factory Identify.fromJson(Map<String, dynamic> json) =>
       _$IdentifyFromJson(json);

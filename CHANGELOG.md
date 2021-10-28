@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.13.3] - 2021-10-28
+
+### Changed
+
+- Fixed `Identify` FQL function (incorrect JSON name of parameter)
+
 ## [0.13.2] - 2021-07-26
 
 ### Changed
@@ -172,6 +178,8 @@ All notable changes to this project will be documented in this file.
 
 - `FaunaDBConfig` class
 - `FaunaDBClient` class
+
+[0.13.3]: https://github.com/gavanitrate/faunadb-http-dart/compare/0.13.2...0.13.3
 
 [0.13.2]: https://github.com/gavanitrate/faunadb-http-dart/compare/0.13.1...0.13.2
 
