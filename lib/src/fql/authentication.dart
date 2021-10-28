@@ -1,7 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
 import 'expr.dart';
-import 'miscellaneous.dart';
 
 part 'authentication.g.dart';
 
