@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.13.4] - 2021-11-22
+
+### Changed
+
+- Fixed `Select` FQL function `default` parameter data type
+
 ## [0.13.3] - 2021-10-28
 
 ### Changed
@@ -178,6 +184,8 @@ All notable changes to this project will be documented in this file.
 
 - `FaunaDBConfig` class
 - `FaunaDBClient` class
+
+[0.13.3]: https://github.com/gavanitrate/faunadb-http-dart/compare/0.13.3...0.13.4
 
 [0.13.3]: https://github.com/gavanitrate/faunadb-http-dart/compare/0.13.2...0.13.3
 

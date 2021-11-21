@@ -100,7 +100,7 @@ class Select extends Expr {
   final Expr from;
 
   @JsonKey(name: 'default', disallowNullValue: true, includeIfNull: false)
-  final Expr? default_;
+  final Object? default_;
 
   Select(this.path, this.from, {this.default_});
 

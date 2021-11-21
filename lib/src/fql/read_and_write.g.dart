@@ -86,9 +86,7 @@ Select _$SelectFromJson(Map<String, dynamic> json) {
   return Select(
     json['select'] as Object,
     Expr.fromJson(json['from'] as Map<String, dynamic>),
-    default_: json['default'] == null
-        ? null
-        : Expr.fromJson(json['default'] as Map<String, dynamic>),
+    default_: json['default'],
   );
 }
 
