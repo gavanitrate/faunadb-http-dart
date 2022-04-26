@@ -9,3 +9,4 @@ export 'src/fql/miscellaneous.dart';
 export 'src/fql/read_and_write.dart';
 export 'src/fql/string.dart';
 export 'src/fql/time_and_date.dart';
+export 'src/fql/type_checks.dart';
