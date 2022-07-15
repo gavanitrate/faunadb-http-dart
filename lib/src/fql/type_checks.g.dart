@@ -7,9 +7,9 @@ part of 'type_checks.dart';
 // **************************************************************************
 
 IsNull _$IsNullFromJson(Map<String, dynamic> json) => IsNull(
-      json['value'] as Object,
+      json['is_null'] as Object,
     );
 
 Map<String, dynamic> _$IsNullToJson(IsNull instance) => <String, dynamic>{
-      'value': instance.value,
+      'is_null': instance.value,
     };

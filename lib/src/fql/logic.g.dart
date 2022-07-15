@@ -40,6 +40,17 @@ Map<String, dynamic> _$ContainsToJson(Contains instance) => <String, dynamic>{
       'in': instance.in_,
     };
 
+ContainsStr _$ContainsStrFromJson(Map<String, dynamic> json) => ContainsStr(
+      json['containsstr'] as Object,
+      json['search'] as Object,
+    );
+
+Map<String, dynamic> _$ContainsStrToJson(ContainsStr instance) =>
+    <String, dynamic>{
+      'containsstr': instance.value,
+      'search': instance.search,
+    };
+
 Equals _$EqualsFromJson(Map<String, dynamic> json) => Equals(
       json['equals'] as Object,
     );

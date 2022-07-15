@@ -53,11 +53,26 @@ class Contains extends Expr {
 
   Contains(this.path, this.in_);
 
-  factory Contains.fromJson(Map<String, dynamic> json) =>
-      _$ContainsFromJson(json);
+  factory Contains.fromJson(Map<String, dynamic> json) => _$ContainsFromJson(json);
 
   @override
   Map<String, dynamic> toJson() => _$ContainsToJson(this);
+}
+
+@JsonSerializable()
+class ContainsStr extends Expr {
+  @JsonKey(name: 'containsstr')
+  final Object value;
+
+  @JsonKey(name: 'search')
+  final Object search;
+
+  ContainsStr(this.value, this.search);
+
+  factory ContainsStr.fromJson(Map<String, dynamic> json) => _$ContainsStrFromJson(json);
+
+  @override
+  Map<String, dynamic> toJson() => _$ContainsStrToJson(this);
 }
 
 @JsonSerializable()

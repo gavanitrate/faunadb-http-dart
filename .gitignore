@@ -2,3 +2,5 @@
 .dart_tool/
 .packages
 doc/
+lib/.DS_Store
+.DS_Store

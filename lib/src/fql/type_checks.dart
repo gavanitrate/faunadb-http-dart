@@ -5,6 +5,7 @@ part 'type_checks.g.dart';
 
 @JsonSerializable()
 class IsNull extends Expr {
+  @JsonKey(name: 'is_null')
   final Object value;
 
   IsNull(this.value);
