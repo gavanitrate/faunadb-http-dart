@@ -148,6 +148,20 @@ Run `pub run build_runner build` to generate the boilerplate code to add JSON se
 
 `pub run build_runner watch` is great when trying things out.
 
+## Limitations:
+
+As currently written, the fauna objects only work 1 way. In other words, they will fail if you try to feed them back into a query.
+A very common scenerio where this is needed is [cursors](https://docs.fauna.com/fauna/current/api/fql/functions/paginate?lang=javascript#cursor) for paging which are made of Fauna objects.
+
+While it would be nice for the objects to cleanly jsonEncode and also be ingestible by fauna, a quick workaround is as follows:
+
+```dart
+        FaunaResponse? ret = null;
+        var dec = jsonDecode(ret.raw!)['resource']['after'];
+        nextPageKey = dec;
+```
+
+
 ## Contributors
 
 Can be found in `CONTRIBUTORS.md`
