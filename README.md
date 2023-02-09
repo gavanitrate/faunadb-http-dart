@@ -156,7 +156,7 @@ A very common scenerio where this is needed is [cursors](https://docs.fauna.com/
 While it would be nice for the objects to cleanly jsonEncode and also be ingestible by fauna, a quick workaround is as follows:
 
 ```dart
-        FaunaResponse? ret = null;
+        FaunaResponse? ret = await client.query(query);
         var dec = jsonDecode(ret.raw!)['resource']['after'];
         nextPageKey = dec;
 ```
